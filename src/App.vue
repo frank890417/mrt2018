@@ -1,6 +1,6 @@
 <template lang="pug">
 #app( :style="bgStyle" )
-  div.testroute
+  //- .testroute
     span 測試用
     router-link.ml-5(:to="r" v-for="r in testRoutes") 
       span.color.white {{r}}
@@ -43,7 +43,8 @@ export default {
 @import "./assets/_mixins.sass"
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
 @import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700)
-@import "../node_modules/animate-sass/animate"
+// @import "../node_modules/animate-sass/animate"
+
 
 .testroute
   position: fixed

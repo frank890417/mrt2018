@@ -14,7 +14,6 @@
       .col
       .col
       .col
-      .col
   transition(name="menu")
     .fullPage(v-if="menuState")
       .row.row-page
@@ -33,24 +32,24 @@
                 .tags.scrollX
                   .tag(v-for="tag in tags", @click="searchKeyword=tag") {{tag}}
             .row( @click="setMenuState(false)" )
-              router-link.col-sm-4(to="/about")
+              router-link.col-sm-6(to="/about")
                 img.logo(src="/static/img/NavIcon1.svg")
                 h2 臺北聲音地景計畫
-                p.nav-short-description 每個地方，都有專屬自己的聲音，人群嘈雜、商家紛鬧叫賣，你，還感受到了些什麼？
-              router-link.col-sm-4(to="/explore")
-                img.logo(src="/static/img/NavIcon1.svg")
+                p.nav-short-description 每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，你，還感受到了些什麼？
+              router-link.col-sm-6(to="/explore")
+                img.logo(src="/static/img/NavIcon2.svg")
                 h2 場景探索
-                p.nav-short-description 繁忙的台北街頭，乘載著川流不息的人們，而你，是否曾側耳傾聽那些美妙的旋律？
+                p.nav-short-description 繁忙的台北街頭，乘載著川流不息的人們，<br>而你，是否曾側耳傾聽那些美妙的旋律？
             
             .row(@click="setMenuState(false)" )
-              router-link.col-sm-4(to="/playground")
-                img.logo(src="/static/img/NavIcon1.svg")
+              router-link.col-sm-6(to="/playground")
+                img.logo(src="/static/img/NavIcon3.svg")
                 h2.nav-expo 即興創作
-                p.nav-short-description 在你心中，台北的「聲音」，又是什麼樣子的?
-              router-link.col-sm-4(to="/rules")
-                img.logo(src="/static/img/NavIcon1.svg")
+                p.nav-short-description 在你心中，台北的「聲音」，<br>又是什麼樣子的?
+              router-link.col-sm-6(to="/rules")
+                img.logo(src="/static/img/NavIcon4.svg")
                 h2.nav-base 競賽規則與報名
-                p.nav-short-description 結合文化在地性、捷運站體空間，創作出屬於台北的特色音樂。
+                p.nav-short-description 結合文化在地性、捷運站體空間，<br>創作出屬於台北的特色音樂。
 
             //- div.row(v-if="searchKeyword!=''" 
             //-         @click="setMenuState(false)").scrollY
@@ -121,7 +120,7 @@ export default {
 
 <style lang="sass">
 @import "../assets/_mixins.sass"
-
+$speed_cb: cubic-bezier(.04,.6,.42,1) 
 .staticLogo
   position: fixed
   left: 50px
@@ -136,6 +135,16 @@ export default {
   padding: 10px
   cursor: pointer
   z-index: 350
+  &:hover .iconbar
+    @keyframes ani
+      0%
+        height: 40px
+      50%
+        height: 0px
+      100%
+        height: 40px
+    animation-speed-curve: $speed_cb
+    animation: ani 1s both 1
   
 .icon-bar
   width: 10px
@@ -153,7 +162,8 @@ export default {
     left: 35%
   &:nth-child(2)
     left: 65%
-    top: 50p
+    top: 50px
+
 
 //transition effect
 .bgcuts
@@ -165,10 +175,13 @@ export default {
   display: flex
   overflow: hidden
   z-index: 200
+  
   .col
     flex: 1
     top: 0%
-    transition: 0.5s
+    height: 100%
+    transition: 1s
+    transition-speed-curve: $speed_cb
     background-color: $colorBlue
     border-right: solid 1px rgba(white,0.05)
     position: relative
@@ -182,38 +195,33 @@ export default {
 
 
 
-.slice-enter-active,.slice-leave-active
-  transition: 0.5s
-.slice-leave-active,.slice-leave-active .col
-  transition: 0.5s 0.5s
-.slice-enter-active,.slice-leave-to
+.slice-enter-active
+  transition: 1s
+
+.slice-enter,.slice-leave-to
   .col:nth-child(2n)
-    top: 110%
-    &:before
-      top: 100%
-      height: 100%
+    top: -100%
   .col:nth-child(2n+1)
-    top: -110%
-    &:before
-      top: -100%
-      height: 100%
+    top: 100%
+.slice-leave-active,.slice-leave
+  transition: 1s 0.5s
+  .col  
+    transition: 1s 0.5s
 .slice-enter-to,.slice-leave-active
   .col
     top: 0%
-    &:before
-      top: 0%
-      height: 0
 
 
-.menu-enter-active,.menu-leave-active
-  transition: 0.5s
+// .menu-enter-active,.menu-leave-active
+  // transition: 0.5s
 .menu-enter-active
-  transition-delay: 0.5s
-
-.menu-enter-active,.menu-leave-to
-  opacity: 0
-.menu-enter-to,.menu-leave-active
+  transition: 1s 0.5s
+.menu-leave-active
+  transition: 1s 0s
+.menu-enter-to,.menu-leave-to
   opacity: 1
+.menu-enter,.menu-leave-active
+  opacity: 0
 
 .menu
   input
@@ -228,6 +236,9 @@ export default {
 
   &.open
     .hambergur
+      .icon-bar
+        background-color: #fff
+
       .icon-bar:nth-child(1)
         top: 50%
         transform: translate(-50%,-50%) rotate(45deg)

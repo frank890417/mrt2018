@@ -1,13 +1,13 @@
 <template lang="pug">
   .page.page-test.color.white
     section.sectionHero
-      .container
+      .container-fluid
         .row
-          .col-sm-6
-            h4.musicBar Xiangshan
-            h1 捷運象山站
-            p 象山站為台北捷運信義線—淡水線的延伸段，全線長 7.9 公里，座落於台北市信義區，是台北市的後山。<br><br>除了是城市人群繁忙中的休憩園地外，更是許多人眺望台北市夜景與繁華信義區的重要景點。
-          .col-sm-6
+          .col-sm-4
+            h4.musicBar
+            h1 {{ station.title }}
+            p(v-html="station.description")
+          .col-sm-8
             img(src="http://taipeisoundscape.com/img/scene_door.svg")
 
 
@@ -26,7 +26,10 @@ export default {
 
   },
   computed:{
-
+    ...mapState(['stations']),
+    station(){
+      return this.stations.find(o=>o.name=="南港站")
+    }
   },
   methods:{
 

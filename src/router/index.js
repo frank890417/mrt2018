@@ -91,6 +91,9 @@ router.beforeEach( (to,from,next)=>{
   console.log(to.meta.bgcolor)
   store.commit("setBgColor", to.meta.bgColor)
 
+  setTimeout(() => {
+    window.scrollTo(0,0)
+  }, 500);
   next()
 })
 

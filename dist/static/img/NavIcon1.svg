@@ -3,16 +3,14 @@
     <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
     <title>NavIcon1</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <ellipse id="path-1" cx="73.5" cy="52" rx="40.5" ry="40"></ellipse>
-    </defs>
+    <defs></defs>
     <g id="NavIcon1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Oval">
-            <use fill="#4F61FE" fill-rule="evenodd" style="mix-blend-mode: lighten;" xlink:href="#path-1"></use>
-            <use stroke="#4F61FE" stroke-width="3" xlink:href="#path-1"></use>
-        </g>
-        <circle id="Oval" stroke="#4F61FE" stroke-width="3" cx="64" cy="59" r="12"></circle>
-        <ellipse id="Oval-Copy" fill="#C82424" style="mix-blend-mode: lighten;" cx="114" cy="66.5" rx="35" ry="34.5"></ellipse>
         <path d="M41.5,52 L50,91" id="Path-2"></path>
+        <path d="M15.5,95 L170.507258,95" id="Path-4" stroke="#4F61FE" stroke-width="5"></path>
+        <polyline id="Path-9" stroke="#4F61FE" stroke-width="4" points="39 93.5 63.5 55 148.501471 55 148.501471 94.7018669"></polyline>
+        <polyline id="Path-9" stroke="#4F61FE" stroke-width="4" points="61 80.6025839 68.3834625 69 94 69 94 80.9647855"></polyline>
+        <path d="M52,26 L59,45" id="Path-5" stroke="#FFFFFF" stroke-width="4"></path>
+        <path d="M49,50.5 L37,40.5" id="Path-7" stroke="#FFFFFF" stroke-width="4"></path>
+        <path d="M70.5,40.5 L72.5,25.5" id="Path-8" stroke="#FFFFFF" stroke-width="4"></path>
     </g>
 </svg>

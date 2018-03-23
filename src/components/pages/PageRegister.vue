@@ -16,24 +16,30 @@
               li(@click="toFormPart(2)")  3. 上傳作品
               li(@click="toFormPart(3)")  4. 上傳同意書
 
-            .form
+            el-form.form(label-width="50px")
               .container(v-if="formPart==0")
-                el-form(label-width="50px")
-                  el-input(v-model="registData.personCount",  type="number")
-                  hr
-                  div(v-for="(p,pid) in registData.personCount")
-                    h4 創作人{{pid+1}}. {{registData.person[pid].name}}
-                    el-form-item(label="姓名")  
-                      el-input(v-model="registData.person[pid].name")
-                    el-form-item(label="性別")  
-                      el-input(v-model="registData.person[pid].gender")
-                    el-form-item(label="年齡")  
-                      el-input(v-model="registData.person[pid].age",
-                               type="number")
-                    el-form-item(label="電話")  
-                      el-input(v-model="registData.person[pid].phone")
-                    el-form-item(label="信箱")  
-                      el-input(v-model="registData.person[pid].email")
+                el-input(v-model="registData.personCount",  type="number")
+                hr
+                div(v-for="(p,pid) in registData.personCount")
+                  h4 創作人{{pid+1}}. {{registData.person[pid].name}}
+                  el-form-item(label="姓名")  
+                    el-input(v-model="registData.person[pid].name")
+                  el-form-item(label="性別")  
+                    el-input(v-model="registData.person[pid].gender")
+                  el-form-item(label="年齡")  
+                    el-input(v-model="registData.person[pid].age",
+                              type="number")
+                  el-form-item(label="電話")  
+                    el-input(v-model="registData.person[pid].phone")
+                  el-form-item(label="信箱")  
+                    el-input(v-model="registData.person[pid].email")
+
+              .container(v-if="formPart==1")
+                div(v-for="(c,cid) in registData.conceptCount")
+                el-form-item(label="站體")  
+                  el-select(v-model="registData.concepts[cid].target")
+                el-form-item(label="論述", v-if="registData.concepts[cid].target")  
+                  el-input(v-model="registData.concepts[cid].content")
 
 
 </template>
@@ -47,7 +53,9 @@ export default {
       formPart: 0,
       registData: {
         personCount: 1,
-        person: [{},{},{},{},{},{},{},{},{},{}]
+        conceptCount: 3,
+        person: [{},{},{},{},{},{},{},{},{},{}],
+        concepts: [{},{},{},{}]
       }
     }
   },

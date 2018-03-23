@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="177px" height="116px" viewBox="0 0 177 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>NavIcon3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="NavIcon3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Path-11" stroke="#4F61FE" stroke-width="4" points="46.5 26 25 53.5 55 59.5"></polygon>
+        <rect id="Rectangle" stroke="#FFFFFF" stroke-width="5" transform="translate(87.500000, 80.500000) rotate(-330.000000) translate(-87.500000, -80.500000) " x="74.5" y="67.5" width="26" height="26"></rect>
+        <circle id="Oval-2" stroke="#C8242A" stroke-width="5" cx="115" cy="42" r="12"></circle>
+    </g>
+</svg>

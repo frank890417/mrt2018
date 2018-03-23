@@ -3,9 +3,9 @@
   section.section-hero
     .container-fluid
       .row
-        .col-sm-6.col-content
+        .col-sm-8.col-content
           img(src="http://taipeisoundscape.com/img/scene_door.svg")
-        .col-sm-6
+        .col-sm-4
           img.logo(src="/static/img/Logo.svg")
           h3.color.red {{ $t('index.engtitle') }}
           h1.title

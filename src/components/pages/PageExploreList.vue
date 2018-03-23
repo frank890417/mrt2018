@@ -13,7 +13,8 @@
           router-link.animated.fadeIn.col-sm-3(v-for = "station in stations",
                     :to="'/explore/station'")
             img(src="http://taipeisoundscape.com/img/scene_door.svg")
-            h4.color.black {{ station.name }}
+            h3.color.black {{ station.name }}
+            p {{ station.keywords}}
 </template>
 
 <script>
