@@ -3,16 +3,16 @@ import "slick-carousel/slick/slick.css"
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
+Vue.use(ElementUI)
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
 import PageLoading from './components/pages/PageLoading.vue'
 import SectionFooter from './components/SectionFooter.vue'
-// import FullMenu from './components/FullMenu.vue'
+import FullMenu from './components/FullMenu.vue'
 Vue.component("PageLoading", PageLoading)
 Vue.component("SectionFooter", SectionFooter)
-// Vue.component("FullMenu", FullMenu)
+Vue.component("FullMenu", FullMenu)
 
 
 import Vue from 'vue'

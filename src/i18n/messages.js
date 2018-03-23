@@ -49,6 +49,8 @@ const messages = {
 `
     },
     register: {
+      engtitle: "Register Form",
+      title: "報名表單",
       description: `結合文化在地性、捷運站體空間，
 創作出屬於台北的特色音樂，
 就有機會在捷運站聽到自己的創作哦！

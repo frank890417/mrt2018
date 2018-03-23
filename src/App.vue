@@ -1,6 +1,7 @@
 <template lang="pug">
 #app( :style="bgStyle" )
   div.testroute
+    span 測試用
     router-link.ml-5(:to="r" v-for="r in testRoutes") 
       span.color.white {{r}}
   transition(name="fade" , mode="out-in")
@@ -8,7 +9,7 @@
   .all_pages_area
     transition(name="fade" , mode="out-in")
       router-view(:key="$route.path")
-  full_menu
+  FullMenu
   SectionFooter
 </template>
 
@@ -37,17 +38,21 @@ export default {
 
 <style lang="sass">
 
-.testroute
-  position: fixed
-  top: 0
-  left: 0
-  z-index: 100
 
 
 @import "./assets/_mixins.sass"
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
 @import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700)
 @import "../node_modules/animate-sass/animate"
+
+.testroute
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 100
+  background-color: $colorBlue
+  color: white
+
 html,body
   margin: 0
   width: 100%
@@ -180,7 +185,8 @@ $page_trans_time: 0.5s
     background-image: linear-gradient(90deg, transparent 0%, transparent 50% , $colorRed 50%)
     background-size: cover
     
-
+a
+  color: $colorRed
 h1,h2,h3,h4,h5,h6,p,li,span
   letter-spacing: 0.05rem
   line-height: 2
@@ -189,20 +195,22 @@ h1,h2,h3,h4,h5,h6,p,li,span
       color: $colorRed
     &.white
       color: $colorWhite
+    &.black
+      color: #222
   &.small
     font-size: 0.6em
     
 h1
-  font-size: 2.8rem
-  font-weight: semi-bold
+  font-size: 3rem
+  font-weight: 700
   line-height: 1.4
 h2
   font-size: 2.4rem
-  font-weight: semi-bold
+  font-weight: 700
   line-height: 1.4
 h3
   font-size: 1.8rem
-  font-weight: semi-bold
+  font-weight: 700
   line-height: 1.4
 h4
   font-size: 1.2rem

@@ -12,11 +12,11 @@
             span {{ $t('index.title') }}
           h4 {{ $t('index.subtitle') }}
           .btn-group
-            .btn.color.white 關於
-            .btn.color.white 場景探索
+            router-link.btn.color.white(to="/about") 關於
+            router-link.btn.color.white(to="/explore") 場景探索
             br
-            .btn.color.white 即興創作
-            .btn.color.white 規則與報名
+            router-link.btn.color.white(to="/playground") 即興創作
+            router-link.btn.color.white(to="/rules") 規則與報名
             
 
 </template>
@@ -31,6 +31,9 @@ export default {
 <style lang="sass">
 @import "../../assets/_mixins.sass"
 .page-index
+  background-image: url(/static/img/bg1.svg)
+  background-size: cover
+  background-position: 0 100%
   .section-hero
     .col-content
       display: flex

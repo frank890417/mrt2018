@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import $ from 'jquery'
+
 import store from '../store'
 import PageIndex from '@/components/pages/PageIndex'
 import PageAbout from '@/components/pages/PageAbout'
@@ -8,9 +10,9 @@ import PageExploreStation from '@/components/pages/PageExploreStation'
 import PagePlayground from '@/components/pages/PagePlayground'
 import PageRegister from '@/components/pages/PageRegister'
 import PageRules from '@/components/pages/PageRules'
-
 import PageTemplate from '@/components/pages/PageTemplate'
 import HelloWorld from '@/components/pages/PageLoading'
+import { setTimeout } from 'timers';
 
 Vue.use(Router)
 
@@ -90,5 +92,30 @@ router.beforeEach( (to,from,next)=>{
   store.commit("setBgColor", to.meta.bgColor)
 
   next()
+})
+
+router.afterEach((to, from) => {
+  // setTimeout(()=>{
+  //   let text = $("h1.title").text()
+  //   let index1 = 0
+  //   $("h1.title").text("")
+  //   function update() {
+  //     index1++
+  //     let tt = text.slice(0,index1-2)
+  //     while(tt.length<text.length){
+  //       tt+="-"
+  //     }
+  //     $("h1.title").text(tt)
+  //     if (index1<text.length+5){
+  //       setTimeout(() => {
+  //         update()
+  //       }, 100);
+  //     }
+  //   }
+  //   update()
+
+
+  // },500)
+  
 })
 export default router

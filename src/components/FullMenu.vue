@@ -1,14 +1,26 @@
 <template lang="pug">
 .menu(:class="{open: menuState}")
+  router-link.staticLogo(to="/", @click="setMenuState(false)" )
+    img(src="/static/img/Logo.svg")
+          
   .hambergur(@click="setMenuState(!menuState)")
     .icon-bar
     .icon-bar
-  transition(name="fade")
+  transition(name="slice")
+    .bgcuts( v-if="menuState")
+      .col
+      .col
+      .col
+      .col
+      .col
+      .col
+      .col
+  transition(name="menu")
     .fullPage(v-if="menuState")
       .row.row-page
-        .col-menu.col-sm-9
+        .col-menu.col-sm-12
           .container.container-menu
-            .row.row-search
+            //- .row.row-search
               .col-sm-12
                 input(placeholder="搜尋雜學校", v-model="tempSearchKeyword")
                 
@@ -20,50 +32,35 @@
               .col-sm-12
                 .tags.scrollX
                   .tag(v-for="tag in tags", @click="searchKeyword=tag") {{tag}}
-            .row( @click="setMenuState(false)" v-if="searchKeyword==''")
-              router-link.col-sm-4(to="/")
-                h2 Home
-                p.nav-short-description 回首頁
-              router-link.col-sm-4(to="/news")
-                h2 News
-                p.nav-short-description 最新消息
+            .row( @click="setMenuState(false)" )
               router-link.col-sm-4(to="/about")
-                h2 About
-                p.nav-short-description 關於雜學校
+                img.logo(src="/static/img/NavIcon1.svg")
+                h2 臺北聲音地景計畫
+                p.nav-short-description 每個地方，都有專屬自己的聲音，人群嘈雜、商家紛鬧叫賣，你，還感受到了些什麼？
+              router-link.col-sm-4(to="/explore")
+                img.logo(src="/static/img/NavIcon1.svg")
+                h2 場景探索
+                p.nav-short-description 繁忙的台北街頭，乘載著川流不息的人們，而你，是否曾側耳傾聽那些美妙的旋律？
             
-            .row(@click="setMenuState(false)" v-if="searchKeyword==''")
-              router-link.col-sm-4(to="/expo")
-                h2.nav-expo ZA EXPO
-                p.nav-short-description 我們想著有沒有一間學校，沒有制式的選擇、沒有標準化的價值、框架...
-              router-link.col-sm-4(to="/base")
-                h2.nav-base ZA BASE
-                p.nav-short-description 我們想著有沒有一間學校，沒有制式的選擇、沒有標準化的價值、框架...
-              router-link.col-sm-4(to="/course")
-                h2.nav-course ZA COURSE
-                p.nav-short-description 我們想著有沒有一間學校，沒有制式的選擇、沒有標準化值、沒有框架...
-              
-            div.row(v-if="searchKeyword!=''" 
-                    @click="setMenuState(false)").scrollY
-              newsbox.col-lg-4.col-md-6.col-sm-12(v-for="post in filteredPost", 
-                              :post = "post" ,
-                               :target="postTarget(post)",
-                               :key="post.title",
-                              :tag="post.tag")
+            .row(@click="setMenuState(false)" )
+              router-link.col-sm-4(to="/playground")
+                img.logo(src="/static/img/NavIcon1.svg")
+                h2.nav-expo 即興創作
+                p.nav-short-description 在你心中，台北的「聲音」，又是什麼樣子的?
+              router-link.col-sm-4(to="/rules")
+                img.logo(src="/static/img/NavIcon1.svg")
+                h2.nav-base 競賽規則與報名
+                p.nav-short-description 結合文化在地性、捷運站體空間，創作出屬於台北的特色音樂。
 
-            .row
-              .col-sm-12
-                hr
-              .col-sm-8
-                h3 聯絡資訊　Contact Info
-                ul.infos
-                  li 
-                  li Tel. +886-2-2729-7122
-                  li Mail. zashare@ozzie-art.com
-                  li Business hours. 10:00-19:00 Mon. - Fri.
-              .col-sm-4
-                p 網站製作：墨雨設計<br>© 2018 雜學校 Za Share All Rights Reserved.
-        .col-member.col-sm-3
-          auth_panel
+            //- div.row(v-if="searchKeyword!=''" 
+            //-         @click="setMenuState(false)").scrollY
+            //-   newsbox.col-lg-4.col-md-6.col-sm-12(v-for="post in filteredPost", 
+            //-                   :post = "post" ,
+            //-                    :target="postTarget(post)",
+            //-                    :key="post.title",
+            //-                   :tag="post.tag"
+        //- .col-member.col-sm-3
+        //-   auth_panel
 </template>
 
 <script>
@@ -71,8 +68,6 @@ import {mapState,mapMutations, mapActions, mapGetters} from 'vuex'
 export default {
   data() {
     return {
-      tags: "師培、教具、國小、偏鄉、國中、高中、大學、實驗教育、媒體".split("、"),
-      tempSearchKeyword: ""
     }
   },
   computed: {
@@ -127,26 +122,99 @@ export default {
 <style lang="sass">
 @import "../assets/_mixins.sass"
 
-
+.staticLogo
+  position: fixed
+  left: 50px
+  top: 50px
+  z-index: 400
 .hambergur
   +size(72px)
   position: fixed
-  left: 0px
-  top: 50px
-  background-color: black
+  right: 20px
+  top: 20px
+  // background-color: black
   padding: 10px
   cursor: pointer
-  z-index: 50
-  +rwd_md
-    left: 0
-    top: 0
-    +size(60px)
-    .icon-bar
-      +size(30px,3px)
-      &:nth-child(1)
-        top: 40%
-      &:nth-child(2)
-        top: 60%
+  z-index: 350
+  
+.icon-bar
+  width: 10px
+  height: 40px
+  // margin: 8px 0px
+  position: absolute
+  left: 50%
+  top: 50%
+  border-radius: 50px
+  transform: translate(-50%,-50%)
+  background-color: black
+  transform-origin: center center
+  transition: 0.5s
+  &:nth-child(1)
+    left: 35%
+  &:nth-child(2)
+    left: 65%
+    top: 50p
+
+//transition effect
+.bgcuts
+  position: fixed
+  width: 100%
+  height: 100%
+  left: 0
+  top: 0
+  display: flex
+  overflow: hidden
+  z-index: 200
+  .col
+    flex: 1
+    top: 0%
+    transition: 0.5s
+    background-color: $colorBlue
+    border-right: solid 1px rgba(white,0.05)
+    position: relative
+    // &:before
+    //   content: ''
+    //   display: block
+    //   position: absolute
+    //   background-color: #fff
+    //   width: 100%
+    //   height: 0
+
+
+
+.slice-enter-active,.slice-leave-active
+  transition: 0.5s
+.slice-leave-active,.slice-leave-active .col
+  transition: 0.5s 0.5s
+.slice-enter-active,.slice-leave-to
+  .col:nth-child(2n)
+    top: 110%
+    &:before
+      top: 100%
+      height: 100%
+  .col:nth-child(2n+1)
+    top: -110%
+    &:before
+      top: -100%
+      height: 100%
+.slice-enter-to,.slice-leave-active
+  .col
+    top: 0%
+    &:before
+      top: 0%
+      height: 0
+
+
+.menu-enter-active,.menu-leave-active
+  transition: 0.5s
+.menu-enter-active
+  transition-delay: 0.5s
+
+.menu-enter-active,.menu-leave-to
+  opacity: 0
+.menu-enter-to,.menu-leave-active
+  opacity: 1
+
 .menu
   input
     border: none
@@ -167,62 +235,52 @@ export default {
         top: 50%
         transform: translate(-50%,-50%) rotate(-45deg)
 
-  
-.icon-bar
-  width: 40px
-  height: 4px
-  // margin: 8px 0px
-  position: absolute
-  left: 50%
-  top: 50%
-  transform: translate(-50%,-50%)
-  background-color: #fff
-  transform-origin: center center
-  transition: 0.5s
-  &:nth-child(1)
-    top: 35%
-  &:nth-child(2)
-    top: 65%
-
 .fullPage
   position: fixed
   width: 100%
   height: 100%
   top: 0
   left: 0
-  background-color: #fff
-  z-index: 40
+  // background-color: #fff
+  z-index: 280
   box-sizing: border-box
   text-align: left
   a
     display: inline-block
     color: inherit
     text-decoration: none
-
     
   h2
     font-size: 40px
-    font-weight: 900
+
     margin-bottom: 20px
     text-transform: Uppercase
 
   .row-page
     height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    color: white
     +rwd_md
       overflow-y: auto
-  .col-menu,.col-member
-    height: 100%
-  .col-menu
-    padding: 50px 60px
-    padding-left: 100px
-    box-sizing: border-box
-    .container
-      margin-top: 20px
-      +rwd_md
-        margin-top: 0
-        padding-top: 0
-    +rwd_md
-      padding-right: 20px
+  // .col-menu
+  //   height: 100vh
+  //   display: flex
+  //   justify-content: center
+  //   align-items: center
+  //   height: 100%
+  // .col-menu
+  //   padding: 50px 60px
+  //   padding-left: 100px
+  //   box-sizing: border-box
+  //   .container
+  //     margin-top: 20px
+  //     +rwd_md
+  //       margin-top: 0
+  //       padding-top: 0
+  //   +rwd_md
+  //     padding-right: 20px
 
 
 
@@ -330,21 +388,16 @@ export default {
         &:hover
           background-color: #ddd
   .container-menu
-    display: flex
+    // display: flex
     flex-direction: column
     height: 100%
-    max-width: 900px
-    justify-content: space-between
-          
-  .nav-course
-    &:hover,&.router-link-active
-      color: #8135f9
-  .nav-base
-    &:hover,&.router-link-active
-      color: #8af187
-  .nav-expo
-    &:hover,&.router-link-active
-      color: #1161ef
+    // max-width: 1300px
+    justify-content: center
+    align-items: center
+    .row
+      margin-top: 50px
+      margin-bottom: 50px
+
 
 .infos
   list-style: none
