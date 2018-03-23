@@ -10,11 +10,12 @@
             h3.title-eng {{ $t('explore.title_eng')  }}
             h1.title {{ $t('explore.title')  }}
             p(v-html="$t('explore.description')")
-          router-link.animated.fadeIn.col-sm-3(v-for = "station in stations",
-                    :to="'/explore/station'")
+          router-link.animated.fadeIn.col-sm-3(v-for = "(station,sid) in stations",
+                    :to="'/explore/station/'+sid")
             img(src="http://taipeisoundscape.com/img/scene_door.svg")
             h3.color.black {{ station.name }}
             p {{ station.keywords}}
+            .tag(:v-if="station.audition") 徵選中
 </template>
 
 <script>

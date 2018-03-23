@@ -11,7 +11,7 @@
           h1.title
             span {{ $t('index.title') }}
           h4 {{ $t('index.subtitle') }}
-          .btn-group
+          div
             router-link.btn.color.white(to="/about") 關於
             router-link.btn.color.white(to="/explore") 場景探索
             br

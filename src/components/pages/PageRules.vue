@@ -1,5 +1,5 @@
 <template lang="pug">
-  .page.page-test.color.red
+  .page.page-test.color.white
     section.sectionHero
       .container
         .row
@@ -10,16 +10,19 @@
       .container
         .row
           .col-sm-6
+            h4.musicBar
             h3  {{ $t('rules.p1Title') }}
             ol
               li(v-for="item in textToList($t('rules.p1'))" 
                  v-html="item")
           .col-sm-6
+            h4.musicBar
             h3  {{ $t('rules.p2Title') }}
             ol
               li(v-for="item in textToList($t('rules.p2'))" 
                  v-html="item")
           .col-sm-8
+            h4.musicBar
             h3  {{ $t('rules.p3Title') }}
             ol
               li(v-for="item in textToList($t('rules.p3'))" 

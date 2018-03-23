@@ -1,6 +1,9 @@
 $colorBlue: #0B0E2A
 $colorRed: #CE2834
 $colorWhite: #F9F8F7
+
+
+  
 @mixin trans($s:0.5s)
   transition: $s
 
@@ -71,3 +74,8 @@ $break_xs: 500px
 =rwd_xs
   +range_width(0px,$break_xs)
     @content
+
+
+$speed_cb: cubic-bezier(.04,.6,.42,1) 
+.trans-cb
+  transition-speed-curve: $speed_cb

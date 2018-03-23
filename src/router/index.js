@@ -52,6 +52,14 @@ let router =  new Router({
       }
     },
     {
+      path: '/explore/station/:station_id',
+      name: 'PageExploreStation',
+      component: PageExploreStation,
+      meta: {
+        bgColor: "white"
+      }
+    },
+    {
       path: '/playground',
       name: 'PagePlayground',
       component: PagePlayground,
@@ -64,7 +72,7 @@ let router =  new Router({
       name: 'PageRules',
       component: PageRules,
       meta: {
-        bgColor: "red"
+        bgColor: "white"
       }
     },
     {

@@ -16,6 +16,7 @@
       .col
   transition(name="menu")
     .fullPage(v-if="menuState")
+      //- video(src="http://taipeisoundscape.com/video/indexbgv_lower.mp4" muted autoplay loop)
       .row.row-page
         .col-menu.col-sm-12
           .container.container-menu
@@ -33,21 +34,29 @@
                   .tag(v-for="tag in tags", @click="searchKeyword=tag") {{tag}}
             .row( @click="setMenuState(false)" )
               router-link.col-sm-6(to="/about")
-                img.logo(src="/static/img/NavIcon1.svg")
+                .rect
+                h1 PLAN
+                //- img.logo(src="/static/img/NavIcon1.svg")
                 h2 臺北聲音地景計畫
                 p.nav-short-description 每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，你，還感受到了些什麼？
               router-link.col-sm-6(to="/explore")
-                img.logo(src="/static/img/NavIcon2.svg")
+                //- img.logo(src="/static/img/NavIcon2.svg")
+                .rect
+                h1 EXPLORE
                 h2 場景探索
                 p.nav-short-description 繁忙的台北街頭，乘載著川流不息的人們，<br>而你，是否曾側耳傾聽那些美妙的旋律？
             
             .row(@click="setMenuState(false)" )
               router-link.col-sm-6(to="/playground")
-                img.logo(src="/static/img/NavIcon3.svg")
+                //- img.logo(src="/static/img/NavIcon3.svg")
+                .rect
+                h1 PLAYGROUND
                 h2.nav-expo 即興創作
                 p.nav-short-description 在你心中，台北的「聲音」，<br>又是什麼樣子的?
               router-link.col-sm-6(to="/rules")
-                img.logo(src="/static/img/NavIcon4.svg")
+                //- img.logo(src="/static/img/NavIcon4.svg")
+                .rect
+                h1 REGISTER
                 h2.nav-base 競賽規則與報名
                 p.nav-short-description 結合文化在地性、捷運站體空間，<br>創作出屬於台北的特色音樂。
 
@@ -252,7 +261,7 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   height: 100%
   top: 0
   left: 0
-  // background-color: #fff
+  background-color: white
   z-index: 280
   box-sizing: border-box
   text-align: left
@@ -261,18 +270,41 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
     color: inherit
     text-decoration: none
     
+  h1
+    color: $colorBlue
+    text-shadow: 0px 0px 0px 10px black
   h2
-    font-size: 40px
-
     margin-bottom: 20px
     text-transform: Uppercase
+    color: $colorBlue
+  p
+    color: $colorBlue
 
+  .rect
+    +size(10px,20px)
+    background-color: $colorRed
+    margin-bottom: 20px
+    +trans
+
+  a:hover
+    .rect
+      +size(100px,20px)
+      transition-speed-curve: $speed_cb
+  video
+  //   mix-blend-mode: lighten
+    opacity: 0.1
+    position: absolute
+    left: 0
+    top: 0
   .row-page
+
     height: 100%
     display: flex
     justify-content: center
     align-items: center
     color: white
+    
+    z-index: 100
     +rwd_md
       overflow-y: auto
   // .col-menu
@@ -406,8 +438,8 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
     justify-content: center
     align-items: center
     .row
-      margin-top: 50px
-      margin-bottom: 50px
+      margin-top: 100px
+      margin-bottom: 100px
 
 
 .infos
