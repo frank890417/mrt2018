@@ -3,9 +3,9 @@
   section.section-hero
     .container-fluid
       .row
-        .col-sm-8.col-content
-          img(src="http://taipeisoundscape.com/img/scene_door.svg")
-        .col-sm-4
+        .col-sm-8
+          img.floatInUp.animated(src="http://taipeisoundscape.com/img/scene_door.svg")
+        .col-sm-4.col-content
           img.logo(src="/static/img/Logo.svg")
           h3.color.red {{ $t('index.engtitle') }}
           h1.title
@@ -31,18 +31,20 @@ export default {
 <style lang="sass">
 @import "../../assets/_mixins.sass"
 .page-index
-  background-image: url(/static/img/bg1.svg)
+  // background-image: url(/static/img/bg1.svg)
   background-size: cover
   background-position: 0 100%
+  overflow: hidden
+  height: 100vh
   .section-hero
     .col-content
       display: flex
       flex-direction: column
       // align-items: center
       // justify-content: center
-
+      padding-top: 20vh
     .logo
-      width: 200px
+      width: 300px
       margin-bottom: 50px
     .btn-group
       margin-top: 50px

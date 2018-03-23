@@ -266,4 +266,18 @@ p,li
       &:active
         background-color: darken($colorRed,5)
 
+$speed_cb: cubic-bezier(.04,.6,.42,1) 
+.animated
+  animation-speed-curve: ease-in-out
+  animation-duration: 1.5s
+@keyframes floatInUp
+  0%
+    opacity: 0
+    transform: translateY(100px)
+  100%
+    opacity: 1
+    transform: translateY(0px)
+.floatInUp
+  animation-name: floatInUp
+  
 </style>
