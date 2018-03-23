@@ -5,9 +5,12 @@
         .row
           .col-sm-12
             h1.title 報名表單
+            p(v-html=" $t('register.description') ")
     section.sectionStyle
       .container
         .row
+          .col-sm-4
+            p 
          
 
 </template>

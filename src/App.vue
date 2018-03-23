@@ -1,6 +1,6 @@
 <template lang="pug">
-#app
-  div
+#app( :style="bgStyle" )
+  div.testroute
     router-link.ml-5(:to="r" v-for="r in testRoutes") 
       span.color.white {{r}}
   transition(name="fade" , mode="out-in")
@@ -23,15 +23,27 @@ export default {
     }
   },
   computed:{
-    // ...mapState({
-    //   loading: 'loading/loading'
-    // })
+    ...mapState({
+      loading: (state)=>state.loading.loading,
+      bgColor: "bgColor"
+    }),
+    bgStyle(){
+      return {'background-color': this.bgColor}
+    }
   },
   name: 'App'
 }
 </script>
 
 <style lang="sass">
+
+.testroute
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 100
+
+
 @import "./assets/_mixins.sass"
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
 @import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700)
@@ -41,6 +53,7 @@ html,body
   width: 100%
   background-color: $colorBlue
   font-size: 16px
+  overflow-x: hidden
 
 #app
   font-family: 'Hind', 'Noto Sans TC','Avenir', Helvetica, Arial, sans-serif
@@ -51,6 +64,8 @@ html,body
   
 .container
   max-width: 1440px
+  padding-left: 5vw
+  padding-right: 5vw
 
 .all_pages_area
   min-height: 100vh
@@ -67,7 +82,7 @@ html,body
     background-size: cover
 
 .fade-enter-active, .fade-leave-active 
-  transition: opacity .5s
+  transition: opacity .3s
 
 .fade-enter, .fade-leave-to
   opacity: 0
@@ -206,6 +221,7 @@ p,li
   text-align: left
   padding-top: 50px
   min-height: 100vh
+  padding-bottom: 100px
   &.color.blue
     background-color: $colorBlue
     color: $colorWhite

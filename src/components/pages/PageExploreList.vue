@@ -10,10 +10,10 @@
             h3.title-eng {{ $t('explore.title_eng')  }}
             h1.title {{ $t('explore.title')  }}
             p(v-html="$t('explore.description')")
-          router-link.animated.fadeIn.col-sm-3(v-for = "i in 20",
+          router-link.animated.fadeIn.col-sm-3(v-for = "station in stations",
                     :to="'/explore/station'")
             img(src="http://taipeisoundscape.com/img/scene_door.svg")
-            h4 捷運xxxx站
+            h4 {{ station.name }}
 </template>
 
 <script>
@@ -22,14 +22,14 @@ import $ from 'jquery'
 export default {
   data(){
     return {
-
+      
     }
   },
   mounted(){
 
   },
   computed:{
-
+    ...mapState(['stations'])
   },
   methods:{
 

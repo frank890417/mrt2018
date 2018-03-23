@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store'
 import PageIndex from '@/components/pages/PageIndex'
 import PageAbout from '@/components/pages/PageAbout'
 import PageExploreList from '@/components/pages/PageExploreList'
@@ -13,51 +14,81 @@ import HelloWorld from '@/components/pages/PageLoading'
 
 Vue.use(Router)
 
-export default new Router({
+let router =  new Router({
   mode: "history",
   routes: [
     {
       path: '/',
       name: 'PageIndex',
-      component: PageIndex
+      component: PageIndex,
+      meta: {
+        bgColor: "blue"
+      }
     },
     {
       path: '/about',
       name: 'PageAbout',
-      component: PageAbout
+      component: PageAbout,
+      meta: {
+        bgColor: "blue"
+      }
     },
     {
       path: '/explore',
       name: 'PageExploreList',
-      component: PageExploreList
+      component: PageExploreList,
+      meta: {
+        bgColor: "white"
+      }
     },
     {
       path: '/explore/station',
       name: 'PageExploreStation',
-      component: PageExploreStation
+      component: PageExploreStation,
+      meta: {
+        bgColor: "white"
+      }
     },
     {
       path: '/playground',
       name: 'PagePlayground',
-      component: PagePlayground
+      component: PagePlayground,
+      meta: {
+        bgColor: "white"
+      }
     },
     {
       path: '/rules',
       name: 'PageRules',
-      component: PageRules
+      component: PageRules,
+      meta: {
+        bgColor: "red"
+      }
     },
     {
       path: '/register',
       name: 'PageRegister',
-      component: PageRegister
+      component: PageRegister,
+      meta: {
+        bgColor: "red"
+      }
     },
-
-
 
     {
       path: '/template',
       name: 'PageTemplate',
-      component: PageTemplate
+      component: PageTemplate,
+      meta: {
+        bgColor: "white"
+      }
     }
   ]
 })
+
+router.beforeEach( (to,from,next)=>{
+  console.log(to.meta.bgcolor)
+  store.commit("setBgColor", to.meta.bgColor)
+
+  next()
+})
+export default router

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import $ from 'jquery'
-const post = {
+const loading = {
   namespaced: true,
   state: {
     position: 0,
@@ -27,4 +27,4 @@ const post = {
 
   }
 }
-export default post
+export default loading

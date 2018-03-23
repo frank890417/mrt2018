@@ -18,7 +18,7 @@ Vue.component("SectionFooter", SectionFooter)
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from 'vuex'
+import store from './store'
 import VueI18n from 'vue-i18n'
 import messages from '@/i18n/messages.js'
 
@@ -32,13 +32,13 @@ const i18n = new VueI18n({
 if (process.env.NODE_ENV == "development") {
 
   setTimeout(() => {
-    store.commit("setLoading", false)
+    store.commit("loading/setLoading", false)
   }, 500);
 }
 if (process.env.NODE_ENV == "production") {
 
   setTimeout(() => {
-    store.commit("setLoading", false)
+    store.commit("loading/setLoading", false)
   }, 3000);
 
 
@@ -51,6 +51,7 @@ new Vue({
   el: '#app',
   i18n,
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

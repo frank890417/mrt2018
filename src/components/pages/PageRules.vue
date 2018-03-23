@@ -1,9 +1,10 @@
 <template lang="pug">
-  .page.page-test.color.white
+  .page.page-test.color.red
     section.sectionHero
       .container
         .row
           .col-sm-12
+            h3.engtitle 
             h1.title 競賽辦法
     section.sectionStyle
       .container
@@ -24,7 +25,7 @@
               li(v-for="item in textToList($t('rules.p3'))" 
                  v-html="item")
           .col-sm-4
-            router-link.btn.red(to="/register") 前往報名
+            router-link.btn.white(to="/register") 前往報名
          
 
 </template>
