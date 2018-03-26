@@ -4,8 +4,8 @@
     img(src="/static/img/Logo.svg")
           
   .hambergur(@click="setMenuState(!menuState)")
-    .icon-bar
-    .icon-bar
+    .icon-bar(:style="bgStyle", 
+                      v-for="i in 2")
   transition(name="slice")
     .bgcuts( v-if="menuState")
       .col
@@ -86,6 +86,14 @@ export default {
     }),
     filteredPost(){
       return this.posts.map(o=>({...o,tag: "ZA EXPO"})).filter(o=>JSON.stringify(o).indexOf(this.searchKeyword)!=-1)
+    },
+    bgStyle(){
+      if (!this.menuState){
+        return {'background-color': this.$store.state.colors[this.$route.meta.navColor]}
+      }else{
+        return {'background-color': this.$store.state.colors.red}
+      }
+
     }
   },
   methods: {

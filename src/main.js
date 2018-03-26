@@ -7,9 +7,12 @@ Vue.use(ElementUI)
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
+import SvgInline from './components/SvgInline.vue'
 import PageLoading from './components/pages/PageLoading.vue'
 import SectionFooter from './components/SectionFooter.vue'
 import FullMenu from './components/FullMenu.vue'
+
+Vue.component("SvgInline", SvgInline)
 Vue.component("PageLoading", PageLoading)
 Vue.component("SectionFooter", SectionFooter)
 Vue.component("FullMenu", FullMenu)

@@ -1,18 +1,19 @@
 <template lang="pug">
-  .page.page-test.color.white
+  .page.page-scene-list.color.white
     //- section.sectionHero
     //-   .container
     //-     .row
     section.sectionStyle
       .container
         .row
-          .col-sm-6
+          .col-sm-4
             h3.title-eng {{ $t('explore.title_eng')  }}
             h1.title {{ $t('explore.title')  }}
             p(v-html="$t('explore.description')")
-          router-link.animated.fadeIn.col-sm-3(v-for = "(station,sid) in stations",
+          router-link.animated.fadeIn.col-sm-4.col-station(
+                    v-for = "(station,sid) in stations",
                     :to="'/explore/station/'+sid")
-            img(src="http://taipeisoundscape.com/img/scene_door.svg")
+            img(:src="station.img")
             h3.color.black {{ station.name }}
             p {{ station.keywords}}
             .tag(:v-if="station.audition") 徵選中
@@ -41,5 +42,29 @@ export default {
 
 <style lang="sass">
 @import "../../assets/_mixins.sass"
+.page-scene-list
+  .col-station
+    padding: 10px
+    &:hover
+      img
+        top: -20px
+  h3,p
+    +trans
+  a:hover
+    color: inherit
+    text-decoration: none
+    h3,p
 
+
+  img
+    position: relative
+    top: 0
+    +trans
+  .tag
+    position: absolute
+    right: 0
+    top: 0
+    background-color: $colorRed
+    color: white
+    padding: 5px
 </style>

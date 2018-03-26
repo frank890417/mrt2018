@@ -11,7 +11,7 @@
           h1.title
             span {{ $t('index.title') }}
           h4 {{ $t('index.subtitle') }}
-          div
+          div.btns
             router-link.btn.color.white(to="/about") 關於
             router-link.btn.color.white(to="/explore") 場景探索
             br
@@ -46,7 +46,9 @@ export default {
     .logo
       width: 300px
       margin-bottom: 50px
-    .btn-group
-      margin-top: 50px
+
+    .btns
+      margin-top: 40px
       .btn
+        margin: 5px
 </style>

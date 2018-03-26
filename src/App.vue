@@ -7,7 +7,7 @@
   transition(name="fade" , mode="out-in")
     pageLoading(v-if="loading")
   .all_pages_area
-    transition(name="fade" , mode="out-in")
+    transition(name="page" , mode="out-in")
       router-view(:key="$route.path")
   FullMenu
   SectionFooter
@@ -68,6 +68,9 @@ html,body
   text-align: center
   background-color: $colorBlue
   
+.ovh
+  overflow: hidden
+
 .container
   max-width: 1440px
   padding-left: 5vw
@@ -93,9 +96,15 @@ html,body
 .fade-enter, .fade-leave-to
   opacity: 0
 
+.page-enter-active, .page-leave-active 
+  transition: opacity .3s
+
+.page-enter, .page-leave-to
+  opacity: 0
 
 
-$page_trans_time: 0.5s
+
+$page_trans_time: 0.4s
 
 
 .page-enter-active,.page-leave-active
@@ -258,6 +267,13 @@ p,li
       background-color: #eee
       &:active
         background-color: #ddd
+  &.grey
+    background-color: #eee
+    color: #222
+    &:hover
+      background-color: #ddd
+      &:active
+        background-color: #ccc
   &.red
     background-color: $colorRed
     color: $colorWhite
@@ -265,6 +281,10 @@ p,li
       background-color: lighten($colorRed,5)
       &:active
         background-color: darken($colorRed,5)
+
+
+
+    background-color: #eee
 
 $speed_cb: cubic-bezier(.04,.6,.42,1) 
 .animated

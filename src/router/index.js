@@ -24,7 +24,8 @@ let router =  new Router({
       name: 'PageIndex',
       component: PageIndex,
       meta: {
-        bgColor: "blue"
+        bgColor: "blue",
+        navColor: "white"
       }
     },
     {
@@ -32,7 +33,8 @@ let router =  new Router({
       name: 'PageAbout',
       component: PageAbout,
       meta: {
-        bgColor: "blue"
+        bgColor: "blue",
+        navColor: "white"
       }
     },
     {
@@ -40,7 +42,8 @@ let router =  new Router({
       name: 'PageExploreList',
       component: PageExploreList,
       meta: {
-        bgColor: "white"
+        bgColor: "white",
+        navColor: "red"
       }
     },
     {
@@ -48,7 +51,8 @@ let router =  new Router({
       name: 'PageExploreStation',
       component: PageExploreStation,
       meta: {
-        bgColor: "white"
+        bgColor: "white",
+        navColor: "red"
       }
     },
     {
@@ -56,7 +60,8 @@ let router =  new Router({
       name: 'PageExploreStation',
       component: PageExploreStation,
       meta: {
-        bgColor: "white"
+        bgColor: "white",
+        navColor: "red"
       }
     },
     {
@@ -64,7 +69,8 @@ let router =  new Router({
       name: 'PagePlayground',
       component: PagePlayground,
       meta: {
-        bgColor: "white"
+        bgColor: "white",
+        navColor: "red"
       }
     },
     {
@@ -72,7 +78,8 @@ let router =  new Router({
       name: 'PageRules',
       component: PageRules,
       meta: {
-        bgColor: "white"
+        bgColor: "white",
+        navColor: "red"
       }
     },
     {
@@ -80,7 +87,8 @@ let router =  new Router({
       name: 'PageRegister',
       component: PageRegister,
       meta: {
-        bgColor: "red"
+        bgColor: "red",
+        navColor: "white"
       }
     },
 
@@ -89,7 +97,8 @@ let router =  new Router({
       name: 'PageTemplate',
       component: PageTemplate,
       meta: {
-        bgColor: "white"
+        bgColor: "white",
+        navColor: "red"
       }
     }
   ]
