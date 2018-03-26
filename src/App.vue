@@ -284,7 +284,7 @@ p,li
 
 
 
-    background-color: #eee
+  background-color: #eee
 
 $speed_cb: cubic-bezier(.04,.6,.42,1) 
 .animated

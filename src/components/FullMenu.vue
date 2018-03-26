@@ -2,7 +2,6 @@
 .menu(:class="{open: menuState}")
   router-link.staticLogo(to="/", @click="setMenuState(false)" )
     img(src="/static/img/Logo.svg")
-          
   .hambergur(@click="setMenuState(!menuState)")
     .icon-bar(:style="bgStyle", 
                       v-for="i in 2")
@@ -15,7 +14,8 @@
       .col
       .col
   transition(name="menu")
-    .fullPage(v-if="menuState")
+    .fullPage(v-show="menuState")
+      canvas.full
       //- video(src="http://taipeisoundscape.com/video/indexbgv_lower.mp4" muted autoplay loop)
       .row.row-page
         .col-menu.col-sm-12
@@ -121,6 +121,62 @@ export default {
   },
   mounted(){
     // this.authInit()
+    this.$nextTick(()=>{
+      var canvas = document.querySelector("canvas")
+      var ctx = canvas.getContext("2d")
+      var time=0
+      var ww=window.innerWidth
+      var wh=window.innerHeight
+      canvas.width = ww
+      canvas.height = wh
+  
+      function drawWave(args){
+        let color = args.color || "rgba(0,0,0,0.2)"
+        let amp = args.amp || 100
+        let freq = args.freq || 100
+        let timefreq = args.timefreq || 50
+
+        ctx.beginPath()
+        ctx.moveTo(0,wh/2)
+        for(var i=0;i<ww;i++){
+          let y = amp*Math.sin(i/freq+time/timefreq)
+          ctx.lineTo(i,y)
+        }
+        ctx.strokeStyle=color
+        ctx.stroke()
+      }
+
+      function render(){
+        ctx.clearRect(0,0,ww,wh)
+        time++
+        // console.log(time)
+        ctx.save()
+        ctx.translate(0,wh/2)
+          drawWave({
+            color: "rgba(0,0,0,0.1)",
+            freq: 50,
+            timegfreq: 50,
+            amp: 100
+          })
+          drawWave({
+            color: "rgba(0,0,0,0.15)",
+            freq: 100,
+            timegfreq: 30,
+            amp: 50
+          })
+          drawWave({
+            color: "rgba(0,0,0,0.05)",
+            freq: 500,
+            timegfreq: 30,
+            amp: 200
+          })
+        ctx.restore()
+        requestAnimationFrame(render)
+        
+      }
+      requestAnimationFrame(render)
+
+    })
   },
   watch: {
     tempSearchKeyword(){
@@ -241,6 +297,15 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   opacity: 0
 
 .menu
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 10
+  canvas.full
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
   input
     border: none
     outline: none
