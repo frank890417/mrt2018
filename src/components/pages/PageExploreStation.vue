@@ -6,7 +6,9 @@
         router-link.btn-next(v-if="stationDelta(1)" :to="stationDelta(1)")
         .row
           .col-lg-5.col-md-12.col-content
-            router-link.btn-back(to="/explore") 返回列表
+            router-link.btn-back(to="/explore") 
+              i.fa.fa-undo
+              span 返回列表
             br
             div(:key="station.name")
               .ovh
@@ -69,6 +71,25 @@ export default {
     &:hover
       border-left-color: lighten($colorRed,15)
       border-right-color: lighten($colorRed,15)
+  // .btn-back
+  //   background-color: #fff
+  //   padding: 10px 20px
+  //   letter-spacing: 0.2em
+  //   padding-left: 100px 
+  //   color: #222
+  //   // position: fixed
+  //   position: absolute
+  //   left: 0px
+  //   top: 20px
+  //   font-size: 1.4em
+  //   cursor: pointer
+  //   box-shadox: 0px 0px 10px rgba(black,0.1)
+  //   &:hover
+  //     background-color: #fafafa
+  //     text-decoration: none
+  //   i
+  //     margin-right: 10px
+
   .btn-prev
     left: 50px
     border-right: 20px solid

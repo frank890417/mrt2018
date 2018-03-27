@@ -10,7 +10,7 @@
           .col-sm-7
             p(v-html="$t('about.content') ")
 
-    h1.decor {{testtext}}
+
 </template>
 
 <script>
@@ -20,29 +20,17 @@ export default {
   data(){
     return {
       testtext: "Taipei soundscope",
-      showtext: ""
+
     }
   },
   mounted(){
     // setInterval(()=>{ this.generateShowtext() } ,500)
   },
   computed:{
-    testtext(){
-      
-    }
+  
   },
   methods:{
-    generateShowtext(){
-      let temp = ""
-      this.testtext.split("").forEach(t=>{
-        if (Math.random()<0.2){
-          temp+="-"
-        }else{
-          temp+=t
-        }
-      })
-      this.showtext=temp
-    }
+   
   }
 }
 </script>
@@ -53,7 +41,13 @@ export default {
   overflow: hidden
   background-image: url(/static/img/bg2.svg)
   background-size: 100% auto
-  background-position: 0 500px
+  background-position: 0 400px
+  @keyframes aboutani
+    0%
+      background-position: 0px 400px
+    100%
+      background-position: 0px 350px
+  animation: aboutani 6s infinite alternate
   h1.decor
     font-size: 300px
     font-weight: 700

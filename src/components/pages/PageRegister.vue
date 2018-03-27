@@ -2,6 +2,9 @@
   .page.page-register.color.red
     section.sectionHero
       .container
+        router-link.btn-back(to="/rules") 
+            i.fa.fa-undo
+            span 返回競賽規則
         .row
           .col-sm-3
             h3.title-eng.color.white {{ $t('register.engtitle') }}
@@ -18,67 +21,78 @@
 
             el-form(label-width="100px")
               .container(v-if="formPart==0")
-                .btn(@click="creator_count_change(-1)") -
-                label 創作者人數
-                el-form-item  
-                  el-input(v-model="registData.personCount",  type="number")
-                .btn(@click="creator_count_change(1)") +
-                hr
+                .row
+                  .col-sm-12
+                    label 創作者人數:
+                    span
+                      .btn(@click="creator_count_change(-1)") -
+                      span.number {{registData.personCount}}
+                      .btn(@click="creator_count_change(1)") +
+                    hr
                 .row(v-for="(p,pid) in parseInt(registData.personCount)")
                   .col-sm-2
-                    h4 創作人{{pid+1}}. {{registData.person[pid].name}}
+                    h4 創作人{{pid+1}}.<br> {{registData.person[pid].name}}
                   .col-sm-10
-                    el-form-item(label="姓名")  
+                    el-form-item(label="姓名", placeholder="")  
                       el-input(v-model="registData.person[pid].name")
                     el-form-item(label="性別")  
-                      el-input(v-model="registData.person[pid].gender")
+                      el-radio(v-model="registData.person[pid].gender" label="男") 男
+                      el-radio(v-model="registData.person[pid].gender" label="女") 女
                     el-form-item(label="年齡")  
                       el-input(v-model="registData.person[pid].age",
                                 type="number")
-                    el-form-item(label="電話")  
-                      el-input(v-model="registData.person[pid].phone")
+                    el-form-item(label="電話")   
+                      el-input(v-model="registData.person[pid].phone", placeholder="09xx-xxx-xxx / 02-xxxx-xxxx")
                     el-form-item(label="信箱")  
-                      el-input(v-model="registData.person[pid].email")
+                      el-input(v-model="registData.person[pid].email", placeholder="yourmail@example.com")
                     el-form-item(label="居住城市")  
-                      el-input(v-model="registData.person[pid].city")
-                    el-form-item(label="確定可參加 3 天工作坊?")  
-                      el-radio(v-model="registData.person[pid].attend", :value="true")
-                      el-radio(v-model="registData.person[pid].attend", :value="false")
+                      el-input(v-model="registData.person[pid].city", placeholder="e.g. 台北市")
+                    el-form-item(label="工作坊")  
+                      label 確定可參加 3 天工作坊? &nbsp;&nbsp;&nbsp;
+                      el-radio(v-model="registData.person[pid].attend", :label="true") 確定
+                      el-radio(v-model="registData.person[pid].attend", :label="false") 無法參與
                   .col-sm-12
                     hr
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
               .container(v-if="formPart==1")
-                p 從本次選定之 10 個捷運站內挑選 1 至 3 個捷運站進行該捷運站的人文、地理的特性認知及相對應的音樂創作方向論述
-                div(v-for="(c,cid) in parseInt(registData.conceptCount)")
-                  el-form-item(:label="'站體'+ (cid+1)")  
-                    el-select(v-model="registData.concepts[cid].target")
-                      el-option(v-for="op in stationsOptions"
-                                :value="op" ) {{op}}
-                  el-form-item(label="論述", v-if="registData.concepts[cid].target")  
-                    el-input(v-model="registData.concepts[cid].content",
-                              type="textarea", placeholder="100字內")
-                  hr
+                .row
+                  .col-sm-12
+                    p 從本次選定之 10 個捷運站內挑選 1 至 3 個捷運站進行該捷運站的人文、地理的特性認知及相對應的音樂創作方向論述
+                div.row(v-for="(c,cid) in parseInt(registData.conceptCount)")
+                  .col-sm-12
+                    el-form-item(:label="'站體'+ (cid+1)")  
+                      el-select(v-model="registData.concepts[cid].target", placeholder="請選擇站體")
+                        el-option(v-for="op in stationsOptions"
+                                  :value="op" ) {{op}}
+                    el-form-item(label="論述", v-if="registData.concepts[cid].target")  
+                      el-input(v-model="registData.concepts[cid].content",
+                                type="textarea", placeholder="100字內", rows=5)
+                    hr
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
               .container(v-if="formPart==2")
-                ul
-                  li 繳交作品可為環境音樂提案作品、演奏演唱、配樂或其他音樂創作或改做作品。曲風、形式、配器不限,需註明原創或改做作品。
-                  li 提供針對本次徵選之十站站體音樂 demo 者享有加分鼓勵(評分項目之音樂提案 10%)。
-                  li 1-3 首作品(至多 3 首),每首⻑度不超過 5 分鐘。
-                  li 以 MP3、192kbps 以上、stereo 規格上傳。
-                  li 檔案大小勿超過 10MB。
-                el-form-item(label="上傳作品1")  
-                  el-input(v-model="registData.works[0]")
-                el-form-item(label="上傳作品2")  
-                  el-input(v-model="registData.works[1]")
-                el-form-item(label="上傳作品3")  
-                  el-input(v-model="registData.works[2]")
-                el-form-item(label="作品名稱")  
-                  el-input(v-model="registData.works[0].name")
-                el-form-item(label="作品說明")  
-                  el-input(v-model="registData.works[0].content")
-                hr
+                .row
+                  .col-sm-12
+                    ul
+                      li 繳交作品可為環境音樂提案作品、演奏演唱、配樂或其他音樂創作或改做作品。曲風、形式、配器不限,需註明原創或改做作品。
+                      li 提供針對本次徵選之十站站體音樂 demo 者享有加分鼓勵(評分項目之音樂提案 10%)。
+                      li 1-3 首作品(至多 3 首),每首⻑度不超過 5 分鐘。
+                      li 以 MP3、192kbps 以上、stereo 規格上傳。
+                      li 檔案大小勿超過 10MB。
+                .row(v-for="(w,wid) in parseInt(registData.workCount)")
+                  .col-sm-2
+                    h4 作品{{wid}}.
+                  .col-sm-10
+                    el-form-item(label="作品名稱")  
+                      el-input(v-model="registData.works[wid].name")
+                    el-form-item(label="作品說明")  
+                      el-input(v-model="registData.works[wid].content")
+                    el-form-item(label="上傳作品")  
+                      el-upload(v-model="registData.works[wid]")
+                  .col-sm-12
+                    hr
+
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
 
@@ -106,6 +120,7 @@ export default {
       registData: {
         personCount: 1,
         conceptCount: 3,
+        workCount: 3,
         person: [{},{},{},{},{},{},{},{},{},{}],
         concepts: [{},{},{},{}],
         works: [{},{},{}]
@@ -160,23 +175,32 @@ export default {
     padding: 0
     
     li
-      border-bottom: solid 8px rgba(white,0.5) 
+      border-bottom: solid 10px rgba(white,0.4) 
       flex: 1
       text-align: center
       margin-right: 10px
       cursor: pointer
       font-size: 20px
       font-weight: 600
+      +trans
+      opacity: 0.6
       &:last-child
         margin-right: 0
-      &.active,&:hover
-        border-bottom: solid 8px rgba(white,1)
+      &:hover
+        border-bottom: solid 10px rgba(white,0.6)
+        opacity: 0.8
+      &.active
+        border-bottom: solid 10px rgba(white,1)
+        opacity: 1
   .el-form
     background-color: $colorWhite
     color: black
     padding: 50px 0px
   .el-select,.el-input,.el-textarea
     width: 100%
+  .number
+    margin: 10px
+    font-size: 20px
   input,textarea
     border: solid 2px #666
     width: 100%

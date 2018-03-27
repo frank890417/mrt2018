@@ -26,10 +26,12 @@ export default {
   computed:{
     ...mapState({
       loading: (state)=>state.loading.loading,
-      bgColor: "bgColor"
+      bgColor: "bgColor",
+      colors: "colors"
     }),
     bgStyle(){
-      return {'background-color': this.bgColor}
+      return {'background-color': this.bgColor,
+              'border-color': this.colors[this.$route.meta.navColor] }
     }
   },
   name: 'App'
@@ -68,6 +70,7 @@ html,body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
+  border: solid 12px
   // background-color: $colorBlue
   
 .ovh
@@ -104,14 +107,14 @@ html,body
   opacity: 0
 
 .page-enter-active, .page-leave-active 
-  transition: .3s
+  transition: .5s
 
 .page-enter, .page-leave-to
   opacity: 0
 
 
 
-$page_trans_time: 0.4s
+$page_trans_time: 0.5s
 
 
 .page-enter-active,.page-leave-active
@@ -154,10 +157,10 @@ $page_trans_time: 0.4s
 
 .page-enter-active
   opacity: 1
-  transition-timing-function: ease-out
+  // transition-timing-function: ease-out
   &:before
     top: 0
-    transition-timing-function: ease-out
+    // transition-timing-function: ease-out
     // box-shadow: 0px 20px white
     content: ""
     display: block
@@ -220,29 +223,30 @@ h1,h2,h3,h4,h5,h6,p,li,span
 h1
   font-size: 2.8rem
   font-weight: 700
-  line-height: 1.4
+  line-height: 1.5
 h2
   font-size: 2rem
   font-weight: 500
-  line-height: 1.4
+  line-height: 1.5
 h3
   font-size: 1.6rem
   font-weight: 500
-  line-height: 1.4
+  line-height: 1.5
 h4
   font-size: 1.2rem
   font-weight: 500
-  line-height: 1.4
+  line-height: 1.5
 h5
   font-size: 1rem
   font-weight: 500
-  line-height: 1.4
+  line-height: 1.5
 p,li
   font-size: 1rem
   line-height: 2
   font-weight: 500
   opacity: 0.9
-
+p
+  text-align: justify
 .page
   text-align: left
   padding-top: 100px
@@ -271,6 +275,7 @@ p,li
     font-size: 1.5em
     white-space: nowrap
     font-weight: 600
+    @extends .musicBar
     
 
 .btn
@@ -303,6 +308,26 @@ p,li
 
 
   background-color: #eee
+
+
+.btn-back
+  background-color: #fff
+  padding: 10px 20px
+  letter-spacing: 0.2em
+  padding-left: 60px 
+  color: #222
+  // position: fixed
+  position: absolute
+  left: 0px
+  top: 20px
+  font-size: 1.2em
+  cursor: pointer
+  box-shadox: 0px 0px 10px rgba(black,0.1)
+  &:hover
+    background-color: #fafafa
+    text-decoration: none
+  i
+    margin-right: 10px
 
 $speed_cb: cubic-bezier(.04,.6,.42,1) 
 .animated

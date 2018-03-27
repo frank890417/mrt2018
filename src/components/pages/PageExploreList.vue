@@ -60,6 +60,7 @@ export default {
     color: inherit
     text-decoration: none
     h3,p
+    
   .station-cover
     display: flex
     justify-content: center
