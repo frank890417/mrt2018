@@ -10,23 +10,27 @@
             h3.title-eng.color.white {{ $t('register.engtitle') }}
             h1.title  {{ $t('register.title') }}
             p(v-html=" $t('register.description') ")
+            a.btn.white(href="/static/file/20180226徵件辦法_中文版.pdf", target="_blank") 
+              i.fa.fa-file
+              span &nbsp;&nbsp;徵件辦法及同意書下載
             //- pre {{registData}}
           .col-sm-9.col-form
             
             ul.navTab
               li(@click="toFormPart(0)",:class="{active: formPart==0}") 1. 個人資料
-              li(@click="toFormPart(1)",:class="{active: formPart==1}")  2. 創作論述
-              li(@click="toFormPart(2)",:class="{active: formPart==2}")  3. 上傳作品
-              li(@click="toFormPart(3)",:class="{active: formPart==3}")  4. 上傳同意書
+              li(@click="toFormPart(1)",:class="{active: formPart==1}") 2. 創作論述
+              li(@click="toFormPart(2)",:class="{active: formPart==2}") 3. 上傳作品
+              li(@click="toFormPart(3)",:class="{active: formPart==3}") 4. 上傳同意書
 
-            el-form(label-width="100px")
-              .container(v-if="formPart==0")
+            el-form(label-width="100px", label-position="left")
+              .container(v-show="formPart==0")
                 .row
                   .col-sm-12
                     label 創作者人數:
                     span
                       .btn(@click="creator_count_change(-1)") -
                       span.number {{registData.personCount}}
+                      input(type="hidden",name="personCount", v-model="registData.personCount")
                       .btn(@click="creator_count_change(1)") +
                     hr
                 .row(v-for="(p,pid) in parseInt(registData.personCount)")
@@ -39,7 +43,8 @@
                       el-radio(v-model="registData.person[pid].gender" label="男") 男
                       el-radio(v-model="registData.person[pid].gender" label="女") 女
                     el-form-item(label="年齡")  
-                      el-input(v-model="registData.person[pid].age",
+                      el-input(v-model="registData.person[pid].age"
+                                , placeholder="未滿18歲需填寫法定監護人同意書",
                                 type="number")
                     el-form-item(label="電話")   
                       el-input(v-model="registData.person[pid].phone", placeholder="09xx-xxx-xxx / 02-xxxx-xxxx")
@@ -55,7 +60,7 @@
                     hr
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
-              .container(v-if="formPart==1")
+              .container(v-show="formPart==1")
                 .row
                   .col-sm-12
                     p 從本次選定之 10 個捷運站內挑選 1 至 3 個捷運站進行該捷運站的人文、地理的特性認知及相對應的音樂創作方向論述
@@ -71,7 +76,7 @@
                     hr
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
-              .container(v-if="formPart==2")
+              .container(v-show="formPart==2")
                 .row
                   .col-sm-12
                     ul
@@ -96,10 +101,11 @@
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
 
-              .container(v-if="formPart==3")
+              .container(v-show="formPart==3")
                 p 上傳同意書
-                el-form-item(label="同意書-名字" 
-                              v-for="(p,pid) in parseInt(registData.personCount)")  
+                el-form-item(:label="'同意書'+pid+' '+registData.person[pid].name" 
+                              v-for="(p,pid) in parseInt(registData.personCount)",
+                              label-width="200px")  
                   el-input(v-model="registData.person[pid].file")
                 hr
                 span 我已確認作品與資訊無誤 

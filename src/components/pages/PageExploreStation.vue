@@ -111,8 +111,6 @@ export default {
     display: flex
     justify-content: center
     align-items: center
-    [data-name="hidden"]
-      display: none
     svg
       width: 120vmin
       max-width: 100%

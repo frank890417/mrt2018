@@ -4,13 +4,14 @@
     .container-fluid
       .row
         .col-sm-8
-          img.floatInUp.animated(src="http://taipeisoundscape.com/img/scene_door.svg")
+          SvgInline.floatInUp.animated(src="/static/img/stations/scene_door.svg")
         .col-sm-4.col-content
-          img.logo(src="/static/img/Logo.svg")
+          SvgInline.logo(src="/static/img/Logo.svg")
           h3.color.red {{ $t('index.engtitle') }}
           h1.title
             span {{ $t('index.title') }}
-          h4 {{ $t('index.subtitle') }}
+          h3.sub {{ $t('index.subtitle') }}
+          h2 2018/3/31-5/15
           div.btns
             router-link.btn.color.white(to="/about") 關於
             router-link.btn.color.white(to="/explore") 場景探索
@@ -38,6 +39,12 @@ export default {
   height: 100vh
   .title
     font-size: 3rem
+    margin-top: 0px
+    margin-bottom: -10px
+
+
+  .sub
+    opacity: 0.7
   .section-hero
     .col-content
       display: flex

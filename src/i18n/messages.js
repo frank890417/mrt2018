@@ -3,7 +3,7 @@ const messages = {
     index: {
       engtitle: "The sound of Taipei",
       title: "台北聲音地景計畫",
-      subtitle: "捷運站體環境音樂-隱音 徵選活動 2018/3/31-5/15",
+      subtitle: "捷運站體環境音樂-隱音 徵選活動",
 
 
     },

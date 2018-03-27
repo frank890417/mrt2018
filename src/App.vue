@@ -191,7 +191,9 @@ $page_trans_time: 0.5s
   &:after
     opacity: 1
 
-
+svg
+  [data-name="hidden"]
+    display: none
 
 
 .musicBar

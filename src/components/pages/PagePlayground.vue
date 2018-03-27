@@ -8,6 +8,9 @@
             h1.title 即興創作
             p 松山機場的廣播、小巨蛋的演唱會、龍山寺的擲筊、象山的101、東門的市場<br>在你心中，台北的「聲音」，又是什麼樣子的?
             p 選取不同的旋律、節奏、聲音，<br>組合出你想像中的，<br>捷運站體音樂。
+        .row
+          .col-sm-12
+            .block(v-for="i in 18")
 
     section.sectionStyle
       .container
@@ -38,5 +41,8 @@ export default {
 
 <style lang="sass">
 @import "../../assets/_mixins.sass"
-
+.block
+  +size(120px)
+  display: inline-block
+  border: 1px solid #000
 </style>

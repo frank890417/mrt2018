@@ -94,7 +94,10 @@ export default {
 
     },
     logoStyle(){
-      return {opacity: this.$route.path=="/"?0:1}
+      return {
+        opacity: (this.$route.path=="/" || this.$route.path=="/register")?0:1,
+        'pointer-events': (this.$route.path=="/" || this.$route.path=="/register")?"none":""
+      }
     }
   },
   methods: {
