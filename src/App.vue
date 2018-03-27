@@ -6,9 +6,9 @@
       span.color.white {{r}}
   transition(name="fade" , mode="out-in")
     pageLoading(v-if="loading")
-  .all_pages_area
+  .all_pages_area( :style="bgStyle" )
     transition(name="page" , mode="out-in")
-      router-view(:key="$route.path")
+      router-view
   FullMenu
   SectionFooter
 </template>
@@ -58,7 +58,7 @@ export default {
 html,body
   margin: 0
   width: 100%
-  background-color: $colorBlue
+  // background-color: $colorBlue
   font-size: 15px
   overflow-x: hidden
   color: #333
@@ -68,7 +68,7 @@ html,body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
-  background-color: $colorBlue
+  // background-color: $colorBlue
   
 .ovh
   overflow: hidden
@@ -80,26 +80,31 @@ html,body
 
 .all_pages_area
   min-height: 100vh
+  position: relative
+  +trans
   &:before
     content: ""
     display: block
-    +ab_full
+    position: absolute
     left: 0
     top: 0
+    width: 100%
+    height: 100%
     opacity: 0.2
     pointer-events: none
     mix-blend-mode: multiply
     background-image: url("/static/img/paper-compressor.jpg")
-    background-size: cover
+    // background-size: 100% auto
+    background-repeat: repeat
 
 .fade-enter-active, .fade-leave-active 
-  transition: opacity .3s
+  transition: .3s
 
 .fade-enter, .fade-leave-to
   opacity: 0
 
 .page-enter-active, .page-leave-active 
-  transition: opacity .3s
+  transition: .3s
 
 .page-enter, .page-leave-to
   opacity: 0
@@ -111,7 +116,7 @@ $page_trans_time: 0.4s
 
 .page-enter-active,.page-leave-active
   transition: $page_trans_time
-  transition-timing-function: ease-in
+  // transition-timing-function: ease-in
   position: relative
   // min-height: 100vh
   .placeholder_body
@@ -133,19 +138,19 @@ $page_trans_time: 0.4s
   //   top: 100vh
   //   transition-timing-function: ease-in
     // box-shadow: 0px 20px white
-  &:after
-    display: block
-    content: ""
-    opacity: 0
-    transition: $page_trans_time
-    height: 100vh
-    position: fixed
-    +size(100%)
-    z-index: 1
-    left: 0
-    width: 100%
-    top: 0
-    background-color: $colorBlue
+  // &:after
+  //   display: block
+  //   content: ""
+  //   opacity: 0
+  //   transition: $page_trans_time
+  //   height: 100vh
+  //   position: fixed
+  //   +size(100%)
+  //   z-index: 1
+  //   left: 0
+  //   width: 100%
+  //   top: 0
+  //   background-color: $colorBlue
 
 .page-enter-active
   opacity: 1
@@ -244,15 +249,18 @@ p,li
   min-height: 100vh
   padding-bottom: 100px
   &.color.blue
-    background-color: $colorBlue
+    // background-color: $colorBlue
+    background-color: transparent
     color: $colorWhite
     .title-eng
       color: $colorRed
   &.color.red
-    background-color: $colorRed
+    // background-color: $colorRed
+    background-color: transparent
     color: $colorWhite
   &.color.white
-    background-color: $colorWhite
+    // background-color: $colorWhite
+    background-color: transparent
     color: #333
     .title-eng
       color: $colorRed

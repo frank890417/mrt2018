@@ -6,12 +6,8 @@
   .hambergur(@click="setMenuState(!menuState)")
     .icon-bar(:style="bgStyle", 
                       v-for="i in 2")
-  //- transition(name="slice")
+  transition(name="slice")
     .bgcuts( v-if="menuState")
-      .col
-      .col
-      .col
-      .col
       .col
       .col
   transition(name="menu")
@@ -19,7 +15,8 @@
       canvas.full
       //- video(src="http://taipeisoundscape.com/video/indexbgv_lower.mp4" muted autoplay loop)
       .row.row-page
-        .col-menu.col-sm-12
+        .col-sm-4
+        .col-menu.col-sm-8
           .container.container-menu
             //- .row.row-search
               .col-sm-12
@@ -234,7 +231,7 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   top: 50%
   border-radius: 50px
   transform: translate(-50%,-50%)
-  background-color: black
+  background-color: $colorWhite
   transform-origin: center center
   transition: 0.5s
   &:nth-child(1)
@@ -261,7 +258,7 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
     height: 100%
     transition: 1s
     transition-speed-curve: $speed_cb
-    background-color: $colorBlue
+    background-color: $colorWhite
     border-right: solid 1px rgba(white,0.05)
     position: relative
     // &:before
@@ -283,9 +280,9 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   .col:nth-child(2n+1)
     top: 100%
 .slice-leave-active,.slice-leave
-  transition: 1s 0.5s
+  transition: 1s 0s
   .col  
-    transition: 1s 0.5s
+    transition: 1s 0s
 .slice-enter-to,.slice-leave-active
   .col
     top: 0%
@@ -294,19 +291,22 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
 // .menu-enter-active,.menu-leave-active
   // transition: 0.5s
 .menu-enter-active
-  transition: 1s 0.5s
+  transition: 0.5s 1.5s
 .menu-leave-active
-  transition: 1s 0s
+  transition: 0.5s 0.5s
 .menu-enter-to,.menu-leave-to
   opacity: 1
+  top: 0
 .menu-enter,.menu-leave-active
   opacity: 0
+  top: 100vh
 
 .menu
   position: fixed
   left: 0
   top: 0
   z-index: 10
+  +trans
   canvas.full
     position: absolute
     left: 0
@@ -344,6 +344,7 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   z-index: 280
   box-sizing: border-box
   text-align: left
+  +trans
   a
     display: inline-block
     color: inherit

@@ -6,15 +6,17 @@
         router-link.btn-next(v-if="stationDelta(1)" :to="stationDelta(1)")
         .row
           .col-lg-5.col-md-12.col-content
-            router-link(to="/explore") 返回
+            router-link.btn-back(to="/explore") 返回列表
             br
-            .line {{ station.line[0] }}
-            h4.musicBar.animated.fadeIn {{ station.eng_name }}
-            h1.animated.fadeIn {{ station.name }}
-            h5.animated.fadeIn {{ station.keywords }}
-            br
-            p.animated.fadeIn(v-html="station.description")
-          .col-lg-7.col-md-12.col-scene
+            div(:key="station.name")
+              .ovh
+                .line.animated.slideInLeft {{ station.line[0] }}
+              h4.musicBar.animated.fadeIn {{ station.eng_name }}
+              h1.animated.fadeIn {{ station.name }}
+              h5.animated.fadeIn {{ station.keywords }}
+              br
+              p.animated.fadeIn(v-html="lineToBr(station.description)")
+          .col-lg-7.col-md-12.col-scene.animated.fadeIn(:key="station.name")
             SvgInline.floatInUp.animated(:src="station.img")
 
 
@@ -78,7 +80,7 @@ export default {
     background-color: $colorRed
     color: white
     margin-top: 150px
-    margin-bottom: 50px
+    margin-bottom: 20px
     display: inline-block
   .col-content
     padding-left: 10vw

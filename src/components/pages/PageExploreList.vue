@@ -13,7 +13,8 @@
           router-link.animated.fadeIn.col-sm-4.col-station(
                     v-for = "(station,sid) in stations",
                     :to="'/explore/station/'+sid")
-            img(:src="station.img")
+            .station-cover
+              img(:src="station.img")
             h3.color.black {{ station.name }}
             p {{ station.keywords}}
             .tag(:v-if="station.audition") 徵選中
@@ -45,7 +46,12 @@ export default {
 .page-scene-list
   .col-station
     padding: 10px
+    +trans
+    box-sizing: border-box
+    background-color: rgba(white,0.2)
     &:hover
+      background-color: rgba(white,0.5)
+      box-shadow: 0px 0px 20px rgba(black,0.1)
       img
         top: -20px
   h3,p
@@ -54,11 +60,16 @@ export default {
     color: inherit
     text-decoration: none
     h3,p
-
+  .station-cover
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 400px
 
   img
     position: relative
     top: 0
+    width: 100%
     +trans
   .tag
     position: absolute

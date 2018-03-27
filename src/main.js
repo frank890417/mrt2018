@@ -49,6 +49,14 @@ if (process.env.NODE_ENV == "production") {
 
 Vue.config.productionTip = false
 
+Vue.mixin({
+  methods: {
+    lineToBr(text){
+      return text.replace(/\n/,"<br>")
+    }
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
