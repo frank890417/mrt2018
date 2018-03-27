@@ -4,30 +4,31 @@
       .container
         .row
           .col-sm-12
-            h3.engtitle 
+            h3.title-eng Register Information
             h1.title 競賽辦法
     section.sectionStyle
       .container
         .row
           .col-sm-6
-            h4.musicBar
-            h3  {{ $t('rules.p1Title') }}
+            h4.musicBar 
+            h2  {{ $t('rules.p1Title') }}
             ol
               li(v-for="item in textToList($t('rules.p1'))" 
                  v-html="item")
           .col-sm-6
             h4.musicBar
-            h3  {{ $t('rules.p2Title') }}
+            h2  {{ $t('rules.p2Title') }}
             ol
               li(v-for="item in textToList($t('rules.p2'))" 
                  v-html="item")
           .col-sm-8
             h4.musicBar
-            h3  {{ $t('rules.p3Title') }}
+            h2  {{ $t('rules.p3Title') }}
             ol
               li(v-for="item in textToList($t('rules.p3'))" 
                  v-html="item")
-          .col-sm-4
+        .row
+          .col-sm-12
             router-link.btn.red(to="/register") 前往報名
          
 

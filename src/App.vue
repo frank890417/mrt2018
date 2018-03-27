@@ -42,7 +42,8 @@ export default {
 
 @import "./assets/_mixins.sass"
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
-@import url(https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700)
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,600,700)
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css)
 // @import "../node_modules/animate-sass/animate"
 
 
@@ -58,11 +59,12 @@ html,body
   margin: 0
   width: 100%
   background-color: $colorBlue
-  font-size: 16px
+  font-size: 15px
   overflow-x: hidden
+  color: #333
 
 #app
-  font-family: 'Hind', 'Noto Sans TC','Avenir', Helvetica, Arial, sans-serif
+  font-family: 'Roboto Condensed', 'Noto Sans TC','Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
@@ -164,17 +166,17 @@ $page_trans_time: 0.4s
   opacity: 1
   // top: 0px
   &:before
-    top: -100vh
+    // top: -100vh
   &:after
     opacity: 0
 .page-leave
   opacity: 1
-  top: 0px
+  // top: 0px
   &:after
     opacity: 0
 .page-leave-to
   opacity: 0
-  top: -30px
+  // top: -30px
 
   &:before 
     top: 0
@@ -188,8 +190,8 @@ $page_trans_time: 0.4s
   &:after
     display: inline-block
     content: ""
-    width: 100px
-    height: 10px
+    width: 80px
+    height: 8px
     margin-left: 10px
     border-bottom: solid 2px $colorRed
     background-image: linear-gradient(90deg, transparent 0%, transparent 50% , $colorRed 50%)
@@ -211,48 +213,56 @@ h1,h2,h3,h4,h5,h6,p,li,span
     font-size: 0.6em
     
 h1
-  font-size: 3rem
+  font-size: 2.8rem
   font-weight: 700
   line-height: 1.4
 h2
-  font-size: 2.4rem
-  font-weight: 700
+  font-size: 2rem
+  font-weight: 500
   line-height: 1.4
 h3
-  font-size: 1.8rem
-  font-weight: 700
+  font-size: 1.6rem
+  font-weight: 500
   line-height: 1.4
 h4
   font-size: 1.2rem
-  font-weight: normal
+  font-weight: 500
   line-height: 1.4
 h5
   font-size: 1rem
-  font-weight: normal
+  font-weight: 500
   line-height: 1.4
 p,li
   font-size: 1rem
   line-height: 2
-  font-weight: normal
+  font-weight: 500
+  opacity: 0.9
 
 .page
   text-align: left
-  padding-top: 50px
+  padding-top: 100px
   min-height: 100vh
   padding-bottom: 100px
   &.color.blue
     background-color: $colorBlue
     color: $colorWhite
+    .title-eng
+      color: $colorRed
   &.color.red
     background-color: $colorRed
     color: $colorWhite
   &.color.white
     background-color: $colorWhite
-    color: #222
+    color: #333
+    .title-eng
+      color: $colorRed
   .title
-    
+    font-size: 2.5em
   .title-eng
     color: $colorRed
+    font-size: 1.5em
+    white-space: nowrap
+    font-weight: 600
     
 
 .btn

@@ -1,11 +1,12 @@
 <template lang="pug">
 .menu(:class="{open: menuState}")
-  router-link.staticLogo(to="/", @click="setMenuState(false)" )
+  router-link.staticLogo(to="/", @click="setMenuState(false)" ,
+                        :style="logoStyle")
     img(src="/static/img/Logo.svg")
   .hambergur(@click="setMenuState(!menuState)")
     .icon-bar(:style="bgStyle", 
                       v-for="i in 2")
-  transition(name="slice")
+  //- transition(name="slice")
     .bgcuts( v-if="menuState")
       .col
       .col
@@ -94,6 +95,9 @@ export default {
         return {'background-color': this.$store.state.colors.red}
       }
 
+    },
+    logoStyle(){
+      return {opacity: this.$route.path=="/"?0:1}
     }
   },
   methods: {
@@ -196,9 +200,11 @@ export default {
 $speed_cb: cubic-bezier(.04,.6,.42,1) 
 .staticLogo
   position: fixed
-  left: 50px
-  top: 50px
+  left: 30px
+  top: 30px
   z-index: 400
+  width: 50px
+  +trans
 .hambergur
   +size(72px)
   position: fixed

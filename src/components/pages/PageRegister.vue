@@ -4,10 +4,10 @@
       .container
         .row
           .col-sm-3
-            h3.color.white {{ $t('register.engtitle') }}
+            h3.title-eng.color.white {{ $t('register.engtitle') }}
             h1.title  {{ $t('register.title') }}
             p(v-html=" $t('register.description') ")
-            pre {{registData}}
+            //- pre {{registData}}
           .col-sm-9.col-form
             
             ul.navTab
@@ -19,11 +19,12 @@
             el-form(label-width="100px")
               .container(v-if="formPart==0")
                 .btn(@click="creator_count_change(-1)") -
-                el-form-item(label="創作者人數")  
+                label 創作者人數
+                el-form-item  
                   el-input(v-model="registData.personCount",  type="number")
                 .btn(@click="creator_count_change(1)") +
                 hr
-                div.row(v-for="(p,pid) in parseInt(registData.personCount)")
+                .row(v-for="(p,pid) in parseInt(registData.personCount)")
                   .col-sm-2
                     h4 創作人{{pid+1}}. {{registData.person[pid].name}}
                   .col-sm-10
@@ -38,18 +39,35 @@
                       el-input(v-model="registData.person[pid].phone")
                     el-form-item(label="信箱")  
                       el-input(v-model="registData.person[pid].email")
-                .btn.btn-default.btn-next.grey(@click="nextStep") 下一步
+                    el-form-item(label="居住城市")  
+                      el-input(v-model="registData.person[pid].city")
+                    el-form-item(label="確定可參加 3 天工作坊?")  
+                      el-radio(v-model="registData.person[pid].attend", :value="true")
+                      el-radio(v-model="registData.person[pid].attend", :value="false")
+                  .col-sm-12
+                    hr
+                .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
               .container(v-if="formPart==1")
+                p 從本次選定之 10 個捷運站內挑選 1 至 3 個捷運站進行該捷運站的人文、地理的特性認知及相對應的音樂創作方向論述
                 div(v-for="(c,cid) in parseInt(registData.conceptCount)")
-                el-form-item(label="站體")  
-                  el-select(v-model="registData.concepts[cid].target")
-                el-form-item(label="論述", v-if="registData.concepts[cid].target")  
-                  el-input(v-model="registData.concepts[cid].content")
-                .btn.btn-default.btn-next.grey(@click="nextStep") 下一步
+                  el-form-item(:label="'站體'+ (cid+1)")  
+                    el-select(v-model="registData.concepts[cid].target")
+                      el-option(v-for="op in stationsOptions"
+                                :value="op" ) {{op}}
+                  el-form-item(label="論述", v-if="registData.concepts[cid].target")  
+                    el-input(v-model="registData.concepts[cid].content",
+                              type="textarea", placeholder="100字內")
+                  hr
+                .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
               .container(v-if="formPart==2")
-                p 提交音樂作品，可為環境音樂提案作品、演奏演唱、配樂或其他音樂創作作品。<br>提供針對本次徵選之十站站體音樂demo 者享有加分鼓勵（評選標準中之音樂提案10%）
+                ul
+                  li 繳交作品可為環境音樂提案作品、演奏演唱、配樂或其他音樂創作或改做作品。曲風、形式、配器不限,需註明原創或改做作品。
+                  li 提供針對本次徵選之十站站體音樂 demo 者享有加分鼓勵(評分項目之音樂提案 10%)。
+                  li 1-3 首作品(至多 3 首),每首⻑度不超過 5 分鐘。
+                  li 以 MP3、192kbps 以上、stereo 規格上傳。
+                  li 檔案大小勿超過 10MB。
                 el-form-item(label="上傳作品1")  
                   el-input(v-model="registData.works[0]")
                 el-form-item(label="上傳作品2")  
@@ -60,8 +78,8 @@
                   el-input(v-model="registData.works[0].name")
                 el-form-item(label="作品說明")  
                   el-input(v-model="registData.works[0].content")
-                p(v-html="$t('memo') ")
-                .btn.btn-default.btn-next.grey(@click="nextStep") 下一步
+                hr
+                .btn.btn-default.btn-next.red(@click="nextStep") 下一步
 
 
               .container(v-if="formPart==3")
@@ -98,7 +116,10 @@ export default {
 
   },
   computed:{
-
+    ...mapState(['stations']),
+    stationsOptions(){
+      return this.stations.map(s=>s.name)
+    }
   },
   methods:{
     creator_count_change(delta){
@@ -124,32 +145,45 @@ export default {
 <style lang="sass">
 @import "../../assets/_mixins.sass"
 .page-register
-  background-image: url(/static/img/map-01.svg)
+  // background-image: url(/static/img/ma p-01.svg)
   background-size: contain
   background-position: center center
   background-repeat: no-repeat
   background-attachment: fixed
-
+  .el-form-item
+    margin-bottom: 10px
   .navTab
     display: flex
     justify-content: center
     align-items: center
     list-style: none
+    padding: 0
     
     li
       border-bottom: solid 8px rgba(white,0.5) 
       flex: 1
       text-align: center
-      margin: 10px
+      margin-right: 10px
       cursor: pointer
       font-size: 20px
       font-weight: 600
+      &:last-child
+        margin-right: 0
       &.active,&:hover
         border-bottom: solid 8px rgba(white,1)
   .el-form
     background-color: $colorWhite
     color: black
-    padding: 50px 20px
+    padding: 50px 0px
+  .el-select,.el-input,.el-textarea
+    width: 100%
+  input,textarea
+    border: solid 2px #666
+    width: 100%
+    background-color: transparent
+    &:focus
+      border: solid 2px $colorRed
+
   .col-form
     margin-top: 50px
   .btn-send

@@ -10,7 +10,7 @@
           .col-sm-7
             p(v-html="$t('about.content') ")
 
-    h1.decor {{showtext}}
+    h1.decor {{testtext}}
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted(){
-    setInterval(()=>{ this.generateShowtext() } ,500)
+    // setInterval(()=>{ this.generateShowtext() } ,500)
   },
   computed:{
     testtext(){

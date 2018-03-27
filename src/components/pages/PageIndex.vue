@@ -36,6 +36,8 @@ export default {
   background-position: 0 100%
   overflow: hidden
   height: 100vh
+  .title
+    font-size: 3rem
   .section-hero
     .col-content
       display: flex
@@ -44,8 +46,8 @@ export default {
       // justify-content: center
       padding-top: 20vh
     .logo
-      width: 300px
-      margin-bottom: 50px
+      width: 250px
+      margin-bottom: 40px
 
     .btns
       margin-top: 40px
