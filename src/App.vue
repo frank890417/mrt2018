@@ -192,7 +192,7 @@ $page_trans_time: 0.5s
     opacity: 1
 
 svg
-  *[data-name="hidden"]
+  *[data-name="hidden"],  rect#hidden
     // display: none
     stroke: transparent
     fill: transparent

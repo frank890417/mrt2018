@@ -95,6 +95,11 @@ export default {
           trigger_tap_the_card: "06南港站/南港站_刷票出口與廣播_13s.mp3",
 
 
+          trigger_watch_red_house: "01西門站/西門站_群眾喊聲？_7s.mp3",
+          trigger_motherchild_buyticket: "01西門站/西門站_買電影票_7s.mp3",
+          trigger_foreign_take_picture: "01西門站/西門站_外國旅客_8s.mp3",
+
+
           trigger_drilling: "03中山站/中山站_螺絲電鑽_6s.mp3",
           trigger_fixing: "03中山站/中山站_機車修理器具碰撞_4s.mp3",
           trigger_chatting: "03中山站/中山站_文創商店店員對話_7s.mp3",
@@ -113,6 +118,27 @@ export default {
 
 
 
+          trigger_move: "09劍南路站/劍南路站_美麗華遊戲區_12s.mp3",
+          trigger_fountain: "09劍南路站/劍南路站_美麗華噴水池_16s.mp3",
+          trigger_film_advocacy: "09劍南路站/劍南路站_美麗華影聽進場宣告_10s.mp3",
+          trigger_speaker: "09劍南路站/劍南路站_美麗華影聽廣播_14s.mp3",
+
+
+          trigger_instruction: "08行天宮站/行天宮站_講示_13s.mp3",
+          trigger_noise: "08行天宮站/行天宮站_松江市場_13s.mp3",
+          trigger_fortune_telling: "08行天宮站/行天宮站_算命街_5s.mp3",
+          trigger_wash_hand: "08行天宮站/行天宮站_行天宮洗手_5s.mp3",
+
+
+          trigger_rubbing: "07大橋頭站/大橋頭站_迪化街拓印_8s.mp3",
+          trigger_sieve_rice: "07大橋頭站/大橋頭站_迪化街篩米聲_2s.mp3",
+          trigger_nuts_store: "07大橋頭站/大橋頭站_迪化街賣堅果_11s.mp3",
+          trigger_wooden_furniture: "07大橋頭站/大橋頭站_迪化街木傢俱店_27s.mp3",
+
+
+          trigger_woman_package: "02北門站/北門站_行李箱_10s.mp3",
+          trigger_man_child_mail: "02北門站/北門站_郵局叫號_10s.mp3",
+          trigger_sell_cloth: "02北門站/北門站_布店_4s.mp3",
 
           trigger_radio: "松山機場/登機廣播＿32s.mp3",
           trigger_package: "松山機場/行李推車2_13s.mp3",
@@ -139,7 +165,13 @@ export default {
           trigger_peoples: "台北小巨蛋/六點半進場_7s.mp3",
           trigger_sell_light: "台北小巨蛋/螢光燈販賣_11s.mp3",
           trigger_sell: "台北小巨蛋/商品販賣部_14s.mp3",
-          trigger_egg_bus: "台北小巨蛋/交通指揮與車聲_19s.mp3 "
+          trigger_egg_bus: "台北小巨蛋/交通指揮與車聲_19s.mp3 ",
+
+
+          trigger_lots_child: "大湖公園_小朋友嬉戲_13s.mp3",
+          trigger_duck: "大湖公園_大鴨子叫_14s.mp3",
+          trigger_boat: "大湖公園_湖水聲_9s.mp3",
+
 
         };
 
