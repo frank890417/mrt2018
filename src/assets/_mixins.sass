@@ -14,6 +14,11 @@ $colorWhite: #F9F8F7
 @mixin ab_full
   position: absolute
   +size(100%)
+@mixin ab_center
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
   
 @mixin bxshadow
   box-shadow: 0px 0px 20px rgba(black,0.3)
