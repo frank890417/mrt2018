@@ -22,7 +22,7 @@
               li(@click="toFormPart(2)",:class="{active: formPart==2}") 3. 上傳作品
               li(@click="toFormPart(3)",:class="{active: formPart==3}") 4. 上傳同意書
 
-            el-form(label-width="100px", label-position="left")
+            el-form(label-width="100px", label-position="left", action="http://api.taipeisoundscape.com/registwork2018", method="post",enctype="multipart/form-data")
               .container(v-show="formPart==0")
                 .row
                   .col-sm-12
@@ -30,7 +30,7 @@
                     span
                       .btn(@click="creator_count_change(-1)") -
                       span.number {{registData.personCount}}
-                      input(type="hidden",name="personCount", v-model="registData.personCount")
+                      input(type="hidden",name="creator_count", v-model="registData.personCount")
                       .btn(@click="creator_count_change(1)") +
                     hr
                 .row(v-for="(p,pid) in parseInt(registData.personCount)")
@@ -38,24 +38,31 @@
                     h4 創作人{{pid+1}}.<br> {{registData.person[pid].name}}
                   .col-sm-10
                     el-form-item(label="姓名", placeholder="")  
-                      el-input(v-model="registData.person[pid].name")
+                      el-input(v-model="registData.person[pid].name", :name="'creator_'+pid+'_name'")
                     el-form-item(label="性別")  
-                      el-radio(v-model="registData.person[pid].gender" label="男") 男
-                      el-radio(v-model="registData.person[pid].gender" label="女") 女
+                      el-radio(v-model="registData.person[pid].gender" label="男", :name="'creator_'+pid+'_gender'") 男
+                      el-radio(v-model="registData.person[pid].gender" label="女", :name="'creator_'+pid+'_gender'") 女
                     el-form-item(label="年齡")  
-                      el-input(v-model="registData.person[pid].age"
-                                , placeholder="未滿18歲需填寫法定監護人同意書",
+                      el-input(v-model="registData.person[pid].age",
+                                placeholder="未滿18歲需填寫法定監護人同意書",
+                                :name="'creator_'+pid+'_age'",
                                 type="number")
                     el-form-item(label="電話")   
-                      el-input(v-model="registData.person[pid].phone", placeholder="09xx-xxx-xxx / 02-xxxx-xxxx")
+                      el-input(v-model="registData.person[pid].phone", 
+                                placeholder="09xx-xxx-xxx / 02-xxxx-xxxx",
+                                :name="'creator_'+pid+'_phone'",)
                     el-form-item(label="信箱")  
-                      el-input(v-model="registData.person[pid].email", placeholder="yourmail@example.com")
+                      el-input(v-model="registData.person[pid].mail", placeholder="yourmail@example.com",
+                                :name="'creator_'+pid+'_mail'",)
                     el-form-item(label="居住城市")  
-                      el-input(v-model="registData.person[pid].city", placeholder="e.g. 台北市")
+                      el-input(v-model="registData.person[pid].address", placeholder="e.g. 台北市",
+                                :name="'creator_'+pid+'_address'")
                     el-form-item(label="工作坊")  
                       label 確定可參加 3 天工作坊? &nbsp;&nbsp;&nbsp;
-                      el-radio(v-model="registData.person[pid].attend", :label="true") 確定
-                      el-radio(v-model="registData.person[pid].attend", :label="false") 無法參與
+                      el-radio(v-model="registData.person[pid].attend_workshop", :label="true",
+                                :name="'creator_'+pid+'_attend_workshop'") 確定
+                      el-radio(v-model="registData.person[pid].attend_workshop", :label="false",
+                                :name="'creator_'+pid+'_attend_workshop'") 無法參與
                   .col-sm-12
                     hr
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
@@ -67,11 +74,11 @@
                 div.row(v-for="(c,cid) in parseInt(registData.conceptCount)")
                   .col-sm-12
                     el-form-item(:label="'站體'+ (cid+1)")  
-                      el-select(v-model="registData.concepts[cid].target", placeholder="請選擇站體")
+                      el-select(v-model="registData.concepts[cid].target", placeholder="請選擇站體",:name="'concept_'+cid+'_target'")
                         el-option(v-for="op in stationsOptions"
                                   :value="op" ) {{op}}
                     el-form-item(label="論述", v-if="registData.concepts[cid].target")  
-                      el-input(v-model="registData.concepts[cid].content",
+                      el-input(v-model="registData.concepts[cid].content",:name="'concept_'+cid+'_content'"
                                 type="textarea", placeholder="100字內", rows=5)
                     hr
                 .btn.btn-default.btn-next.red(@click="nextStep") 下一步
@@ -90,11 +97,11 @@
                     h4 作品{{wid}}.
                   .col-sm-10
                     el-form-item(label="作品名稱")  
-                      el-input(v-model="registData.works[wid].name")
+                      el-input(v-model="registData.works[wid].name",:name="'work_'+wid+'_name'")
                     el-form-item(label="作品說明")  
-                      el-input(v-model="registData.works[wid].content")
+                      el-input(v-model="registData.works[wid].content",:name="'work_'+wid+'_content'",type="textarea")
                     el-form-item(label="上傳作品")  
-                      el-upload(v-model="registData.works[wid]")
+                      input(type="file",:name="'work_'+wid+'_file'")
                   .col-sm-12
                     hr
 
@@ -102,15 +109,17 @@
 
 
               .container(v-show="formPart==3")
-                p 上傳同意書
-                el-form-item(:label="'同意書'+pid+' '+registData.person[pid].name" 
-                              v-for="(p,pid) in parseInt(registData.personCount)",
-                              label-width="200px")  
-                  el-input(v-model="registData.person[pid].file")
-                hr
-                span 我已確認作品與資訊無誤 
-                  el-checkbox
-                .btn.red.btn-send(@click="sendData") 送出報名資料
+                .row
+                  .col-sm-12
+                    p 上傳同意書
+                    el-form-item(v-for="(p,pid) in parseInt(registData.personCount)",
+                                  :label="'同意書'+pid+' '+registData.person[pid].name" 
+                                  label-width="200px")  
+                      input(type="file",:name="'creator_'+pid+'_agreement_file'")
+                    hr
+                    span 我已確認作品與資訊無誤 
+                      el-checkbox
+                    button.btn.red.btn-send(type="submit") 送出報名資料
 
 
 
@@ -158,6 +167,7 @@ export default {
     },
     sendData(){
       this.$message("傳送資料！")
+      console.log($("form").serialize())
     }
   }
 }
