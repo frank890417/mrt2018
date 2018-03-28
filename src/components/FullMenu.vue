@@ -36,30 +36,30 @@
             .row( @click="setMenuState(false)" )
               router-link.col-sm-6(to="/about")
                 .rect
-                h1 PLAN
+                h1 {{ $t('nav.plan.eng') }}
                 //- img.logo(src="/static/img/NavIcon1.svg")
-                h2 臺北聲音地景計畫
-                p.nav-short-description 每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，你，還感受到了些什麼？
+                h2 {{ $t('nav.plan.title') }}
+                p.nav-short-description(v-html="$t('nav.plan.content')")
               router-link.col-sm-6(to="/explore")
                 //- img.logo(src="/static/img/NavIcon2.svg")
                 .rect
-                h1 EXPLORE
-                h2 場景探索
-                p.nav-short-description 繁忙的台北街頭，乘載著川流不息的人們，<br>而你，是否曾側耳傾聽那些美妙的旋律？
+                h1  {{ $t('nav.explore.eng') }}
+                h2 {{ $t('nav.explore.title') }}
+                p.nav-short-description(v-html="$t('nav.explore.content')") 繁忙的台北街頭，乘載著川流不息的人們，<br>而你，是否曾側耳傾聽那些美妙的旋律？
             
             .row(@click="setMenuState(false)" )
               router-link.col-sm-6(to="/playground")
                 //- img.logo(src="/static/img/NavIcon3.svg")
                 .rect
-                h1 PLAYGROUND
-                h2.nav-expo 即興創作
-                p.nav-short-description 在你心中，台北的「聲音」，<br>又是什麼樣子的?
+                h1  {{ $t('nav.register.eng') }}
+                h2.nav-expo {{ $t('nav.register.title') }}
+                p.nav-short-description(v-html="$t('nav.playground.content')") 在你心中，台北的「聲音」，<br>又是什麼樣子的?
               router-link.col-sm-6(to="/rules")
                 //- img.logo(src="/static/img/NavIcon4.svg")
                 .rect
-                h1 REGISTER
-                h2.nav-base 競賽規則與報名
-                p.nav-short-description 結合文化在地性、捷運站體空間，<br>創作出屬於台北的特色音樂。
+                h1  {{ $t('nav.register.eng') }}
+                h2.nav-base {{ $t('nav.register.title') }}
+                p.nav-short-description(v-html="$t('nav.register.content')") 結合文化在地性、捷運站體空間，<br>創作出屬於台北的特色音樂。
 
             //- div.row(v-if="searchKeyword!=''" 
             //-         @click="setMenuState(false)").scrollY

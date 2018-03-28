@@ -1,4 +1,26 @@
 let data = {
+  nav: {
+    plan: {
+      title: "PLAN",
+      eng: "臺北聲音地景計畫",
+      content: "With the busy streets of Taipei carrying heavy traffic flows everyday, Have you ever opened your ears to those beautiful melodies hidden in the sounds of Taipei City ?"
+    },
+    explore: {
+      title: "EXPLORE",
+      eng: "場景探索",
+      content: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places ?"
+    },
+    playground: {
+      title: "PLAYGROUND",
+      eng: "即興創作",
+      content: "What does Taipei sound like in your mind?"
+    },
+    register: {
+      title: "REGISTER",
+      eng: "競賽規則與報名",
+      content: "Create your own music pieces for Taipei by combining the cultural characteristic of places in Taipei with the sounds of MRT stations ."
+    }
+  },
   index: {
     engtitle: "台北聲音地景計畫",
     title: "Taipei Soundscape Program",
@@ -12,9 +34,15 @@ let data = {
 For the third stage of the program in 2018, we have chosen 10 MRT stations of different characteristics and cultural meanings to play ambient music. The stations are Nangang Station, Ximen Station, Beimen Station, Zhongshan Station, Yuanshan Station, Taipei 101 Station, Jiannan Rd. Station, Dahu Park Station, Xingtian Temple Station and Daqiaotou Station. We have also changed the competition rules. This time, we focus on finding the suitable musicians and giving participants a chance to fully understand the spirit of ambient music. As a result, all winners will participate a three-day soundscape workshop. During this time, winners may visit the MRT stations, exchange ideas with some experts and musicians, and create ambient music for the 10 MRT stations with the help of the mentors. With our theme Sound of Silence, we aim to mix the sounds of our environments by using professional music design techniques to highlight the close relations between ambient music and the design of public space. We also hope that the sounds of Taipei City can become one of the amazing memories of the travelers.`.replace(/\n/g, "<br>")
   },
   explore: {
-    title_eng: "Space explore",
-    title: "場景探索",
-    description: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，<br>你，還感受到了些什麼？"
+    title_eng: "場景探索",
+    title: "Space explore",
+    description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?"
+  },
+  playground:{
+
+    title_eng: "即興創作",
+    title: "Impromptu",
+    description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?"
   },
   rules: {
     p1Title: "徵件資訊",

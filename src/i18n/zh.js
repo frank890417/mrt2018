@@ -1,4 +1,26 @@
 let data = {
+  nav: {
+    plan: {
+      title: "臺北聲音地景計畫",
+      eng: "PLAN",
+      content: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，你，還感受到了些什麼？"
+    },
+    explore: {
+      title: "場景探索",
+      eng: "EXPLORE",
+      content: "繁忙的台北街頭，乘載著川流不息的人們，<br>而你，是否曾側耳傾聽那些美妙的旋律？"
+    },
+    playground: {
+      title: "即興創作",
+      eng: "PLAYGROUND",
+      content: "在你心中，台北的「聲音」，<br>又是什麼樣子的 ?"
+    },
+    register: {
+      title: "REGISTER",
+      eng: "競賽規則與報名",
+      content: "結合文化在地性、捷運站體空間，<br>創作出屬於台北的特色音樂。"
+    }
+  },
   index: {
     engtitle: "Taipei Soundscape Program",
     title: "台北聲音地景計畫",
@@ -16,6 +38,12 @@ let data = {
     title_eng: "Space explore",
     title: "場景探索",
     description: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，<br>你，還感受到了些什麼？"
+  },
+  playground: {
+
+    title_eng: "Impromptu",
+    title: "即興創作",
+    description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?"
   },
   rules: {
     p1Title: "徵件資訊",
