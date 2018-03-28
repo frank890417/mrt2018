@@ -48,8 +48,8 @@
                                 placeholder="未滿18歲需填寫法定監護人同意書",
                                 :name="'creator_'+pid+'_age'",
                                 type="number")
-                    el-form-item(label="年齡")  
-                      el-date(v-model="registData.person[pid].birthday",
+                    el-form-item(label="出生年月日")  
+                      el-date-picker(v-model="registData.person[pid].birthday",
                                 :name="'creator_'+pid+'_birthday'")
                     el-form-item(label="電話")   
                       el-input(v-model="registData.person[pid].phone", 
