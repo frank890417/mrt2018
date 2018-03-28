@@ -11,6 +11,10 @@ import PagePlayground from '@/components/pages/PagePlayground'
 import PageRegister from '@/components/pages/PageRegister'
 import PageRules from '@/components/pages/PageRules'
 import PageTemplate from '@/components/pages/PageTemplate'
+
+import ManageList from '@/components/manages/ManageList'
+import ManageIndep from '@/components/manages/ManageIndep'
+
 import HelloWorld from '@/components/pages/PageLoading'
 import { setTimeout } from 'timers';
 
@@ -96,6 +100,28 @@ let router =  new Router({
       path: '/template',
       name: 'PageTemplate',
       component: PageTemplate,
+      meta: {
+        bgColor: "white",
+        navColor: "red"
+      }
+    }
+
+    ,
+
+    {
+      path: '/manage',
+      name: 'ManageList',
+      component: ManageList,
+      meta: {
+        bgColor: "white",
+        navColor: "red"
+      }
+    },
+
+    {
+      path: '/manage/;id',
+      name: 'ManageIndep',
+      component: ManageIndep,
       meta: {
         bgColor: "white",
         navColor: "red"
