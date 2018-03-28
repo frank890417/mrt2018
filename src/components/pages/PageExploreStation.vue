@@ -95,6 +95,21 @@ export default {
           trigger_tap_the_card: "06南港站/南港站_刷票出口與廣播_13s.mp3",
 
 
+          trigger_drilling: "03中山站/中山站_螺絲電鑽_6s.mp3",
+          trigger_fixing: "03中山站/中山站_機車修理器具碰撞_4s.mp3",
+          trigger_chatting: "03中山站/中山站_文創商店店員對話_7s.mp3",
+
+
+          trigger_bus_moving: "04圓山站/圓山站_公車進站_17s.mp3",
+          trigger_teacher: "04圓山站/圓山站_師生玩耍_8s.mp3",
+          trigger_children_playing: "04圓山站/圓山站_小孩嬉戲_7s.mp3",
+          trigger_buy_tickets: "04圓山站/圓山站_轉運站購票_3s.mp3",
+
+
+          trigger_move: "05台北101/台北101站_鼎泰豐廣播_39s.mp3",
+          trigger_firework: "05台北101/台北101_跨年倒數放煙火_18s.mp3",
+          trigger_take_photos: "05台北101/台北101站_美食街遊客環境音_30s.mp3",
+          trigger_gathering: "05台北101/台北101站_遊客集合_12s.mp3",
 
 
 
@@ -188,25 +203,23 @@ export default {
           }
         }
 
+        window.mountAction = function(){
+          // var ga_global=ga;
+          $( ".col-scene" ).on( "mouseenter", "g[data-name*='<trigger']",trigger_sound);
+          $( ".col-scene" ).on( "mouseleave", "g[data-name*='<trigger']",pause_sound);
+  
+          $( ".col-scene" ).on( "tap", "g[data-name*='<trigger']",trigger_sound);
+          $( ".col-scene" ).on( "click", "g[data-name*='<trigger']",trigger_sound);
 
-        // var ga_global=ga;
-        $( ".col-scene" ).on( "mouseenter", "g[data-name*='<trigger']",trigger_sound);
-        $( ".col-scene" ).on( "mouseleave", "g[data-name*='<trigger']",pause_sound);
-
-        $( ".col-scene" ).on( "tap", "g[data-name*='<trigger']",trigger_sound);
-        $( ".col-scene" ).on( "click", "g[data-name*='<trigger']",trigger_sound);
+        }
+        window.mountAction()
 
       },
   methods:{
     stationDelta(delta){
       setTimeout(function(){
 
-        // var ga_global=ga;
-        $( ".col-scene" ).on( "mouseenter", "g[data-name*='<trigger']",function(){});
-        $( ".col-scene" ).on( "mouseleave", "g[data-name*='<trigger']",pause_sound);
-
-        $( ".col-scene" ).on( "tap", "g[data-name*='<trigger']",function(){});
-        $( ".col-scene" ).on( "click", "g[data-name*='<trigger']",function(){});
+        window.mountAction()
       },300)
 
       let target=parseInt(this.$route.params.station_id)+delta
