@@ -51,7 +51,7 @@ export default {
       flex-direction: column
       // align-items: center
       // justify-content: center
-      padding-top: 20vh
+      padding-top: 10vh
     .logo
       // width: 100%
       width: 350px

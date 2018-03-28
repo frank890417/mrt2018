@@ -12,15 +12,16 @@
             br
             div(:key="station.name")
               .ovh
-                .line.animated.slideInLeft {{ station.line[0] }}
-              h4.musicBar.animated.fadeIn 0{{ $route.params.station_id }} | {{ station.eng_name }}
+                .line.animated.slideInLeft(v-for="line in station.line", 
+                      :style="{'background-color': getLine(line).bgcolor,'color': getLine(line).color}") {{line}}
+              h4.musicBar.animated.fadeIn {{ idtext }} | {{ station.eng_name }}
               h1.animated.fadeIn {{ station.name }}
               h5.animated.fadeIn {{ station.keywords }}
               br
               p.animated.fadeIn(v-html="lineToBr(station.description)")
           .col-lg-7.col-md-12.col-scene
             div.animated.fadeIn(:key="station.name")
-              SvgInline.floatInUp.animated.scene(:src="station.img")
+              SvgInline.floatInUp.animated.scene.showing(:src="station.img")
 
 
 </template>
@@ -168,9 +169,9 @@ export default {
           trigger_egg_bus: "台北小巨蛋/交通指揮與車聲_19s.mp3 ",
 
 
-          trigger_lots_child: "大湖公園_小朋友嬉戲_13s.mp3",
-          trigger_duck: "大湖公園_大鴨子叫_14s.mp3",
-          trigger_boat: "大湖公園_湖水聲_9s.mp3",
+          trigger_lots_child: "10大湖公園站/大湖公園_小朋友嬉戲_13s.mp3",
+          trigger_duck: "10大湖公園站/大湖公園_大鴨子叫_14s.mp3",
+          trigger_boat: "10大湖公園站/大湖公園_湖水聲_9s.mp3",
 
 
         };
@@ -242,6 +243,11 @@ export default {
   
           $( ".col-scene" ).on( "tap", "g[data-name*='<trigger']",trigger_sound);
           $( ".col-scene" ).on( "click", "g[data-name*='<trigger']",trigger_sound);
+          $( ".col-scene" ).on( "mouseenter", "g[data-name*='trigger']",trigger_sound);
+          $( ".col-scene" ).on( "mouseleave", "g[data-name*='trigger']",pause_sound);
+  
+          $( ".col-scene" ).on( "tap", "g[data-name*='trigger']",trigger_sound);
+          $( ".col-scene" ).on( "click", "g[data-name*='trigger']",trigger_sound);
 
         }
         window.mountAction()
@@ -261,14 +267,26 @@ export default {
       return null
 
       
+    },
+    getLine(name){
+      return this.lines.find(l=>l.name==name)
     }
   },
   computed:{
-    ...mapState(['stations']),
+    ...mapState(['stations','lines']),
     station(){
       return this.stations[this.$route.params.station_id]
+    },
+    idtext (){
+      let tid = parseInt(this.$route.params.station_id) +1
+      if (tid<10){
+        return "0"+tid
+      }else{
+        return ""+tid
+      }
     }
   },
+
 }
 </script>
 
@@ -318,9 +336,10 @@ export default {
     padding: 5px 10px
     background-color: $colorRed
     color: white
-    margin-top: 150px
+    margin-top: 15vh
     margin-bottom: 20px
     display: inline-block
+    margin-right: 10px
   .col-content
     padding-left: 10vw
     box-sizing: border-box
@@ -329,9 +348,10 @@ export default {
     display: flex
     justify-content: center
     align-items: center
+    overflow: show
     svg
-      width: 120vmin
-      max-width: 100%
+      width: 125vmin
+      max-width: 110%
 
   img
     width: 100%
@@ -454,7 +474,8 @@ export default {
     // right: -7vw
     // transform: none
     // -webkit-pointer-events: none
-    overflow: hidden
+    // overflow: hidden
+    overflow: visible
     // max-height: 0px
     // transition: opacity 0.5s, max-height 0s 1.1s
 

@@ -28,7 +28,7 @@
         br
         a.data(href='http://www.mcu.org.tw/', target='_blank', title='前往網站')
           img(src='http://taipeisoundscape.com/img/icon_company_4.png', alt='')
-        |               台北市音樂創作職業工會
+        div(style="display: inline-block") 台北市音樂創作職業工會
         br
         a.data(href='http://www.megaforce.tw/', target='_blank', title='前往網站')
           img(src='http://taipeisoundscape.com/img/icon_company_3.svg', alt='')

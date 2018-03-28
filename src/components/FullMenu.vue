@@ -15,8 +15,8 @@
       canvas.full
       //- video(src="http://taipeisoundscape.com/video/indexbgv_lower.mp4" muted autoplay loop)
       .row.row-page
-        .col-sm-4
-        .col-menu.col-sm-8
+        .col-sm-2
+        .col-menu.col-sm-10
           .container.container-menu
             //- .row.row-search
               .col-sm-12

@@ -18,6 +18,33 @@ const store = new Vuex.Store({
       red: "#CE2834",
       white: "#F9F8F7"
     },
+    lines: [
+      {
+        name: "文湖線",
+        bgcolor: "#BA8B2E",
+        color: "white"
+      },
+      {
+        name: "淡水信義線",
+        bgcolor: "#D41433",
+        color: "white"
+      },
+      {
+        name: "松山新店線",
+        bgcolor: "#0C8155",
+        color: "white"
+      },
+      {
+        name: "中和新蘆線",
+        bgcolor: "#E8AF29",
+        color: "black"
+      },
+      {
+        name: "板南線",
+        bgcolor: "#1568B2",
+        color: "white"
+      }
+    ],
     stations: [
       {
         // path: ,
@@ -119,7 +146,67 @@ const store = new Vuex.Store({
         img: "/static/img/stations/大橋頭站.svg",
         line: ["中和新蘆線"]
        
-      }
+      },
+      {
+        eng_name: "Songshan Airport",
+        name: "捷運松山機場站",
+        description: `從日治時期的軍用機場、光復後空軍接管改為民航用途、民國 60 年航站大廈落成啟用，是東南亞首屈一指的國際機場<br><br>
+民國 68 年改為國內機場，到後來成為小三通機場，松山機場見證了台灣政治與經濟發展的各個階段與變化，承載著許多人離鄉背井、經商或求學等重要的記憶。 `,
+        keywords: "希望、轉變、輕快",
+        audition: false,
+        img: "/static/img/stations/scene_airport.svg",
+        line: ["松山新店線"]
+
+      },
+      {
+        eng_name: "Taipei Arena",
+        name: "捷運台北小巨蛋",
+        description: `台北小巨蛋的前身是市立棒球場，曾舉辦過多場大型國際比賽，而現在是一座多功能體育館，主要為體育活動盛事及大型演唱會場地，為提升台北市健康形象和國際化的重要地標。
+
+附近的複合式商圈是民眾假日休憩娛樂的好去處，是台北市充滿熱情活力的中心區域。 
+`,
+        keywords: "活力、熱情",
+        audition: false,
+        img: "/static/img/stations/scene_egg.svg",
+        line: ["松山新店線"]
+
+      },
+      {
+        eng_name: "Longshan Temple",
+        name: "捷運龍山寺站",
+        description: `艋岬是台北市開發最早的地方，也就是現在的「萬華」，而「龍山寺」是當地居 民信仰、活動、集會和指揮的中心，保佑著一批又一批渡海來台的先民能夠平安順利，富有早期居民打拚、奮鬥的文化歷史。
+
+龍山寺擁有獨一無二的雕塑，平時香火鼎盛，附近的懷舊氣氛更讓龍山寺成為台北著名的觀光景點。 `,
+        keywords: "傳統（復古）、熱鬧",
+        audition: false,
+        img: "/static/img/stations/scene_temple.svg",
+        line: ["板南線"]
+
+      },
+      {
+        eng_name: "Xiangshan Station",
+        name: "捷運象山站",
+        description: `象山站為台北捷運信義線—淡水線的延伸段，全線長 7.9 公里，座落於台北市信義區，是台北市的後山。
+
+除了是城市人群繁忙中的休憩園地外，更是許多人眺望台北市夜景與繁華信義區的重要景點。`,
+        keywords: "舒適、自在、生態",
+        audition: false,
+        img: "/static/img/stations/scene_mountain.svg",
+        line: ["淡水信義線"]
+
+      },
+      {
+        eng_name: "Dongman Station",
+        name: "捷運東門站",
+        description: `歷經清治時期、日治時期、戰後時期，東門市場與戰後官兵及眷屬們生活上的點點滴滴。而掌管飲食的官夫人們對於美食的挑嘴，讓東門市場的美食不但具有色、香、味，更有著濃濃的家鄉味。
+
+蜿蜒的小巷弄內隱藏著道地小吃，是名人、美食家的口袋名單，也因為這樣東門市場成為許多人眼中階級色彩濃厚的「貴族市場」。`,
+        keywords: "歷史情懷、特色美食",
+        audition: false,
+        img: "/static/img/stations/scene_door.svg",
+        line: ["中和新蘆線","淡水信義線"]
+
+      },
     ]
   },
   mutations: {

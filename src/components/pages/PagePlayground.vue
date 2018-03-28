@@ -119,7 +119,7 @@ import $ from 'jquery'
       return {
         locale: "zh",
         // lang: window.data_storage.lang.page_impromptu,
-        description: `松山機場的廣播、小巨蛋的演唱會、龍山寺的擲筊、象山的101、東門的市場，<br>在你心中，台北的「聲音」，又是什麼樣子的?<br><br>選取不同的旋律、節奏、聲音，<br>組合出你想像中的，<br>捷運站體音樂。`,
+        description: `松山機場的廣播、小巨蛋的演唱會、龍山寺的擲筊、象山的101、東門的市場，在你心中，台北的「聲音」，又是什麼樣子的?<br>選取不同的旋律、節奏、聲音，<br>組合出你想像中的，捷運站體音樂。`,
         music: {
           melody: [
             {name_cht: "可愛的" , name_eng: "Unknownly" , file: "可愛的.mp3"},
