@@ -199,7 +199,7 @@ export default {
 @import "../assets/_mixins.sass"
 $speed_cb: cubic-bezier(.04,.6,.42,1) 
 .staticLogo
-  position: fixed
+  position: absolute
   left: 30px
   top: 30px
   z-index: 400

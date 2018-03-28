@@ -37,7 +37,7 @@ const store = new Vuex.Store({
         keywords: "年輕、潮流、多元",
         audition: true,
         img: "/static/img/stations/西門站.svg",
-        line: ["板南線","新店線"]
+        line: ["板南線","松山新店線"]
       },
       {
         eng_name: "Beimen Station",
@@ -47,7 +47,7 @@ const store = new Vuex.Store({
         keywords: "懷舊、封存、寧靜",
         audition: true,
         img: "/static/img/stations/北門站.svg",
-        line: ["新店線"]
+        line: ["松山新店線"]
       },
       {
         eng_name: "Zhongshan Station",
@@ -58,7 +58,7 @@ const store = new Vuex.Store({
         keywords: "手工、風格、融合",
         audition: true,
         img: "/static/img/stations/中山站.svg",
-        line: ["淡水信義線","新店線"]
+        line: ["淡水信義線","松山新店線"]
       },
       {
         eng_name: "Yuanshan Station",
@@ -107,7 +107,7 @@ const store = new Vuex.Store({
         keywords: "文化、習俗、虔誠",
         audition: true,
         img: "/static/img/stations/行天宮.svg",
-        line: ["新蘆線"]
+        line: ["中和新蘆線"]
       },
       {
         eng_name: "Daqiaotou Station",
@@ -117,7 +117,7 @@ const store = new Vuex.Store({
         keywords: "文化、生產、起源",
         audition: true,
         img: "/static/img/stations/大橋頭站.svg",
-        line: ["新蘆線"]
+        line: ["中和新蘆線"]
        
       }
     ]

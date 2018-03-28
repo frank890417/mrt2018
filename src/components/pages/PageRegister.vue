@@ -10,7 +10,7 @@
             h3.title-eng.color.white {{ $t('register.engtitle') }}
             h1.title  {{ $t('register.title') }}
             p(v-html=" $t('register.description') ")
-            a.btn.white(href="/static/file/20180226徵件辦法_中文版.pdf", target="_blank") 
+            a.btn.white(href="/static/file/0321徵件辦法_中文版-final.pdf", target="_blank") 
               i.fa.fa-file
               span &nbsp;&nbsp;徵件辦法及同意書下載
             //- pre {{registData}}
@@ -42,6 +42,7 @@
                     el-form-item(label="性別")  
                       el-radio(v-model="registData.person[pid].gender" label="男", :name="'creator_'+pid+'_gender'") 男
                       el-radio(v-model="registData.person[pid].gender" label="女", :name="'creator_'+pid+'_gender'") 女
+                      el-radio(v-model="registData.person[pid].gender" label="不公開", :name="'creator_'+pid+'_gender'") 不公開
                     el-form-item(label="年齡")  
                       el-input(v-model="registData.person[pid].age",
                                 placeholder="未滿18歲需填寫法定監護人同意書",
@@ -65,7 +66,7 @@
                                 :name="'creator_'+pid+'_attend_workshop'") 無法參與
                   .col-sm-12
                     hr
-                .btn.btn-default.btn-next.red(@click="nextStep") 下一步
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep") 下一步
 
               .container(v-show="formPart==1")
                 .row
@@ -81,7 +82,8 @@
                       el-input(v-model="registData.concepts[cid].content",:name="'concept_'+cid+'_content'"
                                 type="textarea", placeholder="100字內", rows=5)
                     hr
-                .btn.btn-default.btn-next.red(@click="nextStep") 下一步
+                .btn.btn-default.btn-next.red(@click="prevStep") 上一步
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep") 下一步
 
               .container(v-show="formPart==2")
                 .row
@@ -94,7 +96,7 @@
                       li 檔案大小勿超過 10MB。
                 .row(v-for="(w,wid) in parseInt(registData.workCount)")
                   .col-sm-2
-                    h4 作品{{wid}}.
+                    h4 作品{{wid+1}}.
                   .col-sm-10
                     el-form-item(label="作品名稱")  
                       el-input(v-model="registData.works[wid].name",:name="'work_'+wid+'_name'")
@@ -105,7 +107,8 @@
                   .col-sm-12
                     hr
 
-                .btn.btn-default.btn-next.red(@click="nextStep") 下一步
+                .btn.btn-default.btn-next.red(@click="prevStep") 上一步
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep") 下一步
 
 
               .container(v-show="formPart==3")
@@ -164,6 +167,9 @@ export default {
     },
     nextStep(){
       this.formPart=(this.formPart+1)
+    },
+    prevStep(){
+      this.formPart=(this.formPart-1)
     },
     sendData(){
       this.$message("傳送資料！")

@@ -6,7 +6,7 @@
         .col-sm-8
           SvgInline.floatInUp.animated(src="/static/img/stations/scene_door.svg")
         .col-sm-4.col-content
-          SvgInline.logo(src="/static/img/Logo.svg")
+          img.logo(src="/static/img/Logo.svg")
           h3.color.red {{ $t('index.engtitle') }}
           h1.title
             span {{ $t('index.title') }}
@@ -53,7 +53,8 @@ export default {
       // justify-content: center
       padding-top: 20vh
     .logo
-      width: 250px
+      // width: 100%
+      width: 350px
       margin-bottom: 40px
 
     .btns

@@ -119,7 +119,7 @@ let router =  new Router({
     },
 
     {
-      path: '/manage/;id',
+      path: '/manage/:id',
       name: 'ManageIndep',
       component: ManageIndep,
       meta: {
