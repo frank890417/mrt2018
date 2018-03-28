@@ -53,6 +53,15 @@ Vue.mixin({
   methods: {
     lineToBr(text){
       return text.replace(/\n/,"<br>")
+    },
+    swtichLang(locale) {
+      this.$store.commit("setMenuState", true)
+      let _this=this
+      setTimeout(function () {
+        _this.$store.commit("setMenuState", false)
+
+      }, 200)
+      this.$i18n.locale = locale
     }
   }
 })

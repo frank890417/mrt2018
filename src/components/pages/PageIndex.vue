@@ -3,15 +3,19 @@
   section.section-hero
     .container-fluid
       .row
-        .col-sm-8
+        .col-sm-7
           SvgInline.floatInUp.animated(src="/static/img/stations/scene_door.svg")
-        .col-sm-4.col-content
+        .col-sm-5.col-content
           img.logo(src="/static/img/Logo.svg")
           h3.color.red {{ $t('index.engtitle') }}
           h1.title
             span {{ $t('index.title') }}
           h3.sub {{ $t('index.subtitle') }}
           h2 2018/3/31-5/15
+          .btns
+            .btn-lang.btn.red(@click="swtichLang('en')") English 
+            br
+            .btn-lang.btn.red(@click="swtichLang('zh')") 中文版
           div.btns
             router-link.btn.color.white(to="/about") 關於
             router-link.btn.color.white(to="/explore") 場景探索
@@ -24,8 +28,11 @@
 
 <script>
 
+import {mapState,mapMutations, mapActions, mapGetters} from 'vuex'
 export default {
-
+  methods:{
+    
+  }
 }
 </script>
 
@@ -37,6 +44,10 @@ export default {
   background-position: 0 100%
   overflow: hidden
   height: 100vh
+  .btns
+    display: flex
+  .btn-lang
+    
   .title
     font-size: 3rem
     margin-top: 0px

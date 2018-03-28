@@ -12,6 +12,9 @@
       .col
   transition(name="menu")
     .fullPage(v-show="menuState")
+      .langsel
+        .option(@click="switchLang('en')",:class="{active: this.$i18n.locale=='en'}") EN
+        .option(@click="switchLang('zh')",:class="{active: this.$i18n.locale=='zh'}") 中
       canvas.full
       //- video(src="http://taipeisoundscape.com/video/indexbgv_lower.mp4" muted autoplay loop)
       .row.row-page
@@ -199,6 +202,20 @@ export default {
 <style lang="sass">
 @import "../assets/_mixins.sass"
 $speed_cb: cubic-bezier(.04,.6,.42,1) 
+.langsel
+  position: fixed
+  color: $colorRed
+  font-size: 30px
+  right: 110px
+  top: 40px
+  display: flex
+  cursor: pointer
+  opacity: 0.7
+  .option
+    margin-left: 20px
+    font-weight: 800
+  &.active
+    opacity: 1
 .staticLogo
   position: absolute
   left: 30px
