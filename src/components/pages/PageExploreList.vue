@@ -13,7 +13,7 @@
           router-link.animated.fadeIn.col-sm-4.col-station(
                     v-for = "(station,sid) in stations",
                     :to="'/explore/station/'+sid")
-            .station-cover
+            .station-cover.animated
               img(:src="station.img")
             h3.color.black {{ station.name }}
             p {{ station.keywords}}

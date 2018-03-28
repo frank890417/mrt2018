@@ -192,8 +192,11 @@ $page_trans_time: 0.5s
     opacity: 1
 
 svg
-  [data-name="hidden"]
-    display: none
+  *[data-name="hidden"]
+    // display: none
+    stroke: transparent
+    fill: transparent
+    cursor: pointer
 
 
 .musicBar

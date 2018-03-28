@@ -17,7 +17,13 @@ import axios from 'axios'
         console.log(r)
         this.svg_html=r.data
       })
+    },
+    computed: {
+      // proceed(){
+        // return this.svg_html.replace(/\<(trigger.*?)\>/g,"$1")
+      // }
     }
+
   }
 </script>
 
