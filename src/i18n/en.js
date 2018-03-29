@@ -108,7 +108,8 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
     btn_random: "Random",
     label_melody: "Melody",
     label_rhythm: "Rhythm",
-    label_sound: "Sound"
+    label_sound: "Sound",
+    btn_share: "Share"
   },
   rules: {
     title_eng: "競賽辦法",

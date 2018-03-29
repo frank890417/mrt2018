@@ -11,7 +11,7 @@
           .row
             .col-md-6.col-sm-12
               //- img.logo(src="/static/img/Logo.svg")
-              h3.color.red {{ $t('index.engtitle') }}
+              h3.color.red.musicBar {{ $t('index.engtitle') }}
               h1.title
                 span {{ $t('index.title') }}
               h3.sub {{ $t('index.subtitle') }}
@@ -110,12 +110,36 @@ export default {
   .btns
     display: flex
     flex-wrap: wrap
+    .btn
+      font-size: 1,5rem
+    .btn.white
+      background-color: transparent
+      color: white
+
+      &:hover
+        &:before
+          transform: translateY(-10px)
+          background-color: $colorRed
+
+      &:before
+        content: ''
+        display: inline-block
+        +size(5px,20px)
+        background-color: white
+        margin-right: 10px
+        border-radius: 50px
+        +trans
+        
+
+
   .btn-lang
     
   .title
     font-size: 2.6rem
     margin-top: 0px
     margin-bottom: -10px
+    +rwd_sm
+      line-height: 1.2
 
 
   .big-logo svg
@@ -129,7 +153,7 @@ export default {
       flex-direction: column
       // align-items: center
       // justify-content: center
-      padding-top: 10vh
+      padding-top: 5vh
     .logo
       // width: 100%
       width: 350px

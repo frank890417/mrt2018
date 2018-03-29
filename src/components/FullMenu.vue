@@ -233,7 +233,7 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   padding: 10px
   cursor: pointer
   z-index: 350
-  &:hover .iconbar
+  &:hover .iconbar,&:active .iconbar,&:focus .iconbarxw
     @keyframes ani
       0%
         height: 40px
@@ -355,7 +355,9 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
       .icon-bar:nth-child(2)
         top: 50%
         transform: translate(-50%,-50%) rotate(-45deg)
-
+.all_pages_area
+  +rwd_sm
+  
 .fullPage
   position: fixed
   width: 100%
@@ -366,6 +368,7 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   z-index: 280
   box-sizing: border-box
   text-align: left
+  overflow-y: scroll
   +trans
   a
     display: inline-block
@@ -375,6 +378,9 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   h1
     color: $colorBlue
     text-shadow: 0px 0px 0px 10px black
+    font-size: 2.5rem
+    +rwd_sm
+      font-size: 2.5rem
   h2
     margin-bottom: 20px
     text-transform: Uppercase
@@ -405,10 +411,14 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
     justify-content: center
     align-items: center
     color: white
+
     
     z-index: 100
     +rwd_md
       overflow-y: auto
+    +rwd_sm
+      overflow-y: auto
+      max-height: 100vh
   // .col-menu
   //   height: 100vh
   //   display: flex
@@ -442,6 +452,8 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
     .col-menu
       padding: 20px 60px
       padding-right: 20px
+      +rwd_sm
+        padding: 10px 30px
     .container-menu
       overflow-y: auto
       height: 100vh
@@ -542,6 +554,11 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
     .row
       margin-top: 100px
       margin-bottom: 100px
+      +rwd_sm
+        &:first-child
+          margin-bottom: 0
+        &:last-child
+          margin-top: 0
 
 
 .infos

@@ -44,10 +44,10 @@
               .pg_btn(@click="shuffle")
                 img(src="/static/img/icon_btn_shuffle.svg")
 
-            //- .btn_container.col-xs-4
-              h5 分享
+            .btn_container.col-4
+              h5 {{ $t("playground.btn_share") }}
               .pg_btn(@click="share_work")
-                img(src="img/icon_btn_share.svg")
+                img(src="/static/img/icon_btn_share.svg")
 
       .col-sm-9
         .row
@@ -79,11 +79,12 @@
               
             select.pg_select.form-control(v-model='select.env')
               option(v-for='(m,id) in music.env' v-bind:value='id') {{($i18n.locale=="en")?m.name_eng:m.name_cht}} 
-        //- .row
-          .col-xs-12.hidden-sm-up.xs_switcher
-            .col-xs-4.xs_switch(:class="xs_part==1?'red':''" @click="xs_part=1") 旋律
-            .col-xs-4.xs_switch(:class="xs_part==2?'red':''" @click="xs_part=2") 和弦
-            .col-xs-4.xs_switch(:class="xs_part==3?'red':''" @click="xs_part=3") 環境音
+        .row
+          .col-xs-12.d-block.d-sm-none.xs_switcher
+            .row
+              .col-4.xs_switch(:class="xs_part==1?'red':''" @click="xs_part=1") 旋律
+              .col-4.xs_switch(:class="xs_part==2?'red':''" @click="xs_part=2") 和弦
+              .col-4.xs_switch(:class="xs_part==3?'red':''" @click="xs_part=3") 環境音
         
         .row
           //項目清單
@@ -344,10 +345,10 @@ import $ from 'jquery'
             '&display=popup'+
             '&title=在捷運地景音樂，我用'+this.music.env[this.select.env].name_cht+'的聲音創作'+
             '&caption=臺北聲音地景計畫 「捷運站體環境音樂」徵選活動'+
-            '&picture='+"/static/img/og.jpg"+
+            '&picture='+"http://taipeisoundscape.com/static/img/og.jpg"+
             '&description='+ this.share_text[this.select.env] +
-            '&link='+"/static"+
-            '&redirect_uri=/static';
+            '&link='+"http://taipeisoundscape.com/"+
+            '&redirect_uri=http://taipeisoundscape.com';
         window.open(share_url);
         ga('send', 'event', 'MusicPlayground', 'Share', 'Share by FB');
       }
@@ -443,6 +444,14 @@ import $ from 'jquery'
   
   .xs_switcher
     margin-top: 20px
+    width: 100%
+    display: flex
+    margin-left: 15px
+    margin-right: 15px
+    .row
+      width: 100%
+      margin: 0
+
   .xs_switch
     border: solid 2px $colorRed
     cursor: pointer

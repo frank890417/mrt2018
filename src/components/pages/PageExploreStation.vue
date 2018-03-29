@@ -305,6 +305,8 @@ export default {
 .page-explore-station
   height: 100vh
   overflow: hidden
+  +rwd_sm
+    padding-bottom: 0
   .btn-prev,.btn-next
     position: absolute
     top: 50%
@@ -359,6 +361,8 @@ export default {
     justify-content: center
     align-items: center
     overflow: show
+    +rwd_sm
+      min-height: 50vh
     svg
       width: 125vmin
       max-width: 110%
@@ -425,6 +429,8 @@ export default {
 
     +ab_center
     z_index: 10
+    +rwd_sm
+      top: 70%
     // background-color: $colorRed
 
   .btn_next

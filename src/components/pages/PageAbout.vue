@@ -47,6 +47,14 @@ export default {
       background-position: 0px 400px
     100%
       background-position: 0px 350px
+  @keyframes aboutani2
+    0%
+      background-position: 100px 400px
+    100%
+      background-position: 100px 350px
+  +rwd_sm
+    background-size: auto 100%
+    animation: aboutani2 6s infinite alternate
   animation: aboutani 6s infinite alternate
   h1.decor
     font-size: 300px
