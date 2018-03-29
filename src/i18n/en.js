@@ -190,7 +190,7 @@ Submitted music works can be ambient music demos, songs, film scores, original m
                 <li>Applicants shall fill out correct and authentic personal information, including but not limited to applicant’s age, name, nationality, phone number and email address on the application form. Taipei City Government has the rights to disqualify applicants who submit untruthful information.</li>
                 <li>Any question to the regulations of this competition shall be submitted to the contact person of the competition by email three days before the application deadline (before May 12). After the competitions result is announced, no objection or complaint shall be allowed concerning the decision made by the judges.</li>
                 <li>Applicants who do not follow the regulations to apply for the competition will be disqualified.</li>
-                <li><According to the tax law of R.O.C., the organizer shall provide withholding statement at the end of the year when the prize is NT$1,001 and above. Winners who receive a prize of NT$20,000 and above shall pay tax 10% of the prize to Taipei City Government. The city government will send a withholding statement at the end of the year to winners to file individual income tax./li>
+                <li>According to the tax law of R.O.C., the organizer shall provide withholding statement at the end of the year when the prize is NT$1,001 and above. Winners who receive a prize of NT$20,000 and above shall pay tax 10% of the prize to Taipei City Government. The city government will send a withholding statement at the end of the year to winners to file individual income tax.</li>
             </ol>
         </div>
         <div class="col-md-12 col-sm-12"><br><br><br></div>
@@ -207,7 +207,7 @@ Submitted music works can be ambient music demos, songs, film scores, original m
     cooperative_firm: "Cooperative firm",
     label_website: "Website design",
     contact: {
-      label: "Contact: +886-2-2765-2969"
+      label: "Contact: +886-2-2765-2969<br>Email: info@taipeisoundscape.com"
     },
     company: {
       mega: "Mega force Recording Studio",

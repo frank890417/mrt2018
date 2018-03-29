@@ -3,25 +3,30 @@
   section.section-hero
     .container-fluid
       .row
-        .col-sm-7
-          SvgInline.floatInUp.animated(src="/static/img/stations/scene_door.svg")
-        .col-sm-5.col-content
-          img.logo(src="/static/img/Logo.svg")
-          h3.color.red {{ $t('index.engtitle') }}
-          h1.title
-            span {{ $t('index.title') }}
-          h3.sub {{ $t('index.subtitle') }}
-          h2 2018/3/31-5/15
-          .btns
-            .btn-lang.btn.red(@click="switchLang('en')") English 
-            br
-            .btn-lang.btn.red(@click="switchLang('zh')") 中文版
-          div.btns
-            router-link.btn.color.white(to="/about") 關於
-            router-link.btn.color.white(to="/explore") 場景探索
-            br
-            router-link.btn.color.white(to="/playground") 即興創作
-            router-link.btn.color.white(to="/rules") 規則與報名
+        .col-sm-12.col-logo
+          SvgInline.floatInUp.animated.big-logo(src="/static/img/logo_blue.svg")
+    .container
+      .row
+        .col-sm-12.col-content
+          .row
+            .col-md-6.col-sm-12
+              //- img.logo(src="/static/img/Logo.svg")
+              h3.color.red {{ $t('index.engtitle') }}
+              h1.title
+                span {{ $t('index.title') }}
+              h3.sub {{ $t('index.subtitle') }}
+              h2 2018/3/31-5/15
+            .col-md-6.col-sm-12
+              .btns
+                .btn-lang.btn.red(@click="switchLang('en')") English 
+                br
+                .btn-lang.btn.red(@click="switchLang('zh')") 中文版
+              div.btns
+                router-link.btn.color.white(to="/about") {{ $t('nav.plan.title') }}
+                router-link.btn.color.white(to="/explore") {{ $t('nav.explore.title') }}
+                br
+                router-link.btn.color.white(to="/playground") {{ $t('nav.playground.title') }}
+                router-link.btn.color.white(to="/rules") {{ $t('nav.register.title') }}
             
 
 </template>
@@ -43,19 +48,31 @@ export default {
   background-size: cover
   background-position: 0 100%
   overflow: hidden
-  height: 100vh
+  min-height: 100vh
+  .col-logo
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-left: 5vw
+    padding-right: 5vw
+    &>*
+      width: 100%
   .btns
     display: flex
+    flex-wrap: wrap
   .btn-lang
     
   .title
-    font-size: 3rem
+    font-size: 2.6rem
     margin-top: 0px
     margin-bottom: -10px
 
 
-  .sub
-    opacity: 0.7
+  .big-logo svg
+    width: 100%
+  h3.sub
+    opacity: 0.6
+    font-size: 1.4rem
   .section-hero
     .col-content
       display: flex

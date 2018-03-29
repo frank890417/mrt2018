@@ -86,7 +86,7 @@
                       el-select(v-model="registData.concepts[cid].target", 
                         :placeholder="$t('register.s2.label_select')",
                         :name="'concept_'+cid+'_target'" 
-                        :data-require="$t('register.s2.label_station')+ (cid+1)")
+                        :data-require="$t('register.s2.label_station')+ (cid+1)",)
                         el-option(v-for="op in stations"
                                   :value="op.name" ) {{op.name}}
                     el-form-item(:label="$t('register.s2.label_content')", v-if="registData.concepts[cid].target")  
@@ -94,8 +94,8 @@
                                 type="textarea", :placeholder="$t('register.s2.label_content_max')"
                                 , rows=5 :data-require="$t('register.s2.label_station')")
                     hr
-                .btn.btn-default.btn-next.red(@click="prevStep") {{ $t("register.btn_next") }}
-                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_prev") }}
+                .btn.btn-default.btn-next.red(@click="prevStep") {{ $t("register.btn_prev") }}
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_next") }}
 
               .container(v-show="formPart==2")
                 .row
@@ -125,9 +125,10 @@
                   .col-sm-12
                     p {{ $t('register.s4.label_upload') }}
                     el-form-item(v-for="(p,pid) in parseInt(registData.personCount)",
-                                  :label="$t('register.s4.label_agreement')+pid+' '+registData.person[pid].name" 
+                                  :label="$t('register.s4.label_agreement')+(pid+1)+' '+registData.person[pid].name" 
                                   label-width="200px")  
-                      input(type="file",:name="'creator_'+pid+'_agreement_file'" :data-require="$t('register.s4.label_agreement')+pid+' '+registData.person[pid].name +$t('register.s4.label_upload') ", data-requiretype="pdf")
+                      input(type="file",:name="'creator_'+(pid+1)+'_agreement_file'" 
+                        :data-require="$t('register.s4.label_agreement')+(pid+1)+' '+registData.person[pid].name +$t('register.s4.label_upload') ", data-requiretype="pdf")
                     hr
                     span {{ $t('register.s4.label_confirm')  }}
                       el-checkbox
