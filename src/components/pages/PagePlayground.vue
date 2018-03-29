@@ -234,6 +234,7 @@ import $ from 'jquery'
 
       };
     },
+    
     watch:{
       select: function(){
         this.reload();
@@ -256,6 +257,7 @@ import $ from 'jquery'
       }
     },
     methods: {
+
       sync: function(){
 
         $("audio.pg1")[0].currentTime
@@ -346,8 +348,8 @@ import $ from 'jquery'
             '&caption=臺北聲音地景計畫 「捷運站體環境音樂」徵選活動'+
             '&picture='+"http://taipeisoundscape.com/static/img/og.jpg"+
             '&description='+ this.share_text[this.select.env] +
-            '&link='+"http://taipeisoundscape.com/"+
-            '&redirect_uri=http://taipeisoundscape.com';
+            '&link='+"http://taipeisoundscape.com/playground?"+this.status_hash+
+            '&redirect_uri=http://taipeisoundscape.com/playground?'+this.status_hash;
         window.open(share_url);
         ga('send', 'event', 'MusicPlayground', 'Share', 'Share by FB');
       }
@@ -365,6 +367,33 @@ import $ from 'jquery'
         });
         $("audio.pg1").on("ended", vobj.sync);
         
+        if (document.location.indexOf("?")!=-1){
+          let vars = document.location.split("?")[1]
+          vars.split("|").filter(o=>o).map(t=>({
+            key: t.split("=")[0],
+            data: t.split("=")[1]
+          }))
+          this.select.melody=vars.find(o=>o.key=='melody').data
+          this.select.beat=vars.find(o=>o.key=='beat').data
+          this.select.env=vars.find(o=>o.key=='env').data
+          this.volume_melody=vars.find(o=>o.key=='volume_melody').data
+          this.volume_beat=vars.find(o=>o.key=='volume_beat').data
+          this.volume_env=vars.find(o=>o.key=='volume_env').data
+        }
+    },
+    computed: {
+      status_hash(){
+        let list = {
+          melody: this.select.melody,
+          beat: this.select.beat,
+          env: this.select.env,
+          volume_melody: 100,
+          volume_beat: 75,
+          volume_env: 100,
+        }
+        return Object.keys(list).map(key=>key+"="+list[key]+"|").join("")
+
+      }
     }
   }
 </script>
