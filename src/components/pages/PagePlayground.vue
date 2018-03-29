@@ -367,8 +367,8 @@ import $ from 'jquery'
         });
         $("audio.pg1").on("ended", vobj.sync);
         
-        if (document.location.indexOf("?")!=-1){
-          let vars = document.location.split("?")[1]
+        if (document.URL.indexOf("?")!=-1){
+          let vars = decodeURI(document.URL).replace(/%3D/g,"=").split("?")[1]
           vars.split("|").filter(o=>o).map(t=>({
             key: t.split("=")[0],
             data: t.split("=")[1]
