@@ -104,7 +104,7 @@ export default {
           trigger_drilling: "03中山站/中山站_螺絲電鑽_6s.mp3",
           trigger_fixing: "03中山站/中山站_機車修理器具碰撞_4s.mp3",
           trigger_chatting: "03中山站/中山站_文創商店店員對話_7s.mp3",
-
+          trigger_receipt: "03中山站/中山站_文創商店印發票_14s.mp3",
 
           trigger_bus_moving: "04圓山站/圓山站_公車進站_17s.mp3",
           trigger_teacher: "04圓山站/圓山站_師生玩耍_8s.mp3",
@@ -269,7 +269,7 @@ export default {
       
     },
     //取得對應路線資料（還有翻譯）
-    
+
     getLine(name){
       return this.lines.find(l=>l.name==name || l.eng==name)
     }

@@ -205,15 +205,18 @@ export default {
       this.error_msg="";
       var vobj=this;
       $("[data-require]").each(function(index,obj){
-        if ($(obj).val()=="" && $(obj).children("input").val()=="" ){
-          vobj.error_msg+=$(obj).attr("data-require")+" 需填寫<br>";
-          check=false;
-        }
-        if ($(obj).attr("type")=="file"){
-            if (($(obj).val().split(".").slice(-1)+"").toLowerCase()!= $(obj).attr("data-requiretype")){
-              vobj.error_msg+=$(obj).attr("data-require")+" 檔案格式錯誤! 需為"+$(obj).attr("data-requiretype")+"<br>";
-              check=false;
-            }
+        if ( $(obj).attr('data-require')!='false'){
+          if ($(obj).val()=="" && $(obj).children("input").val()=="" ){
+            vobj.error_msg+=$(obj).attr("data-require")+" 需填寫<br>";
+            check=false;
+          }
+          if ($(obj).attr("type")=="file"){
+              if (($(obj).val().split(".").slice(-1)+"").toLowerCase()!= $(obj).attr("data-requiretype")){
+                vobj.error_msg+=$(obj).attr("data-require")+" 檔案格式錯誤! 需為"+$(obj).attr("data-requiretype")+"<br>";
+                check=false;
+              }
+          }
+
         }
       });
       
