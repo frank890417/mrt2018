@@ -172,7 +172,8 @@ let data = {
     agreement_file_link: "/static/file/捷運站體音樂-徵件辦法_中文版文化局審核_核定版.pdf",
     s1: {
       label_person : "個⼈資料",
-      label_count  : "創作者⼈數",
+      label_count: "創作者⼈數",
+      label_creator: "創作者",
       label_name  : "姓名",
       label_gender  : "性別",
       label_male: "男",
@@ -187,6 +188,13 @@ let data = {
       label_workshop_ask: "確定可參加 3 天工作坊?",
       label_workshop_yes: "確定",
       label_workshop_no: "無法參與"
+    },
+    s2: {
+      description: "從本次選定之 10 個捷運站內挑選 1 至 3 個捷運站進行該捷運站的人文、地理的特性認知及相對應的音樂創作方向論述",
+      label_station: "站體",
+      label_select: "請選擇站體",
+      label_content: "論述",
+      label_content_max: "100字內"
     }
   },
   

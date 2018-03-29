@@ -18,29 +18,6 @@ let data = {
     register: {
       title: "REGISTER",
       eng: "競賽規則與報名",
-      content: "Create your own music pieces for Taipei by combining the cultural characteristic of places in Taipei with the sounds of MRT stations .",
-      btn_next: "Next",
-      btn_prev: "Back",
-      agreement_file: "Rules and regulations download",
-      agreement_file_link: "/static/file/20180328 Rules and regulations.pdf",
-      s1: {
-        label_person: "Personal Information",
-        label_count: "Creators number",
-        label_name: "Name",
-        label_gender: "Gender",
-        label_male: "Male",
-        label_female: "Female",
-        label_hidden: "Hidden",
-        label_age: "Age",
-        label_address: "City",
-        label_birthday: "Birthday",
-        label_tel: "Tel No.",
-        label_mail: "E - mail",
-        label_workshop: "- workshop",
-        label_workshop_ask: "Can you attend the three-days workshop?",
-        label_workshop_yes: "Yes",
-        label_workshop_no: "No"
-      }
     }
   },
   index: {
@@ -48,6 +25,42 @@ let data = {
     title: "Taipei Soundscape Program",
     subtitle: "MRT Station Ambient Music Competition - Sound of Silence",
 
+  },
+  register: {
+    title: "Register Form",
+    eng: "競賽規則與報名",
+
+    description: "Create your own music pieces for Taipei by combining the cultural characteristic of places in Taipei with the sounds of MRT stations .",
+    btn_next: "Next",
+    btn_prev: "Back",
+    agreement_file: "Register Requirements",
+    agreement_file_link: "/static/file/20180328 Rules and regulations.pdf",
+    s1: {
+      label_person: "Personal Information",
+      label_count: "Creators number",
+      label_creator: "Creator",
+      label_name: "Name",
+      label_gender: "Gender",
+      label_male: "Male",
+      label_female: "Female",
+      label_hidden: "Hidden",
+      label_age: "Age",
+      label_address: "City",
+      label_birthday: "Birthday",
+      label_tel: "Tel No.",
+      label_mail: "E - mail",
+      label_workshop: "- workshop",
+      label_workshop_ask: "Can you attend the three-days workshop?",
+      label_workshop_yes: "Yes",
+      label_workshop_no: "No"
+    },
+    s2: {
+      description: "Ａmbient music statement",
+      label_station: "Station",
+      label_select: "Please select station",
+      label_content: "statement",
+      label_content_max: "under 100 words"
+    }
   },
   about: {
     title: "About the Program",

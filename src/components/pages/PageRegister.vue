@@ -39,7 +39,7 @@
                     hr
                 .row(v-for="(p,pid) in parseInt(registData.personCount)")
                   .col-sm-2
-                    h4 創作人{{pid+1}}.<br> {{registData.person[pid].name}}
+                    h4 {{ $t('register.s1.label_creator') }} {{pid+1}}.<br> {{registData.person[pid].name}}
                   .col-sm-10
                     el-form-item(:label="$t('register.s1.label_name')", placeholder="")  
                       el-input(v-model="registData.person[pid].name", :name="'creator_'+pid+'_name'" required)
@@ -78,16 +78,16 @@
               .container(v-show="formPart==1")
                 .row
                   .col-sm-12
-                    p 從本次選定之 10 個捷運站內挑選 1 至 3 個捷運站進行該捷運站的人文、地理的特性認知及相對應的音樂創作方向論述
+                    p {{ $t("register.s2.description") }}
                 div.row(v-for="(c,cid) in parseInt(registData.conceptCount)")
                   .col-sm-12
-                    el-form-item(:label="'站體'+ (cid+1)")  
-                      el-select(v-model="registData.concepts[cid].target", placeholder="請選擇站體",:name="'concept_'+cid+'_target'" required)
-                        el-option(v-for="op in stationsOptions"
-                                  :value="op" ) {{op}}
-                    el-form-item(label="論述", v-if="registData.concepts[cid].target")  
+                    el-form-item(:label="$t('register.s2.label_station')+ (cid+1)")  
+                      el-select(v-model="registData.concepts[cid].target", :placeholder="$t('register.s2.label_select')",:name="'concept_'+cid+'_target'" required)
+                        el-option(v-for="op in stations"
+                                  :value="op.name" ) {{op.name}}
+                    el-form-item(:label="$t('register.s2.label_content')", v-if="registData.concepts[cid].target")  
                       el-input(v-model="registData.concepts[cid].content",:name="'concept_'+cid+'_content'"
-                                type="textarea", placeholder="100字內", rows=5 required)
+                                type="textarea", :placeholder="$t('register.s2.label_content_max')", rows=5 required)
                     hr
                 .btn.btn-default.btn-next.red(@click="prevStep") {{ $t("register.btn_next") }}
                 .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_prev") }}
