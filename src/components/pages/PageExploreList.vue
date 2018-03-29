@@ -17,7 +17,7 @@
               img(:src="station.img")
             h3.color.black {{ station.name }}
             p {{ station.keywords}}
-            .tag(v-if="station.audition" ) 徵選中
+            .tag(v-if="station.audition" ) {{ $t('explore.requiring')  }}
 </template>
 
 <script>
@@ -33,7 +33,10 @@ export default {
 
   },
   computed:{
-    ...mapState(['stations'])
+    stations(){
+      return this.$t("stations")
+    },
+    // ...mapState(['stations'])
   },
   methods:{
 

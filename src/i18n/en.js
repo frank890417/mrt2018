@@ -36,7 +36,8 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
   explore: {
     title_eng: "場景探索",
     title: "Space explore",
-    description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?"
+    description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?",
+    requiring: "Requiring"
   },
   playground: {
 

@@ -37,14 +37,18 @@ let data = {
   explore: {
     title_eng: "Space explore",
     title: "場景探索",
-    description: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，<br>你，還感受到了些什麼？"
+    description: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，<br>你，還感受到了些什麼？",
+    requiring: "徵選中"
   },
   playground: {
     title_eng: "Impromptu",
     title: "即興創作",
     description: `松山機場的廣播、小巨蛋的演唱會、龍山寺的擲筊、象山的101、東門的市場，在你心中，台北的「聲音」，又是什麼樣子的?
 選取不同的旋律、節奏、聲音，
-組合出你想像中的，捷運站體音樂。`.replace(/\n/g, "<br>")
+組合出你想像中的，捷運站體音樂。`.replace(/\n/g, "<br>"),
+    btn_play: "播放",
+    btn_random: "隨機",
+
   },
   rules: {
     p1Title: "徵件資訊",
