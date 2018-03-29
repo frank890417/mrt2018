@@ -38,7 +38,7 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
     title: "Space explore",
     description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?"
   },
-  playground:{
+  playground: {
 
     title_eng: "即興創作",
     title: "Impromptu",
@@ -95,9 +95,211 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
       union: "Music Creators Union",
       mono: "Monoame Design Studio"
     }
-    
 
-    
-  }
+
+
+  },
+
+  stations: [
+    {
+      // path: ,
+      eng_name: "南港站",
+      name: "Nangang Station",
+      description: `1Nangang, the birthplace of Taiwan's tea plantation since the introduction of tea plantation in 1885, became one of the important agricultural areas in Taipei. After revitalized the economy into an industrial zone, Nangang has attracted many factories to bring prosperity.
+Nowadays, key projects that continue to be put into place, such as the High-speed Rail Nangang Station, Nangang Financial Park, Nangang Exhibition Hall and the important landmark of the future Chinese pop music, the “Northern Pop Music Center”. They are bound to bring more yuan development to the Nangang Station.
+`,
+      keywords: "The transfer station for MRT, train and High Speed Rail, near Taipei Music Center",
+      audition: true,
+      img: "/static/img/stations/南港站.svg",
+      line: ["板南線"]
+    },
+    {
+      eng_name: "⻄⾨站",
+      name: "Ximen Station",
+      description: `During the Japanese occupation period, Ximending was a wasteland outside the West Gate of Taipei City. The Japanese decided to imitate Asakusa district of Tokyo and set up a leisure business district. Today, Ximen is the most important and international consumer commerce district in Taipei's West District. It has become a symbol of young generation's subculture and a popular destination for tourists from all around the world.
+`,
+      keywords: "Youthfulness and popular culture",
+      audition: true,
+      img: "/static/img/stations/西門站.svg",
+      line: ["板南線", "松山新店線"]
+    },
+    {
+      eng_name: "北⾨站",
+      name: "Beimen Station",
+      description: `Beimen was the North Gate of Taipei's Fucheng City during the Qing Dynasty and is the main passage to the Dadaocheng area in the early days. Nowadays, it is the only one of the five gates in Taipei City to maintain its original appearance, and also one of the few remaining Qing Dynasty buildings in Taipei.
+Through the evolution of the times, Beimen carry memories of countless people, the current center of Taipei, with its busy history, boasts a landscape that can travel in time and space.
+`,
+      keywords: "Historical meaning, near Dadaocheng and culture galleries",
+      audition: true,
+      img: "/static/img/stations/北門站.svg",
+      line: ["松山新店線"]
+    },
+    {
+      eng_name: "中⼭站",
+      name: "Zhongshan Station",
+      description: `During the Japanese occupation, Zhongshan North Road was a high-class residential area inhabited by upper class; during the period of Nationalist Government, it was a necessary place for foreign officials to visit the Shihlin Official Residence, and also the setting point for consulates in many countries.
+Zhongshan, which used to be a gathering place for fashion indicators, has become the latest cultural and creative hotspot in Taipei together with Hardware Street and Chifeng Street after their efforts to promote the artist's creation with the Contemporary Art Museum.`,
+      keywords: "Design, art and community development",
+      audition: true,
+      img: "/static/img/stations/中山站.svg",
+      line: ["淡水信義線", "松山新店線"]
+    },
+    {
+      eng_name: "圓⼭站",
+      name: "Yuanshan Station",
+      description: `The Yuanshan site is one of the most precious prehistoric sites in Taiwan and it is also a rare multicultural site. Shell mounds are the biggest feature of the site and the Yuanshan culture, most of which belong to semi-salt and water-based shellfish, verifying that Taipei Lake in the Yuanshan period was a brackish water lake.
+Surrounded by natural and cultural atmosphere, Yuanshan has been as part of Huabo Park and has become a must-see attraction for families, parents and foreign tourists, adding a lot of new vitality to prehistoric sites.`,
+      keywords: "Tourism, park and military base for armies in 1950s",
+      audition: true,
+      img: "/static/img/stations/圓山站.svg",
+      line: ["淡水信義線"]
+    },
+    {
+      eng_name: "台北101站",
+      name: "Taipei 101 Station",
+      description: `Taipei’s landmark “Taipei 101” once had the world's tallest building record. It is now the fifth tallest building in the world and the highest skyscraper in the Pacific Rim earthquake belt. The building also has the world’s second largest damper.
+In addition to being an office building, Taipei 101 also has shopping malls, restaurants, and indoor. Each year, it hosts New Year countdown and follows the world’s premier new year’s fireworks display, becoming the top tourist attraction of Taipei. `,
+      keywords: "International shopping center and exhibition center",
+      audition: true,
+      img: "/static/img/stations/101.svg",
+      line: ["淡水信義線"]
+    },
+    {
+      eng_name: "劍南路站",
+      name: "Jiannan Rd. Station",
+      description: `As the oldest temple in Taipei, Jiantan Temple, also known as Guanyin Temple, has a history of about 370 years. There are also many old stone monuments in the Beilin Garden near the temple. The oldest one is the “Fengxian Shijin Monument” in the second year of Xianfeng (1852 AD). The buildings and cultural walked through time and attracts travelers to embark on journey and witness the ancient temples that hold this historical memory.`,
+      keywords: "Miramar Entertainment Park, shopping mall and luxury hotels ",
+      audition: true,
+      img: "/static/img/stations/美麗華.svg",
+      line: ["文湖線"]
+    },
+    {
+      eng_name: "⼤湖公園站",
+      name: "Dahu Park Station",
+      description: `As one of the largest lakes in Taipei it is also called as Bailu Lake due to the group of egrets. The park was built in 1979 traditional Chinese garden design. In addition to the resting facilities, lake trails and picnic space, the park also has indoor and outdoor swimming pools and gymnasiums, and it has become a summer hotpot for the public to refresh their health and fitness.`,
+      keywords: "Nature and park for parents and children",
+      audition: true,
+      img: "/static/img/stations/大湖公園站.svg",
+      line: ["文湖線"]
+    },
+    {
+      eng_name: "⾏天宮站",
+      name: "Xingtian Temple Station",
+      description: `Xingtian Temple is a major faith resort of the Greater Taipei region. The main god is Guan Shengdijun (Grace Lord). Many people come here to worship the Grace Lord, and it is also known as the Taipei Guandi Temple, or the Taipei Wu Temple. It is a well-known temple of Guan Yu in Taiwan. Taiwan’s temples endow traditional arts with Taiwanese folk custom culture. The well-known Guandi temple is not only for religious worshippers, but also an important attraction for foreigners to understand Taiwanese culture.`,
+      keywords: "Temple and religion",
+      audition: true,
+      img: "/static/img/stations/行天宮.svg",
+      line: ["中和新蘆線"]
+    },
+      
+    {
+      eng_name: "⼤橋頭站",
+      name: "Daqiaotou Station",
+      description: `It is also known as Caopuzai and Sichanzai in the early days. As the origin of the rice food culture, the residents of Daqiaotou developed various rice products. due to its proximity to the Tamsui River and its flat terrain and fertile soil, rice has been prosperous since ancient times. The Dihua Street shopping district is a distribution center for Taiwan's northern and southern goods, tea, Chinese medicine, and cloth. It is also a New Year’s street for Taiwan's Lunar New Year shopping.
+`,
+      keywords: "Yangping N. Rd. Night Market and Dihua Street",
+      audition: true,
+      img: "/static/img/stations/大橋頭站.svg",
+      line: ["中和新蘆線"]
+    },
+      
+    {
+      eng_name: "捷運松山機場站",
+      name: "Songshan Airport",
+      description: `Songshan Airport was once a military base during Japanese colonial period. After the Government of the Republic of China was moved to Taiwan, the airport was taken over by the airforce for civil aviation. When the terminal was completed in 1971, Songshan Airport became the top international airport in South East Asia.
+
+In 1979, the airport turned into a domestic airport until it was later opened for the mini three links. Songshan Airport has witnessed historical changes of Taiwan's politics and economy and was part of the important memories of students, businessmen and travelers who were far away from home.`,
+      keywords: "Stories about flying, traveling, dreams, and goodbye and reunite…",
+      audition: false,
+      img: "/static/img/stations/scene_airport.svg",
+      line: ["松山新店線"]
+
+    },
+    {
+      eng_name: "捷運台北小巨蛋",
+      name: "Taipei Arena",
+      description: `The Taipei Arena is an important landmark built to uplift Taipei City's aspects of civic health and internationalism.
+Formerly known as Taipei Municipal Baseball Stadium for major international sport events, the Taipei Arena is now a multifunctinal arena for sport events and large concerts.
+
+Shopping complexes near the arena is also a great place to go on holidays and a energetic center of Taipei City.
+
+`,
+      keywords: "Concert, energetic people, a place for performances and music festivals…",
+      audition: false,
+      img: "/static/img/stations/scene_egg.svg",
+      line: ["松山新店線"]
+
+    },
+    {
+      eng_name: "捷運龍山寺站",
+      name: "Longshan Temple",
+      description: `Wanhua district, also kown as Bangka, is Taipei's earliest settlement. In the past, Longshan temple in this district was originally served as a place of worship, assembly and activities for immigrants from China. Worshipers prayed to the the gods for safe return from journeys.
+
+Now, Longshan Temple has become a spiritual and social heart of the district. The one of a kind sculptures and clouds of smoke from the burning incense in the temple and the traditional buildings nearby it even make Longshan Temple a famous tourist spot of Taipei. `,
+      keywords: "Historical sites of Taiwan, prayers in the temples, the scent of incense, good luck and fortune…",
+      audition: false,
+      img: "/static/img/stations/scene_temple.svg",
+      line: ["板南線"]
+
+    },
+    {
+      eng_name: "捷運象山站",
+      name: "Xiangshan Station",
+      description: `Xiangshan Station is the final stop of the 7.9 km Xinyi Line, an extension of Tamsui Line. Xiangshan (Elephant Mountain) is located in Xinyi District of Taipei City. 
+
+It is not only a serene place to relax amid the hustle and bustle of Taipei City but also a great place to catch the stunning nighttime views of Xinyi District and the magnificent Taipei City.`,
+      keywords: "	Nature as classroom and a quiet place amid the hustles and bustles of city...",
+      audition: false,
+      img: "/static/img/stations/scene_mountain.svg",
+      line: ["淡水信義線"]
+
+    },
+    {
+      eng_name: "捷運東門站",
+      name: "Dongman Station",
+      description: `Dongmen (east gate) of Taipei City has witnessed historical changes of Qing dynasty, Japanese colonial period and the time after WWII. Dongmen was established after the govenment of the Republic of China was moved to Taiwan. To satisfy the shopping needs of government officials' wives, Chinese cooking materials and all kinds of high quality food were sold here. 
+
+There are many famous traditional street food stalls in the market which were the favorites of celebrities and gourmets. As a result, Dongmen market was referred to as a market for the Taipei elite.`,
+      keywords: "Places with culture and history, Dongmen market and Taiwanese street foods sold on Yongkang Street …",
+      audition: false,
+      img: "/static/img/stations/scene_door.svg",
+      line: ["中和新蘆線", "淡水信義線"]
+
+    },
+  ],
+
+
+  lines: [
+    {
+      eng: "文湖線",
+      name: "Wenhu Line",
+      bgcolor: "#BA8B2E",
+      color: "white"
+    },
+    {
+      eng: "淡水信義線",
+      name: "TamsuiXinyi Line",
+      bgcolor: "#D41433",
+      color: "white"
+    },
+    {
+      eng: "松山新店線",
+      name: "Xindian Line",
+      bgcolor: "#0C8155",
+      color: "white"
+    },
+    {
+      eng: "中和新蘆線",
+      name: "Xinlu Line",
+      bgcolor: "#E8AF29",
+      color: "black"
+    },
+    {
+      eng: "板南線",
+      name: "Bannan Line",
+      bgcolor: "#1568B2",
+      color: "white"
+    }
+  ],
 }
 export default data

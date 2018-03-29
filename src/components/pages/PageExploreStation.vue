@@ -13,7 +13,7 @@
             div(:key="station.name")
               .ovh
                 .line.animated.slideInLeft(v-for="line in station.line", 
-                      :style="{'background-color': getLine(line).bgcolor,'color': getLine(line).color}") {{line}}
+                      :style="{'background-color': getLine(line).bgcolor,'color': getLine(line).color}") {{getLine(line).name}}
               h4.musicBar.animated.fadeIn {{ idtext }} | {{ station.eng_name }}
               h1.animated.fadeIn {{ station.name }}
               h5.animated.fadeIn {{ station.keywords }}
@@ -268,14 +268,24 @@ export default {
 
       
     },
+    //取得對應路線資料（還有翻譯）
+    
     getLine(name){
-      return this.lines.find(l=>l.name==name)
+      return this.lines.find(l=>l.name==name || l.eng==name)
     }
   },
   computed:{
-    ...mapState(['stations','lines']),
+    // ...mapState(['lines']),
+    stations(){
+      return this.$t("stations")
+    },
+    lines(){
+      return this.$t("lines")
+    },
     station(){
+      console.log()
       return this.stations[this.$route.params.station_id]
+      // return this.stations[this.$route.params.station_id]
     },
     idtext (){
       let tid = parseInt(this.$route.params.station_id) +1

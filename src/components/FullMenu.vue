@@ -210,13 +210,13 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
   top: 40px
   display: flex
   cursor: pointer
-  opacity: 0.7
   z-index: 500
   .option
     margin-left: 20px
     font-weight: 800
-  &.active
-    opacity: 1
+    opacity: 0.4
+    &.active
+      opacity: 1
 .staticLogo
   position: absolute
   left: 30px

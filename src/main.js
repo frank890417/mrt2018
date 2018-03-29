@@ -17,7 +17,6 @@ Vue.component("PageLoading", PageLoading)
 Vue.component("SectionFooter", SectionFooter)
 Vue.component("FullMenu", FullMenu)
 
-
 import Vue from 'vue'
 import App from './App'
 import router from './router'
