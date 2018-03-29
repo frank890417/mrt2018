@@ -34,7 +34,35 @@
 <script>
 
 import {mapState,mapMutations, mapActions, mapGetters} from 'vuex'
+import $ from 'jquery'
+import Tone from 'tone'
 export default {
+  mounted(){
+    setTimeout(function(){
+      var aa = ["C4","E4","A4","C5","D4","F4","G4","B4","C5","G4","E4","C4","E4","A4","C5","D4","C4","E4","A4","C5","D4","F4","G4","B4","C5","G4","E4","C4","E4","A4","C5","D4",]
+      $("path").each(function(pid,id){
+        $(this).attr("data-id",pid)
+      })
+      $("path").mouseenter(function(obj,i){
+          let _this = this
+          $(this).addClass("active")
+          setTimeout(function(){
+            $(_this).removeClass("active")
+
+          },0)
+          let toneid = parseInt($(this).attr("data-id"))
+          console.log(toneid)
+          //create a synth and connect it to the master output (your speakers)
+          var synth = new Tone.PolySynth().toMaster();
+          synth.volume.value=-20
+
+          //play a middle 'C' for the duration of an 8th note
+          synth.triggerAttackRelease(aa[toneid], "16n");
+
+        })
+
+    },800)
+  },
   methods:{
     
   }
@@ -49,6 +77,28 @@ export default {
   background-position: 0 100%
   overflow: hidden
   min-height: 100vh
+  @keyframes movinga
+    0%,100%
+      transform: translateY(8px)
+    50%
+      transform: translateY(-8px)
+
+  svg
+
+    path
+      cursor: pointer
+      animation: movinga 10s infinite 
+      transition: 0.5s
+      border: solid 1px rgba(white,0)
+      box-shadow: 0px 0px 20px rgba(#4e60ff,0.3)
+      @for $i from 1 through 100
+        &:nth-child(#{$i})
+          animation-delay: #{ -$i * 0.4 }s
+      &:active,&.active
+        opacity: 0
+        transition: 0s
+        stroke: white
+        
   .col-logo
     display: flex
     justify-content: center
