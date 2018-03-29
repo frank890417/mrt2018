@@ -137,7 +137,7 @@
                     el-form-item(v-for="(p,pid) in parseInt(registData.personCount)",
                                   :label="$t('register.s4.label_agreement')+(pid+1)+' '+registData.person[pid].name" 
                                   label-width="200px")  
-                      input(type="file",:name="'creator_'+(pid+1)+'_agreement_file'" 
+                      input(type="file",:name="'creator_'+(pid)+'_agreement_file'" 
                         :data-require="$t('register.s4.label_agreement')+(pid+1)+' '+registData.person[pid].name +$t('register.s4.label_upload') ", data-requiretype="pdf")
                     hr
                     span {{ $t('register.s4.label_confirm')  }}
