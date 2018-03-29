@@ -28,7 +28,7 @@ let data = {
   },
   register: {
     title: "Register Form",
-    eng: "競賽規則與報名",
+    engtitle: "競賽規則與報名",
 
     description: "Create your own music pieces for Taipei by combining the cultural characteristic of places in Taipei with the sounds of MRT stations .",
     btn_next: "Next",
