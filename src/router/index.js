@@ -139,29 +139,4 @@ router.beforeEach( (to,from,next)=>{
   }, 500);
   next()
 })
-
-router.afterEach((to, from) => {
-  // setTimeout(()=>{
-  //   let text = $("h1.title").text()
-  //   let index1 = 0
-  //   $("h1.title").text("")
-  //   function update() {
-  //     index1++
-  //     let tt = text.slice(0,index1-2)
-  //     while(tt.length<text.length){
-  //       tt+="-"
-  //     }
-  //     $("h1.title").text(tt)
-  //     if (index1<text.length+5){
-  //       setTimeout(() => {
-  //         update()
-  //       }, 100);
-  //     }
-  //   }
-  //   update()
-
-
-  // },500)
-  
-})
 export default router

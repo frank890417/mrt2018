@@ -8,6 +8,11 @@
             h1.title {{ $t('about.title')  }}
             p(v-html="$t('about.description')")
           .col-sm-7
+            br
+            br
+            br
+            br
+            br
             p(v-html="$t('about.content') ")
 
 
