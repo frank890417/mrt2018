@@ -55,6 +55,9 @@ let data = {
 
   },
   rules: {
+    title: "競賽辦法",
+    title_eng: "Register Information",
+    register: "前往報名",
     content: `<div class="container">
     <div class="row">
         <div class="col-md-6 col-sm-12">
@@ -144,10 +147,7 @@ let data = {
         </div>
         <div class="col-md-12 col-sm-12"><br><br><br></div>
         <div class="col-md-6 offset-md-3 col-sm-12 text-center">
-            <h4>本活動事項如有疑義或其他未盡事宜，主辦單位保留隨時修改本活動辦法及解釋之權利，詳細資訊參見附件徵件辦法。 </h4><br><a href="/register" class="btn red">前往報名</a></div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12"></div>
+            <h4>本活動事項如有疑義或其他未盡事宜，主辦單位保留隨時修改本活動辦法及解釋之權利，詳細資訊參見附件徵件辦法。 </h4><br></div>
     </div>
 </div>`
 
@@ -165,7 +165,29 @@ let data = {
 (2) 提供針對本次徵選之⼗站站體⾳樂demo 者享有加分⿎勵（評分項⺫之⾳樂提案10%）。
 (3) 1-3 ⾸作品（⾄多3 ⾸），每⾸⻑度不超過5 分鐘。
 (4) 以MP3、192kbps 以上、stereo 規格上傳。
-(5) 檔案⼤⼩勿超過10MB。`
+(5) 檔案⼤⼩勿超過10MB。`,
+    btn_next: "上一步",
+    btn_prev: "下一步",
+    agreement_file: "徵件辦法及同意書下載",
+    agreement_file_link: "/static/file/捷運站體音樂-徵件辦法_中文版文化局審核_核定版.pdf",
+    s1: {
+      label_person : "個⼈資料",
+      label_count  : "創作者⼈數",
+      label_name  : "姓名",
+      label_gender  : "性別",
+      label_male: "男",
+      label_female: "女",
+      label_hidden: "不公開",
+      label_age: "年齡",
+      label_address: "居住城市",
+      label_birthday: "生日",
+      label_tel  : "電話",
+      label_mail: "信箱",
+      label_workshop: "工作坊",
+      label_workshop_ask: "確定可參加 3 天工作坊?",
+      label_workshop_yes: "確定",
+      label_workshop_no: "無法參與"
+    }
   },
   
   footer: {

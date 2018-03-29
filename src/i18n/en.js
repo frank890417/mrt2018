@@ -18,7 +18,29 @@ let data = {
     register: {
       title: "REGISTER",
       eng: "競賽規則與報名",
-      content: "Create your own music pieces for Taipei by combining the cultural characteristic of places in Taipei with the sounds of MRT stations ."
+      content: "Create your own music pieces for Taipei by combining the cultural characteristic of places in Taipei with the sounds of MRT stations .",
+      btn_next: "Next",
+      btn_prev: "Back",
+      agreement_file: "Rules and regulations download",
+      agreement_file_link: "/static/file/20180328 Rules and regulations.pdf",
+      s1: {
+        label_person: "Personal Information",
+        label_count: "Creators number",
+        label_name: "Name",
+        label_gender: "Gender",
+        label_male: "Male",
+        label_female: "Female",
+        label_hidden: "Hidden",
+        label_age: "Age",
+        label_address: "City",
+        label_birthday: "Birthday",
+        label_tel: "Tel No.",
+        label_mail: "E - mail",
+        label_workshop: "- workshop",
+        label_workshop_ask: "Can you attend the three-days workshop?",
+        label_workshop_yes: "Yes",
+        label_workshop_no: "No"
+      }
     }
   },
   index: {
@@ -52,6 +74,10 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
     label_sound: "Sound"
   },
   rules: {
+    title_eng: "競賽辦法",
+    title: "Register Information",
+    register: "Go to registration form",
+
     content: `<div class="container">
     <div class="row">
         <div class="col-md-6 col-sm-12">
@@ -132,10 +158,7 @@ Submitted music works can be ambient music demos, songs, film scores, original m
         </div>
         <div class="col-md-12 col-sm-12"><br><br><br></div>
         <div class="col-md-6 offset-md-3 col-sm-12 text-center">
-            <h4>The organizer holds the rights and ruling power with any unexpected incidents or circumstances that are not covered in the regulations.<br><br><a href="/register" class="btn red">Go to registration form</a></div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12"></div>
+            <h4>The organizer holds the rights and ruling power with any unexpected incidents or circumstances that are not covered in the regulations.<br><br></div>
     </div>
 </div>`
 

@@ -4,8 +4,8 @@
       .container
         .row
           .col-sm-12
-            h3.title-eng Register Information
-            h1.title 競賽辦法
+            h3.title-eng {{ $t('rules.title_eng') }}
+            h1.title  {{ $t('rules.title') }}
     section.sectionStyle
       div(v-html=" $t('rules.content') ")
       //- .container
@@ -102,8 +102,10 @@
           //-   ol
           //-     li(v-for="item in textToList($t('rules.p3'))" 
           //-        v-html="item")
+      .container
         .row
-          .col-sm-12
+          .col-sm-12.text-center
+            router-link.btn.red(to="/register") {{ $t('rules.register') }}
          
 
 </template>

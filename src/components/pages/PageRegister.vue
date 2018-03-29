@@ -4,15 +4,19 @@
       .container
         router-link.btn-back(to="/rules") 
             i.fa.fa-undo
-            span 返回競賽規則
+            span Back
         .row
           .col-sm-3
             h3.title-eng.color.white {{ $t('register.engtitle') }}
             h1.title  {{ $t('register.title') }}
             p(v-html=" $t('register.description') ")
-            a.btn.white(href="/static/file/捷運站體音樂-徵件辦法_中文版文化局審核_核定版.pdf", target="_blank") 
+            //- a.btn.white(href="", target="_blank") 
               i.fa.fa-file
-              span &nbsp;&nbsp;徵件辦法及同意書下載
+              span &nbsp;&nbsp;
+            br
+            a.btn.white(:href="$t('register.agreement_file_link')", target="_blank") 
+              i.fa.fa-file
+              span &nbsp;&nbsp; {{ $t('register.agreement_file') }}
             //- pre {{registData}}
           .col-sm-9.col-form
             
@@ -26,7 +30,7 @@
               .container(v-show="formPart==0")
                 .row
                   .col-sm-12
-                    label 創作者人數:
+                    label {{ $t('register.s1.label_count') }}:
                     span
                       .btn(@click="creator_count_change(-1)") -
                       span.number {{registData.personCount}}
@@ -37,39 +41,39 @@
                   .col-sm-2
                     h4 創作人{{pid+1}}.<br> {{registData.person[pid].name}}
                   .col-sm-10
-                    el-form-item(label="姓名", placeholder="")  
-                      el-input(v-model="registData.person[pid].name", :name="'creator_'+pid+'_name'")
-                    el-form-item(label="性別")  
-                      el-radio(v-model="registData.person[pid].gender" label="男", :name="'creator_'+pid+'_gender'") 男
-                      el-radio(v-model="registData.person[pid].gender" label="女", :name="'creator_'+pid+'_gender'") 女
-                      el-radio(v-model="registData.person[pid].gender" label="不公開", :name="'creator_'+pid+'_gender'") 不公開
-                    el-form-item(label="年齡")  
+                    el-form-item(:label="$t('register.s1.label_name')", placeholder="")  
+                      el-input(v-model="registData.person[pid].name", :name="'creator_'+pid+'_name'" required)
+                    el-form-item(:label="$t('register.s1.label_gender')")  
+                      el-radio(v-model="registData.person[pid].gender" label="男", :name="'creator_'+pid+'_gender'") {{ $t("register.s1.label_male") }}
+                      el-radio(v-model="registData.person[pid].gender" label="女", :name="'creator_'+pid+'_gender'") {{ $t("register.s1.label_female") }}
+                      el-radio(v-model="registData.person[pid].gender" label="不公開", :name="'creator_'+pid+'_gender'") {{ $t("register.s1.label_hidden") }}
+                    el-form-item(:label="$t('register.s1.label_age')")  
                       el-input(v-model="registData.person[pid].age",
                                 placeholder="未滿18歲需填寫法定監護人同意書",
                                 :name="'creator_'+pid+'_age'",
-                                type="number")
-                    el-form-item(label="出生年月日")  
+                                type="number" required)
+                    el-form-item(:label="$t('register.s1.label_birthday')")  
                       el-date-picker(v-model="registData.person[pid].birthday",
-                                :name="'creator_'+pid+'_birthday'")
-                    el-form-item(label="電話")   
+                                :name="'creator_'+pid+'_birthday'" required)
+                    el-form-item(:label="$t('register.s1.label_tel')")   
                       el-input(v-model="registData.person[pid].phone", 
                                 placeholder="09xx-xxx-xxx / 02-xxxx-xxxx",
-                                :name="'creator_'+pid+'_phone'",)
-                    el-form-item(label="信箱")  
+                                :name="'creator_'+pid+'_phone'" required)
+                    el-form-item(:label="$t('register.s1.label_mail')")  
                       el-input(v-model="registData.person[pid].mail", placeholder="yourmail@example.com",
-                                :name="'creator_'+pid+'_mail'",)
-                    el-form-item(label="居住城市")  
+                                :name="'creator_'+pid+'_mail'" required)
+                    el-form-item(:label="$t('register.s1.label_address')")  
                       el-input(v-model="registData.person[pid].address", placeholder="e.g. 台北市",
-                                :name="'creator_'+pid+'_address'")
-                    el-form-item(label="工作坊")  
-                      label 確定可參加 3 天工作坊? &nbsp;&nbsp;&nbsp;
+                                :name="'creator_'+pid+'_address'" required)
+                    el-form-item(:label="$t('register.s1.label_workshop')")  
+                      label {{ $t("register.s1.label_workshop_ask") }} &nbsp;&nbsp;&nbsp;
                       el-radio(v-model="registData.person[pid].attend_workshop", :label="true",
-                                :name="'creator_'+pid+'_attend_workshop'") 確定
+                                :name="'creator_'+pid+'_attend_workshop'" required) {{ $t("register.s1.label_workshop_yes") }}
                       el-radio(v-model="registData.person[pid].attend_workshop", :label="false",
-                                :name="'creator_'+pid+'_attend_workshop'") 無法參與
+                                :name="'creator_'+pid+'_attend_workshop'" required) {{ $t("register.s1.label_workshop_no") }}
                   .col-sm-12
                     hr
-                .btn.btn-default.btn-next.red.float-right(@click="nextStep") 下一步
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_prev") }}
 
               .container(v-show="formPart==1")
                 .row
@@ -78,15 +82,15 @@
                 div.row(v-for="(c,cid) in parseInt(registData.conceptCount)")
                   .col-sm-12
                     el-form-item(:label="'站體'+ (cid+1)")  
-                      el-select(v-model="registData.concepts[cid].target", placeholder="請選擇站體",:name="'concept_'+cid+'_target'")
+                      el-select(v-model="registData.concepts[cid].target", placeholder="請選擇站體",:name="'concept_'+cid+'_target'" required)
                         el-option(v-for="op in stationsOptions"
                                   :value="op" ) {{op}}
                     el-form-item(label="論述", v-if="registData.concepts[cid].target")  
                       el-input(v-model="registData.concepts[cid].content",:name="'concept_'+cid+'_content'"
-                                type="textarea", placeholder="100字內", rows=5)
+                                type="textarea", placeholder="100字內", rows=5 required)
                     hr
-                .btn.btn-default.btn-next.red(@click="prevStep") 上一步
-                .btn.btn-default.btn-next.red.float-right(@click="nextStep") 下一步
+                .btn.btn-default.btn-next.red(@click="prevStep") {{ $t("register.btn_next") }}
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_prev") }}
 
               .container(v-show="formPart==2")
                 .row
@@ -106,12 +110,12 @@
                     el-form-item(label="作品說明")  
                       el-input(v-model="registData.works[wid].content",:name="'work_'+wid+'_content'",type="textarea")
                     el-form-item(label="上傳作品")  
-                      input(type="file",:name="'work_'+wid+'_file'")
+                      input(type="file",:name="'work_'+wid+'_file'" required)
                   .col-sm-12
                     hr
 
-                .btn.btn-default.btn-next.red(@click="prevStep") 上一步
-                .btn.btn-default.btn-next.red.float-right(@click="nextStep") 下一步
+                .btn.btn-default.btn-next.red(@click="prevStep") {{ $t("register.btn_next") }}
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_prev") }}
 
 
               .container(v-show="formPart==3")
@@ -121,7 +125,7 @@
                     el-form-item(v-for="(p,pid) in parseInt(registData.personCount)",
                                   :label="'同意書'+pid+' '+registData.person[pid].name" 
                                   label-width="200px")  
-                      input(type="file",:name="'creator_'+pid+'_agreement_file'")
+                      input(type="file",:name="'creator_'+pid+'_agreement_file'" required)
                     hr
                     span 我已確認作品與資訊無誤 
                       el-checkbox
@@ -152,7 +156,10 @@ export default {
 
   },
   computed:{
-    ...mapState(['stations']),
+    // ...mapState(['stations']),
+    stations(){
+      return this.$t("stations")
+    },
     stationsOptions(){
       return this.stations.map(s=>s.name)
     }
