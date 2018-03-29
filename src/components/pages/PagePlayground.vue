@@ -492,6 +492,7 @@ import $ from 'jquery'
     max-width: 100%
     white-space: wrap
     display: inline-block
+    min-height: 2.5em
 
     margin-top: 15px
     .pg_icon
@@ -524,18 +525,28 @@ import $ from 'jquery'
   .volume_sliders
     background-color: $colorRed
     color: $colorWhite
+    .col-10
+      padding-left: 20px
+      display: flex
+      justify-content: center
+      align-items: center
     // padding: 10px
+    &.container-fluid
+      padding-left: 0
+      padding-right: 0
     .row
       padding: 0px 20px
     h4
       margin: 0
       font-size: 20px
     input
-      position: absolute
-      top: 50%
       width: 90%
 
-      +ab_center
+      // position: absolute
+      // top: 50%
+      // width: 90%
+
+      // +ab_center
     .col-xs-2
       padding: 0
       height: 50px
