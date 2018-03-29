@@ -17,7 +17,7 @@
               img(:src="station.img")
             h3.color.black {{ station.name }}
             p {{ station.keywords}}
-            .tag(:v-if="station.audition") 徵選中
+            .tag(v-if="station.audition" ) 徵選中
 </template>
 
 <script>

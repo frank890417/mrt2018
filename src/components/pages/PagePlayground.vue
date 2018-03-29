@@ -4,7 +4,7 @@
     .row
       .col-sm-3
           .page_title
-              h3.title-eng Impromptu{{ $t('playground.title_eng')  }}
+              h3.title-eng {{ $t('playground.title_eng')  }}
               h1.title {{ $t('playground.title')  }}
           p(v-html="$t('playground.description')")
           hr

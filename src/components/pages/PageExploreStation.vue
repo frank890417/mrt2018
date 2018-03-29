@@ -8,7 +8,7 @@
           .col-lg-5.col-md-12.col-content
             router-link.btn-back(to="/explore") 
               i.fa.fa-undo
-              span 返回列表
+              span Back
             br
             div(:key="station.name")
               .ovh
