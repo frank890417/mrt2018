@@ -52,41 +52,93 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
     label_sound: "Sound"
   },
   rules: {
-    p1Title: "徵件資訊",
-    p1: `1. 本次活動將選出 10 組創作者,入選者必須參與由主辦單位舉辦之聲音地景工作坊,在充分了解環境音樂的設計歷程後,完成指定之捷運站體音樂創作。
-2. 十個目標站體:南港站、⻄門站、北門站、中山站、圓山站、台北 101 站、劍南路站、大湖公園站、行天宮站、大橋頭站。
-3. 徵件報名期間:2018 年 3 月 31 日至 2018 年 5 月 15 日17:00 截止。
-4. 入選名單公佈:2018 年 6 月 5 日 中午 12:00 於活動網站公佈入選名單。`,
-    p2Title: "報名資格",
-    p2: `1. 不限國籍，海內外⾳樂創作⼈均可參加報名。
-2. 可以「個⼈」或「團體（不限⼈數）」⽅式報名，惟團體報名須載明主要創作⼈。
-3. 每位創作⼈（包含主要創作⼈及共同創作⼈）皆須提交「徵選同意書」之數位檔案予承辦單位，⼊選後提交正本，以作為原創作品確認程序。若未能提出本款⽂件者，視同放棄晉級資格，評審團將依遞補程序處理。
-4. 未滿18 歲之徵選者，須提交「法定監護⼈同意書」之檔案予承辦單位。
-5. ⼊選者需完整參與聲⾳地景⼯作坊與完成正式站體環境⾳樂創作。
-`,
-    p3Title: "注意事項",
-    p3: `1. 徵選者可以個人或團體(聯合創作)方式徵選。團體徵選(聯合創作)每位創作者皆需登錄資料,並標註主要創作人,即為此徵選作品之聯絡人(建議以著作權擁有比例較高者擔任),
-2. 徵選者保證於本次活動所留存之資料為正確且真實之個人資料,包含但不限於姓名、國籍、年齡、聯絡電話及電子信箱等。若徵選者所留存資料有任何不實,主辦單位有權取消其徵選資格。
-3. 徵選者若對徵選有任何問題,需於徵選截止前三日透過網站以電子郵件方式向活動窗口提出。經徵選結果及名單公佈後,應服從評審團之裁決。
-4. 經主辦單位及評審認定徵選作品未依活動辦法之指定條件及格式進行報名時,該徵選作品視同不符合徵選資格。
-5. 依中華民國稅法規定，獎金價值超過新台幣1,001元(含)以上時，須由承辦單位於年終開立扣繳憑單；獎金價值超過新台幣20,000元(含)以上時，得獎者需負擔贈品價值10%之稅金，由主辦單位代收，且於年終時寄發該所得扣繳憑單，由得獎者憑此申報年度綜合所得稅。
-`     ,
+    content: `<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <h2>1. Important Information</h2>
+            <p>
+              We will select a total of 10 winners. The 10 winners shall attend Soundscape Workshop to learn about how to produce ambient music, and complete ambient music works for the station he/she chooses from the 10 MRT stations. The 10 winners may work with professional music producers to rearrange their music. They can discuss their music with the producers, and remix their music in Mega Force Studio. The final productions will be played in the MRT stations after a test.
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h2>2.Application Requirements</h2>
+            <ol>
+                <li>This competition is open to all musicians regardless of their nationalities.</li>
+                <li>Applicants may either submit an individual application or a group application (no restrictions to the number of people attended). For group application, applicants shall note in the application form the name of the main artist.</li>
+                <li>The winners shall fully participate Soundscape Workshop, and complete ambient music works for the stations.</li>
+            </ol>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <h2>3.Application Period and Procedures</h2>
+            <ol>
+                <li>Application Period: March 31, 2018 - May 15, 2018 at 17:00<br>
+Finalist Announcement: June 5, 2018 at 12 P.M. on the competition website</li>
+                <li>Applicants should visit the official website( www.taipeisoundscape.com )to download the competition application and upload after you finish all the form. After uploading the above files to our website, you will receive a confirmation email. If you do not receive one, please email info@taipeisoundscape.com.</li>
+                <li>Submit the following documents:
+                    <ol>
+                        <li>A pdf or image format Copyright License Agreement.  
+All applicants, including main artist and co-artist, shall submit a soft copy of Attachment 1 Copyright License Agreement to Harvest Music when applying, and a hard copy when advancing to final. Artists who do not submit this agreement will be disqualified and the award will be forfeited. The jury will give the award to an alternate winner.</li>
+                        <li>Applicants who are under 18 years old shall submit Attachment 2 Parental Consent to Harvest Music.</li>
+                        <li>Choose 1 to 3 MRT stations and write an ambient music statement about the cultural, geographical meaning of the stations and your inspiration of this project. The statement shall be no more than 100 words.</li>
+                        <li>Submit your music works:
+Submitted music works can be ambient music demos, songs, film scores, original music works, or any other music works. There are no restrictions to the music style, music form and instrument used in your music works. Please note in the register form that whether it is an original or adapted work.</li>
+                        <ul>
+                          <li>1-3 music works. Each music work shall be within 5 minutes.</li>
+                          <li>All music works shall be uploaded in MP3 format, stereo, bit rate 192kbps or higher.</li>
+                          <li>All music works shall be 10MB or less.</li>
+                        </ul>
+                  </ul>
+                </li>
+                <li>Admission quota
+                    <ul>
+                        <li>「Formal admission quota: The jury will select 10 winners (group) to get the opportunity for making ambiance music for the MRT stations.</li>
+                        <li>Alternative admission quota: as substitution to attend Soundscape Workshop. These people can substitute the winners who cannot participate Soundscape Workshop, or cannot complete their music works.</li>
+                    </ul>
+                </li>
+                <li>Admission musicians should participate Soundscape Workshop
+                    <ul>
+                        <li> Period: June 15 (Fri) – June 17 (Sun), 2018</li>
+                        <li>Venue: Music Made Center<br>Address: No.133, Guangfu S. Rd., Xinyi Dist., Taipei City, Taiwan (inside the Songshan Cultural and Creative Park, Union No.133, S5)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h2>IV. The Jury and Judging Criteria</h2>
+            <ol>
+                <li>The jury is composed of professionals who are specialized in areas such as composing, audio engineering and film score.</li>
+                <li>Judging Criteria:
 
-  },
-  register: {
-    engtitle: "Register Form",
-    title: "報名表單",
-    description: `結合文化在地性、捷運站體空間，
-創作出屬於台北的特色音樂，
-就有機會在捷運站聽到自己的創作哦！
+                    <ul>
+                        <li>Music production skills 50%: the jury will judge your production skills such as composing, arranging, mixing and recording. </li>
+                        <li>Statement for ambient music 40%: based on the submitted ambient music statement for 1-3 MRT stations from the 10 MRT stations of this competition, the jury will judge the instruments the participants use, their understanding to the ambient music for MRT stations, the connection of their music works and the cultural and geographical characteristics, and the feasibility of their music works.</li>
+                        <li>Music demo 10%: applicants who submit ambient music demo for the 10 MRT stations can get extra points.</li>
+                    </ul>
+                </li>
+                <li>Award:
+                    <p>For those 10 winners (group), each of winner (group) can earn NT$35,000. The selected 3 substitutions will attend Soundscape Workshop</p>
+                </li>
+            </ol>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h2>V. Other Rules and Regulations</h2>
+            <ol>
+                <li>Applicants may either submit an individual application or a group application. For group application, applicants may choose one artist among them (it is suggested to choose the applicant who owns the highest copyright percentage of the work) as the main artist and the contact person of the group. All applicants shall register, fill out his/her personal information. </li>
+                <li>Applicants shall fill out correct and authentic personal information, including but not limited to applicant’s age, name, nationality, phone number and email address on the application form. Taipei City Government has the rights to disqualify applicants who submit untruthful information.</li>
+                <li>Any question to the regulations of this competition shall be submitted to the contact person of the competition by email three days before the application deadline (before May 12). After the competitions result is announced, no objection or complaint shall be allowed concerning the decision made by the judges.</li>
+                <li>Applicants who do not follow the regulations to apply for the competition will be disqualified.</li>
+                <li><According to the tax law of R.O.C., the organizer shall provide withholding statement at the end of the year when the prize is NT$1,001 and above. Winners who receive a prize of NT$20,000 and above shall pay tax 10% of the prize to Taipei City Government. The city government will send a withholding statement at the end of the year to winners to file individual income tax./li>
+            </ol>
+        </div>
+        <div class="col-md-12 col-sm-12"><br><br><br></div>
+        <div class="col-md-6 offset-md-3 col-sm-12 text-center">
+            <h4>The organizer holds the rights and ruling power with any unexpected incidents or circumstances that are not covered in the regulations.<br><br><a href="/register" class="btn red">Go to registration form</a></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12"></div>
+    </div>
+</div>`
 
-規則與同意書請務必下載與詳讀，
-並填寫完整報名資料後送出。`.replace(/\n/g, "<br>"),
-    memo: `(1) 繳交作品可為環境⾳樂提案作品、演奏演唱、配樂或其他⾳樂創作或改做作品。曲⾵、形式、配器不限，需註明原創或改做作品。
-(2) 提供針對本次徵選之⼗站站體⾳樂demo 者享有加分⿎勵（評分項⺫之⾳樂提案10%）。
-(3) 1-3 ⾸作品（⾄多3 ⾸），每⾸⻑度不超過5 分鐘。
-(4) 以MP3、192kbps 以上、stereo 規格上傳。
-(5) 檔案⼤⼩勿超過10MB。`
   },
   footer: {
     sponsor: "Sponsor",

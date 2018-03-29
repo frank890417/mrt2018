@@ -7,7 +7,10 @@
             h3.title-eng Register Information
             h1.title 競賽辦法
     section.sectionStyle
-      .container
+      div(v-html=" $t('rules.content') ")
+      //- .container
+      //- div(v-html="rules.content")
+      //- .container
         .row
           .col-md-6.col-sm-12
             h2 1.徵件資訊

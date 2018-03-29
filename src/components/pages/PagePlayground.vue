@@ -492,7 +492,6 @@ import $ from 'jquery'
     max-width: 100%
     white-space: wrap
     display: inline-block
-    min-height: 2.5em
 
     margin-top: 15px
     .pg_icon
@@ -530,6 +529,8 @@ import $ from 'jquery'
       display: flex
       justify-content: center
       align-items: center
+      h3
+        min-height: 2.5em
     // padding: 10px
     &.container-fluid
       padding-left: 0
