@@ -49,10 +49,21 @@ export default {
 </script>
 
 <style lang="sass">
+@import "../assets/_mixins.sass"
+
 .section-footer
   background-color: #fff
   padding: 50px
   text-align: left
+  padding-top: 50px
+  padding-bottom: 50px
+  .colname 
+     margin-top: 40px
+     font-weight: 600
+     font-size: 1.1rem
   img
     height: 50px
+    max-width: 100%
+  +rwd_sm
+    padding: 20px
 </style>

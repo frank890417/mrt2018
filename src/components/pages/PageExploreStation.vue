@@ -307,6 +307,8 @@ export default {
   overflow: hidden
   +rwd_sm
     padding-bottom: 0
+    padding-top: 60px
+    margin-bottom: 30px
   .btn-prev,.btn-next
     position: absolute
     top: 50%
@@ -319,6 +321,8 @@ export default {
     &:hover
       border-left-color: lighten($colorRed,15)
       border-right-color: lighten($colorRed,15)
+    +rwd_sm
+      top: 70%
   // .btn-back
   //   background-color: #fff
   //   padding: 10px 20px
@@ -341,9 +345,14 @@ export default {
   .btn-prev
     left: 50px
     border-right: 20px solid
+    +rwd_sm
+      left: 10px
   .btn-next
     right: 50px
     border-left: 20px solid
+    +rwd_sm
+      right: 10px
+
   .line
     padding: 5px 10px
     background-color: $colorRed
@@ -355,6 +364,10 @@ export default {
   .col-content
     padding-left: 10vw
     box-sizing: border-box
+    +rwd_sm
+      padding-left: 15px
+
+
   .col-scene
     min-height: 100vh
     display: flex

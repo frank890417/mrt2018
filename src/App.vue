@@ -263,16 +263,22 @@ p
     color: $colorWhite
     .title-eng
       color: $colorRed
+      &:before
+        background-color: $colorRed
   &.color.red
     // background-color: $colorRed
     background-color: transparent
     color: $colorWhite
+    &:before
+      background-color: $colorWhite
   &.color.white
     // background-color: $colorWhite
     background-color: transparent
     color: #333
     .title-eng
       color: $colorRed
+      &:before
+        background-color: $colorRed
   .title
     font-size: 2.5em
   .title-eng
@@ -280,7 +286,17 @@ p
     font-size: 1.5em
     white-space: nowrap
     font-weight: 600
-    @extends .musicBar
+    // @extends .musicBar
+    &:before
+      content: ''
+      // background-color: white
+      display: inline-block
+      +size(8px,30px)
+      border-radius: 50px
+      margin-right: 18px
+      margin-left: -20px
+
+
     
 
 .btn

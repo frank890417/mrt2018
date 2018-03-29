@@ -404,8 +404,8 @@ $speed_cb: cubic-bezier(.04,.6,.42,1)
     position: absolute
     left: 0
     top: 0
-  .row-page
 
+  .row-page
     height: 100%
     display: flex
     justify-content: center

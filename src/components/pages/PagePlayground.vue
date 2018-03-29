@@ -1,11 +1,10 @@
 <template lang='pug'>
-.page.page-playground.red
+.page.page-playground.color.white
   .container
     .row
       .col-sm-3
-          .page_title
-              h3.title-eng {{ $t('playground.title_eng')  }}
-              h1.title {{ $t('playground.title')  }}
+          h3.title-eng {{ $t('playground.title_eng')  }}
+          h1.title {{ $t('playground.title')  }}
           p(v-html="$t('playground.description')")
           hr
           div.volume_sliders.container-fluid
@@ -56,7 +55,7 @@
             h4.col_title 
               .vc {{ $t('playground.label_melody') }}
               .reddot(:style="getball(volume_melody)")
-            h3 {{ ($i18n.locale=="en")?music.melody[select.melody].name_eng:music.melody[select.melody].name_cht }}
+            h3.loop_name {{ ($i18n.locale=="en")?music.melody[select.melody].name_eng:music.melody[select.melody].name_cht }}
               img.pg_icon(src="/static/img/icon_pg_melody_red.svg")
               
             select.pg_select.form-control(v-model='select.melody')
@@ -65,7 +64,7 @@
             h4.col_title 
               .vc {{ $t('playground.label_rhythm') }}
               .reddot(:style="getball(volume_beat)")
-            h3 {{ ($i18n.locale=="en")?music.beat[select.beat].name_eng:music.beat[select.beat].name_cht }}
+            h3.loop_name {{ ($i18n.locale=="en")?music.beat[select.beat].name_eng:music.beat[select.beat].name_cht }}
               img.pg_icon(src="/static/img/icon_pg_beats_red.svg")
               
             select.pg_select.form-control(v-model='select.beat')
@@ -74,7 +73,7 @@
             h4.col_title 
               .vc {{ $t('playground.label_sound') }}
               .reddot(:style="getball(volume_env)")
-            h3 {{ ($i18n.locale=="en")?music.env[select.env].name_eng:music.env[select.env].name_cht }}
+            h3.loop_name {{ ($i18n.locale=="en")?music.env[select.env].name_eng:music.env[select.env].name_cht }}
               img.pg_icon(src="/static/img/icon_pg_env_red.svg")
               
             select.pg_select.form-control(v-model='select.env')
@@ -610,4 +609,8 @@ import $ from 'jquery'
     position: relative
     input
       width: 100%
+
+  .loop_name
+    font-weight: 700
+    
 </style>
