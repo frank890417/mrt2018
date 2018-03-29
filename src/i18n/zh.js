@@ -165,11 +165,15 @@ let data = {
 (2) 提供針對本次徵選之⼗站站體⾳樂demo 者享有加分⿎勵（評分項⺫之⾳樂提案10%）。
 (3) 1-3 ⾸作品（⾄多3 ⾸），每⾸⻑度不超過5 分鐘。
 (4) 以MP3、192kbps 以上、stereo 規格上傳。
-(5) 檔案⼤⼩勿超過10MB。`,
+(5) 檔案⼤⼩勿超過10MB。`.replace(/\n/g, "<br>"),
     btn_next: "上一步",
     btn_prev: "下一步",
     agreement_file: "徵件辦法及同意書下載",
     agreement_file_link: "/static/file/捷運站體音樂-徵件辦法_中文版文化局審核_核定版.pdf",
+    stage1: "個人資料",
+    stage2: "創作論述",
+    stage3: "上傳作品",
+    stage4: "上傳同意書",
     s1: {
       label_person : "個⼈資料",
       label_count: "創作者⼈數",
@@ -187,7 +191,8 @@ let data = {
       label_workshop: "工作坊",
       label_workshop_ask: "確定可參加 3 天工作坊?",
       label_workshop_yes: "確定",
-      label_workshop_no: "無法參與"
+      label_workshop_no: "無法參與",
+      label_under: "未滿18歲需填寫法定監護人同意書"
     },
     s2: {
       description: "從本次選定之 10 個捷運站內挑選 1 至 3 個捷運站進行該捷運站的人文、地理的特性認知及相對應的音樂創作方向論述",
@@ -195,6 +200,18 @@ let data = {
       label_select: "請選擇站體",
       label_content: "論述",
       label_content_max: "100字內"
+    },
+    s3: {
+      label_work: "作品",
+      label_name: "作品名稱",
+      label_description: "作品說明",
+      label_upload: "上傳作品",
+    },
+    s4: {
+      label_upload: "上傳同意書",
+      label_agreement: "同意書",
+      label_confirm: "我已確認作品與資訊無誤",
+      label_send: "送出報名資料",
     }
   },
   

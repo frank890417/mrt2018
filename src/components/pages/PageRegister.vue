@@ -21,10 +21,10 @@
           .col-sm-9.col-form
             
             ul.navTab
-              li(@click="toFormPart(0)",:class="{active: formPart==0}") 1. 個人資料
-              li(@click="toFormPart(1)",:class="{active: formPart==1}") 2. 創作論述
-              li(@click="toFormPart(2)",:class="{active: formPart==2}") 3. 上傳作品
-              li(@click="toFormPart(3)",:class="{active: formPart==3}") 4. 上傳同意書
+              li(@click="toFormPart(0)",:class="{active: formPart==0}") 1. {{  $t('register.stage1') }}
+              li(@click="toFormPart(1)",:class="{active: formPart==1}") 2. {{  $t('register.stage2') }}
+              li(@click="toFormPart(2)",:class="{active: formPart==2}") 3. {{  $t('register.stage3') }}
+              li(@click="toFormPart(3)",:class="{active: formPart==3}") 4. {{  $t('register.stage4') }}
 
             el-form(label-width="100px", label-position="left", action="http://api.taipeisoundscape.com/registwork2018", method="post",enctype="multipart/form-data")
               .container(v-show="formPart==0")
@@ -49,7 +49,7 @@
                       el-radio(v-model="registData.person[pid].gender" label="不公開", :name="'creator_'+pid+'_gender'") {{ $t("register.s1.label_hidden") }}
                     el-form-item(:label="$t('register.s1.label_age')")  
                       el-input(v-model="registData.person[pid].age",
-                                placeholder="未滿18歲需填寫法定監護人同意書",
+                                :placeholder="$t('register.s1.label_under')",
                                 :name="'creator_'+pid+'_age'",
                                 type="number" required)
                     el-form-item(:label="$t('register.s1.label_birthday')")  
@@ -63,7 +63,7 @@
                       el-input(v-model="registData.person[pid].mail", placeholder="yourmail@example.com",
                                 :name="'creator_'+pid+'_mail'" required)
                     el-form-item(:label="$t('register.s1.label_address')")  
-                      el-input(v-model="registData.person[pid].address", placeholder="e.g. 台北市",
+                      el-input(v-model="registData.person[pid].address", placeholder="e.g. 台北市 / Taipei City",
                                 :name="'creator_'+pid+'_address'" required)
                     el-form-item(:label="$t('register.s1.label_workshop')")  
                       label {{ $t("register.s1.label_workshop_ask") }} &nbsp;&nbsp;&nbsp;
@@ -95,21 +95,16 @@
               .container(v-show="formPart==2")
                 .row
                   .col-sm-12
-                    ul
-                      li 繳交作品可為環境音樂提案作品、演奏演唱、配樂或其他音樂創作或改做作品。曲風、形式、配器不限,需註明原創或改做作品。
-                      li 提供針對本次徵選之十站站體音樂 demo 者享有加分鼓勵(評分項目之音樂提案 10%)。
-                      li 1-3 首作品(至多 3 首),每首⻑度不超過 5 分鐘。
-                      li 以 MP3、192kbps 以上、stereo 規格上傳。
-                      li 檔案大小勿超過 10MB。
+                    p(v-html="$t('register.memo')")
                 .row(v-for="(w,wid) in parseInt(registData.workCount)")
                   .col-sm-2
-                    h4 作品{{wid+1}}.
+                    h4 {{ $t('register.s3.label_work') }} {{wid+1}}.
                   .col-sm-10
-                    el-form-item(label="作品名稱")  
+                    el-form-item(:label="$t('register.s3.label_name')")  
                       el-input(v-model="registData.works[wid].name",:name="'work_'+wid+'_name'")
-                    el-form-item(label="作品說明")  
+                    el-form-item(:label="$t('register.s3.label_description')")  
                       el-input(v-model="registData.works[wid].content",:name="'work_'+wid+'_content'",type="textarea")
-                    el-form-item(label="上傳作品")  
+                    el-form-item(:label="$t('register.s3.label_upload')")  
                       input(type="file",:name="'work_'+wid+'_file'" required)
                   .col-sm-12
                     hr
@@ -121,15 +116,15 @@
               .container(v-show="formPart==3")
                 .row
                   .col-sm-12
-                    p 上傳同意書
+                    p {{ $t('register.s4.label_upload') }}
                     el-form-item(v-for="(p,pid) in parseInt(registData.personCount)",
-                                  :label="'同意書'+pid+' '+registData.person[pid].name" 
+                                  :label="$t('register.s4.label_agreement')+pid+' '+registData.person[pid].name" 
                                   label-width="200px")  
                       input(type="file",:name="'creator_'+pid+'_agreement_file'" required)
                     hr
-                    span 我已確認作品與資訊無誤 
+                    span {{ $t('register.s4.label_confirm')  }}
                       el-checkbox
-                    button.btn.red.btn-send(type="submit") 送出報名資料
+                    button.btn.red.btn-send(type="submit") {{ $t('register.s4.label_send') }}
 
 
 

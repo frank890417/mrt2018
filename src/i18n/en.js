@@ -35,6 +35,17 @@ let data = {
     btn_prev: "Back",
     agreement_file: "Register Requirements",
     agreement_file_link: "/static/file/20180328 Rules and regulations.pdf",
+    stage1: "Personal Information",
+    stage2: "Music statement",
+    stage3: "Upload work",
+    stage4: "Upload Agreements",
+    memo: `(1) Submitted music works can be ambient music demos, songs, film scores, original music works, or any other music works. There are no restrictions to
+the music style, music form and instrument used in your music works. Please note in the register form that whether it is an original or adapted
+work.
+(2) 1-3 music works. Each music work shall be within 5 minutes.
+(3) All music works shall be uploaded in MP3 format, stereo, bit rate 192kbps or higher.
+(4) All music works shall be 10MB or less.
+(5) Applicants who submit ambient music demo for the 10 MRT stations can get extra`.replace(/\n/g, "<br>"),
     s1: {
       label_person: "Personal Information",
       label_count: "Creators number",
@@ -52,14 +63,27 @@ let data = {
       label_workshop: "- workshop",
       label_workshop_ask: "Can you attend the three-days workshop?",
       label_workshop_yes: "Yes",
-      label_workshop_no: "No"
+      label_workshop_no: "No",
+      label_under: "Applicants who are under 18 years old shall submit Parental Consent"
     },
     s2: {
-      description: "Ａmbient music statement",
+      description: "Ambient music statement",
       label_station: "Station",
       label_select: "Please select station",
       label_content: "statement",
       label_content_max: "under 100 words"
+    },
+    s3: {
+      label_work: "Work",
+      label_name: "Work name",
+      label_description: "Work description",
+      label_upload: "Upload work",
+    },
+    s4: {
+      label_upload: "Upload Agreement",
+      label_agreement: "Agreement File",
+      label_confirm: "I confirm that the information given in this form is true, complete and accurate.",
+      label_send: "Send registration information",
     }
   },
   about: {
