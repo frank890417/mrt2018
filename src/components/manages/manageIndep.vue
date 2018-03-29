@@ -4,29 +4,37 @@
       .container
         .row
           .col-sm-12
-            h1.title 報名資料 - # {{ $route.params.id }} - {{ nowdata.creators_all }}
+            h1.title 報名資料 - # {{ $route.params.id }}
+
+        .row
+          .col-sm-12
+            ul.breadcrumb
+              li.breadcrumb-item 
+                router-link(to="/manage") 報名資料
+              li.breadcrumb-item 檢視報名資料
+
     section.sectionStyle
       .container
         //- pre(v-html="nowdata")
         .row
           .col-sm-4
-            table.table.table-default(v-for="creator in nowdata.creators")
+            table.table.table-default(v-for="creator in creators")
               thead
                 th 欄位
                 th 內容
               tbody
-                tr(v-for="(d,key) in creator")
-                  td {{key}}
-                  td(v-html="d")
+                tr(v-for="(d,key) in creator", v-if='translateData(d,key,translate_c) ')
+                  td {{ translateData(d,key,translate_c).key }}
+                  td(v-html="translateData(d,key,translate_c).data")
           .col-sm-8
             table.table.table-default
               thead
                 th 欄位
                 th 內容
               tbody
-                tr(v-for="(d,key) in nowdata")
-                  td {{key}}
-                  td(v-html="d")
+                tr(v-for="(d,key ) in nowdata", v-if='translateData(d,key,translate_all) ')
+                  td {{ translateData(d,key,translate_all).key }}
+                  td(v-html="translateData(d,key,translate_all).data")
 
             // el-table(:data="nowdata")
             //   el-table-column(prop="id",label="#",width=50)
@@ -55,6 +63,21 @@ export default {
       registlist: [],
       translate_c: `id,-;
         register_id,-;
+        rank,創作順序;
+        age,年紀;
+        name,姓名;
+        phone,電話;
+        mail,信箱;
+        address,地址;
+        attend_workshop,參加工作坊;
+        agreement_file,同意書;
+        created_at,-;
+        updated_at,-;
+        birthday,生日;
+        
+        `.split(";").map(o=>o.trim().split(",")),
+    translate_all: `id,-;
+        register_id,-;
         rank:創作順序;
         age,年紀;
         name,姓名;
@@ -81,6 +104,20 @@ export default {
     nowdata(){
       return this.use_registlist.find(o=>o.id==this.$route.params.id)
     },
+    creators(){
+      return (( this.nowdata && this.nowdata.creators ) || [] ).map(o=>{
+        let url = "http://api.taipeisoundscape.com/registwork/file"+o.agreement_file
+        let html = "<a href='"+url+"' target='_blank'>同意書</a>"
+        return {
+          ...o,
+          agreement_file: html
+        }
+      })
+
+    },
+    // creators_all(){
+      // return this.creators.reduce((all,creator)=>all+(all!=''?"、":'')+creator.name,"")
+    // },
     use_registlist(){
 
       return this.registlist.map(o=>({
@@ -117,8 +154,18 @@ export default {
   methods:{
     translateData(data,key,dict){
       let d = dict.find(o=>o[0]==key);
-      if (d[1]!="-"){
-        return d[1]
+      if (d && d[1]){
+        if (d[1]=="-"){
+          return null
+        }
+        console.log(d)
+        return {
+          data,
+          key: d[1]
+        }
+      }
+      return {
+        data,key
       }
     }
   }

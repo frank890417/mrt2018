@@ -69,9 +69,9 @@
                     el-form-item(:label="$t('register.s1.label_workshop')")  
                       label {{ $t("register.s1.label_workshop_ask") }} &nbsp;&nbsp;&nbsp;
                       el-radio(v-model="registData.person[pid].attend_workshop", :label="true",
-                                :name="'creator_'+pid+'_attend_workshop'") {{ $t("register.s1.label_workshop_yes") }}
+                                :name="'creator_'+pid+'_workshop'") {{ $t("register.s1.label_workshop_yes") }}
                       el-radio(v-model="registData.person[pid].attend_workshop", :label="false",
-                                :name="'creator_'+pid+'_attend_workshop'") {{ $t("register.s1.label_workshop_no") }}
+                                :name="'creator_'+pid+'_workshop'") {{ $t("register.s1.label_workshop_no") }}
                   .col-sm-12
                     hr
                 .btn.btn-default.btn-next.red.float-right(@click="nextStep")

@@ -98,8 +98,8 @@ export default {
     },
     logoStyle(){
       return {
-        opacity: (this.$route.path=="/" || this.$route.path=="/register")?0:1,
-        'pointer-events': (this.$route.path=="/" || this.$route.path=="/register")?"none":"",
+        opacity: (this.$route.path=="/" || this.$route.path=="/register" || this.$route.path.indexOf("/manage")==-1 )?0:1,
+        'pointer-events': (this.$route.path=="/" || this.$route.path=="/register"  || this.$route.path.indexOf("/manage")==-1 )?"none":"",
         filter: (this.$route.meta.bgColor=="white")?"brightness(0.6)":""
       }
     }
