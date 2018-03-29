@@ -74,7 +74,9 @@
                                 :name="'creator_'+pid+'_attend_workshop'") {{ $t("register.s1.label_workshop_no") }}
                   .col-sm-12
                     hr
-                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_prev") }}
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep")
+                  span {{ $t("register.btn_next") }} 
+                  i.fa.fa-angle-right
 
               .container(v-show="formPart==1")
                 .row
@@ -94,8 +96,12 @@
                                 type="textarea", :placeholder="$t('register.s2.label_content_max')"
                                 , rows=5 :data-require="$t('register.s2.label_station')")
                     hr
-                .btn.btn-default.btn-next.red(@click="prevStep") {{ $t("register.btn_prev") }}
-                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_next") }}
+                .btn.btn-default.btn-next.red(@click="prevStep")
+                  i.fa.fa-angle-left &nbsp;
+                  span {{ $t("register.btn_prev") }}
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep")
+                  span {{ $t("register.btn_next") }} 
+                  i.fa.fa-angle-right
 
               .container(v-show="formPart==2")
                 .row
@@ -116,8 +122,12 @@
                   .col-sm-12
                     hr
 
-                .btn.btn-default.btn-next.red(@click="prevStep") {{ $t("register.btn_next") }}
-                .btn.btn-default.btn-next.red.float-right(@click="nextStep") {{ $t("register.btn_prev") }}
+                .btn.btn-default.btn-next.red(@click="prevStep")
+                  i.fa.fa-angle-left &nbsp;
+                  span {{ $t("register.btn_prev") }}
+                .btn.btn-default.btn-next.red.float-right(@click="nextStep")
+                  span {{ $t("register.btn_next") }} 
+                  i.fa.fa-angle-right
 
 
               .container(v-show="formPart==3")
