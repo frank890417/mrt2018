@@ -29,7 +29,7 @@
           .col-sm-8
             table.table.table-default
               thead
-                th 欄位
+                th(style="width: 150px") 欄位
                 th 內容
               tbody
                 tr(v-for="(d,key ) in nowdata", v-if='translateData(d,key,translate_all) ')
@@ -77,17 +77,32 @@ export default {
         
         `.split(";").map(o=>o.trim().split(",")),
     translate_all: `id,-;
-        register_id,-;
-        rank:創作順序;
-        age,年紀;
-        name,姓名;
-        phone,電話;
+        uuid,-;
+        register_id,報名序號;
+        creator_count,創作者數量;
+        concept_0_target,創作論述站體1;
+        concept_0_content,創作論述內容1;
+        concept_1_target,創作論述站體2;
+        concept_1_content,創作論述內容2;
+        concept_2_target,創作論述站體3;
+        concept_2_content,創作論述內容3;
+        work_0_name,作品名稱1;
+        work_0_file,作品檔案1;
+        work_0_content,作品說明1;
+        work_1_name,作品名稱2;
+        work_1_file,作品檔案2;
+        work_1_content,作品說明2;
+        work_2_name,作品名稱3;
+        work_2_file,作品檔案3;
+        work_2_content,作品說明3;
+        creators,-;
+        creators_all,創作者清單;
         mail,信箱;
         address,地址;
         attend_workshop,參加工作坊;
         agreement_file,同意書;
         created_at,-;
-        updated_at,-;`.split(";").map(o=>o.split(","))
+        updated_at,-;`.split(";").map(o=>o.trim().split(","))
     }
   },
   mounted(){
@@ -120,35 +135,62 @@ export default {
     // },
     use_registlist(){
 
-      return this.registlist.map(o=>({
+      let resultList= this.registlist.map(o=>({
         ...o ,
         creators_all: o.creators.reduce((all,creator)=>all+(all!=''?"、":'')+creator.name,""),
         is18: (o.creators[0] && o.creators[0].age)>18,
-        works: [
-          {
-            id: 0,
-            name: o.work_0_name,
-            content: o.work_0_content,
-            file: o.work_0_file
-          },{
-            id: 1,
-            name: o.work_1_name,
-            content: o.work_1_content,
-            file: o.work_1_file
-          },{
-            id: 2,
-            name: o.work_2_name,
-            content: o.work_2_content,
-            file: o.work_2_file
-          }
+        // works: [
+        //   {
+        //     id: 0,
+        //     name: o.work_0_name,
+        //     content: o.work_0_content,
+        //     file: o.work_0_file
+        //   },{
+        //     id: 1,
+        //     name: o.work_1_name,
+        //     content: o.work_1_content,
+        //     file: o.work_1_file
+        //   },{
+        //     id: 2,
+        //     name: o.work_2_name,
+        //     content: o.work_2_content,
+        //     file: o.work_2_file
+        //   }
           
-        ].filter(o=>o.name)
-          .map(o=>{
-            let url = "http://api.taipeisoundscape.com/registwork/file"+o.file
-            let html = "<a href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
-            return html
-          }).join('<br>')
+        // ].filter(o=>o.name)
+        //   .map(o=>{
+        //     let url = "http://api.taipeisoundscape.com/registwork/file"+o.file
+        //     let html = "<a href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
+        //     return html
+        //   }).join('<br>')
       }))
+
+      resultList.forEach(result=>{
+        console.log(result)
+        Object.keys(result).forEach(key=>{
+
+          // console.log(key)
+          if (key.indexOf("work")!=-1 && key.indexOf("file")!=-1  ){
+              let url = "http://api.taipeisoundscape.com/registwork/file"+result[key]
+              let html = "<audio controls src='"+url+"' download></audio>"
+             console.log(html)
+             if (result[key]!=""){
+               result[key]=html
+
+             }
+          }
+          if (key.indexOf("agree")!=-1 && key.indexOf("file")!=-1  ){
+              let url = "http://api.taipeisoundscape.com/registwork/file"+result[key]
+              let html = "<a href='"+url+"' target='_blank'>下載</a>"
+             console.log(html)
+              result[key]=html
+          }
+        })
+
+
+      })
+      
+      return resultList
     }
   },
   methods:{
