@@ -42,7 +42,7 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
 
     title_eng: "即興創作",
     title: "Impromptu",
-    description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?"
+    description: "There are many sounds in Taipei: the boradcast in Songshan Airport, concerts in Taipei Arena, moon block casting in Longshan Temple, tourists in Taipei 101 near Xiangshan and traditional market in Dongmen. What does Taipei sound like in your mind?"
   },
   rules: {
     p1Title: "徵件資訊",

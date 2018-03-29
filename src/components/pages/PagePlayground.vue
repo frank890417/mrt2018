@@ -4,9 +4,9 @@
     .row
       .col-sm-3
           .page_title
-              h3.title-eng Impromptu
-              h1.title 即興創作
-          p(v-html="description")
+              h3.title-eng Impromptu{{ $t('playground.title_eng')  }}
+              h1.title {{ $t('playground.title')  }}
+          p(v-html="$t('playground.description')")
           hr
           div.volume_sliders.container-fluid
             .row

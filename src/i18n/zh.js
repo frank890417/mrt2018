@@ -16,8 +16,8 @@ let data = {
       content: "在你心中，台北的「聲音」，<br>又是什麼樣子的 ?"
     },
     register: {
-      title: "REGISTER",
-      eng: "競賽規則與報名",
+      title: "競賽規則與報名",
+      eng: "REGISTER",
       content: "結合文化在地性、捷運站體空間，<br>創作出屬於台北的特色音樂。"
     }
   },
@@ -40,10 +40,11 @@ let data = {
     description: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，<br>你，還感受到了些什麼？"
   },
   playground: {
-
     title_eng: "Impromptu",
     title: "即興創作",
-    description: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places?"
+    description: `松山機場的廣播、小巨蛋的演唱會、龍山寺的擲筊、象山的101、東門的市場，在你心中，台北的「聲音」，又是什麼樣子的?
+選取不同的旋律、節奏、聲音，
+組合出你想像中的，捷運站體音樂。`.replace(/\n/g, "<br>")
   },
   rules: {
     p1Title: "徵件資訊",

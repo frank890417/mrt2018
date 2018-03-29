@@ -54,7 +54,7 @@ Vue.mixin({
     lineToBr(text){
       return text.replace(/\n/,"<br>")
     },
-    swtichLang(locale) {
+    switchLang(locale) {
       // this.$store.commit("setMenuState", true)
       // let _this=this
       // setTimeout(function () {

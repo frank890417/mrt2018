@@ -13,9 +13,9 @@
           h3.sub {{ $t('index.subtitle') }}
           h2 2018/3/31-5/15
           .btns
-            .btn-lang.btn.red(@click="swtichLang('en')") English 
+            .btn-lang.btn.red(@click="switchLang('en')") English 
             br
-            .btn-lang.btn.red(@click="swtichLang('zh')") 中文版
+            .btn-lang.btn.red(@click="switchLang('zh')") 中文版
           div.btns
             router-link.btn.color.white(to="/about") 關於
             router-link.btn.color.white(to="/explore") 場景探索
