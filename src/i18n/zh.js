@@ -47,7 +47,11 @@ let data = {
 選取不同的旋律、節奏、聲音，
 組合出你想像中的，捷運站體音樂。`.replace(/\n/g, "<br>"),
     btn_play: "播放",
+    btn_stop: "停止",
     btn_random: "隨機",
+    label_melody: "旋律",
+    label_rhythm: "節奏",
+    label_sound: "環境音"
 
   },
   rules: {

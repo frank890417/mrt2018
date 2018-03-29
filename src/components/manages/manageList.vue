@@ -52,7 +52,7 @@ export default {
       return this.registlist.map(o=>({
         ...o ,
         creators: o.creators.reduce((all,creator)=>all+(all!=''?"、":'')+creator.name,""),
-        is18: o.creators[0].age>18,
+        is18:  (o.creators[0] && o.creators[0].age>18),
         works: [
           {
             id: 0,

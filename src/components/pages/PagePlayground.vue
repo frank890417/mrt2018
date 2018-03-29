@@ -29,18 +29,18 @@
                 input(type="range" v-model="volume_env" min="0" max="100")
           .row
             .btn_container.col-4(v-if='!playing')
-              h5 播放
+              h5 {{ $t("playground.btn_play") }}
               .pg_btn(@click='play')
                 img(src="/static/img/icon_btn_play.svg")
 
             .btn_container.col-4(v-if='playing')
-              h5 停止
+              h5 {{ $t("playground.btn_stop") }}
               .pg_btn(@click='stop')
                 img(src="/static/img/icon_btn_pause.svg")
 
 
             .btn_container.col-4
-              h5 隨機
+              h5 {{ $t("playground.btn_random") }}
               .pg_btn(@click="shuffle")
                 img(src="/static/img/icon_btn_shuffle.svg")
 
@@ -54,31 +54,31 @@
           //隱藏的選單
           .col-4
             h4.col_title 
-              .vc 旋律
+              .vc {{ $t('playground.label_melody') }}
               .reddot(:style="getball(volume_melody)")
-            h3 {{ (locale=="en")?music.melody[select.melody].name_eng:music.melody[select.melody].name_cht }}
+            h3 {{ ($i18n.locale=="en")?music.melody[select.melody].name_eng:music.melody[select.melody].name_cht }}
               img.pg_icon(src="/static/img/icon_pg_melody_red.svg")
               
             select.pg_select.form-control(v-model='select.melody')
-              option(v-for='(m,id) in music.melody' v-bind:value='id') {{(locale=="en")?m.name_eng:m.name_cht}} 
+              option(v-for='(m,id) in music.melody' v-bind:value='id') {{($i18n.locale=="en")?m.name_eng:m.name_cht}} 
           .col-4
             h4.col_title 
-              .vc 節奏
+              .vc {{ $t('playground.label_rhythm') }}
               .reddot(:style="getball(volume_beat)")
-            h3 {{ (locale=="en")?music.beat[select.beat].name_eng:music.beat[select.beat].name_cht }}
+            h3 {{ ($i18n.locale=="en")?music.beat[select.beat].name_eng:music.beat[select.beat].name_cht }}
               img.pg_icon(src="/static/img/icon_pg_beats_red.svg")
               
             select.pg_select.form-control(v-model='select.beat')
-              option(v-for='(m,id) in music.beat' v-bind:value='id') {{(locale=="en")?m.name_eng:m.name_cht}} 
+              option(v-for='(m,id) in music.beat' v-bind:value='id') {{($i18n.locale=="en")?m.name_eng:m.name_cht}} 
           .col-4
             h4.col_title 
-              .vc 環境音
+              .vc {{ $t('playground.label_sound') }}
               .reddot(:style="getball(volume_env)")
-            h3 {{ (locale=="en")?music.env[select.env].name_eng:music.env[select.env].name_cht }}
+            h3 {{ ($i18n.locale=="en")?music.env[select.env].name_eng:music.env[select.env].name_cht }}
               img.pg_icon(src="/static/img/icon_pg_env_red.svg")
               
             select.pg_select.form-control(v-model='select.env')
-              option(v-for='(m,id) in music.env' v-bind:value='id') {{(locale=="en")?m.name_eng:m.name_cht}} 
+              option(v-for='(m,id) in music.env' v-bind:value='id') {{($i18n.locale=="en")?m.name_eng:m.name_cht}} 
         //- .row
           .col-xs-12.hidden-sm-up.xs_switcher
             .col-xs-4.xs_switch(:class="xs_part==1?'red':''" @click="xs_part=1") 旋律
@@ -89,13 +89,13 @@
           //項目清單
           .col-sm-4.col-xs-12(v-show="!xs_mode || (xs_mode && xs_part==1)")
             ul
-              li(v-for='(m,id) in music.melody' v-bind:value='id' @click='set("melody",id)' v-bind:class="(select.melody==id)?'red':''") {{(locale=="en")?m.name_eng:m.name_cht}} 
+              li(v-for='(m,id) in music.melody' v-bind:value='id' @click='set("melody",id)' v-bind:class="(select.melody==id)?'red':''") {{($i18n.locale=="en")?m.name_eng:m.name_cht}} 
           .col-sm-4.col-xs-12(v-show="!xs_mode || (xs_mode && xs_part==2)")
             ul
-              li(v-for='(m,id) in music.beat' v-bind:value='id' @click='set("beat",id)' v-bind:class="(select.beat==id)?'red':''") {{(locale=="en")?m.name_eng:m.name_cht}} 
+              li(v-for='(m,id) in music.beat' v-bind:value='id' @click='set("beat",id)' v-bind:class="(select.beat==id)?'red':''") {{($i18n.locale=="en")?m.name_eng:m.name_cht}} 
           .col-sm-4.col-xs-12(v-show="!xs_mode || (xs_mode && xs_part==3)")
             ul
-              li(v-for='(m,id) in music.env' v-bind:value='id' @click='set("env",id)' v-bind:class="(select.env==id)?'red':''") {{(locale=="en")?m.name_eng:m.name_cht}} 
+              li(v-for='(m,id) in music.env' v-bind:value='id' @click='set("env",id)' v-bind:class="(select.env==id)?'red':''") {{($i18n.locale=="en")?m.name_eng:m.name_cht}} 
 
         .row.pg_audio_player
           .col-sm-12
@@ -122,13 +122,13 @@ import $ from 'jquery'
         description: `松山機場的廣播、小巨蛋的演唱會、龍山寺的擲筊、象山的101、東門的市場，在你心中，台北的「聲音」，又是什麼樣子的?<br>選取不同的旋律、節奏、聲音，<br>組合出你想像中的，捷運站體音樂。`,
         music: {
           melody: [
-            {name_cht: "可愛的" , name_eng: "Unknownly" , file: "可愛的.mp3"},
-            {name_cht: "宇宙的" , name_eng: "Vastly" , file: "宇宙的.mp3"},
-            {name_cht: "勇敢的" , name_eng: "Unknownly" , file: "勇敢的.mp3"},
-            {name_cht: "鬼靈精怪的" , name_eng: "Unknownly" , file: "鬼靈精怪的.mp3"},
-            {name_cht: "雀躍的" , name_eng: "Unknownly" , file: "雀躍的.mp3"},
-            {name_cht: "陽光的" , name_eng: "Unknownly" , file: "陽光的.mp3"},
-            {name_cht: "懷疑的" , name_eng: "Unknownly" , file: "懷疑的.mp3"},
+            {name_cht: "可愛的" , name_eng: "Cute" , file: "可愛的.mp3"},
+            {name_cht: "宇宙的" , name_eng: "Celestial" , file: "宇宙的.mp3"},
+            {name_cht: "勇敢的" , name_eng: "Brave" , file: "勇敢的.mp3"},
+            {name_cht: "鬼靈精怪的" , name_eng: "Witty" , file: "鬼靈精怪的.mp3"},
+            {name_cht: "雀躍的" , name_eng: "Cheerful" , file: "雀躍的.mp3"},
+            {name_cht: "陽光的" , name_eng: "Optimistic" , file: "陽光的.mp3"},
+            {name_cht: "懷疑的" , name_eng: "Suspicious" , file: "懷疑的.mp3"},
 
             {name_cht: "中國風的" , name_eng: "Chinese style" , file: "傳統的.mp3"},
             {name_cht: "穩重的" , name_eng: "Steadily" , file: "穩重的.mp3"},
@@ -142,13 +142,13 @@ import $ from 'jquery'
             {name_cht: "未知的" , name_eng: "Unknownly" , file: "未知的.mp3"},
           ],
           beat: [
-            {name_cht: "小跑步在" , name_eng: "unknownly" , file: "小跑步在.mp3"},
-            {name_cht: "行進在" , name_eng: "unknownly" , file: "行進在.mp3"},
-            {name_cht: "扭動在" , name_eng: "unknownly" , file: "扭動在.mp3"},
-            {name_cht: "拍手在" , name_eng: "unknownly" , file: "拍手在.mp3"},
-            {name_cht: "律動在" , name_eng: "unknownly" , file: "律動在.mp3"},
-            {name_cht: "穿梭在" , name_eng: "unknownly" , file: "穿梭在.mp3"},
-            {name_cht: "漫遊在" , name_eng: "unknownly" , file: "漫遊在.mp3"},
+            {name_cht: "小跑步在" , name_eng: "jogging in" , file: "小跑步在.mp3"},
+            {name_cht: "行進在" , name_eng: "walking in" , file: "行進在.mp3"},
+            {name_cht: "扭動在" , name_eng: "wriggling in" , file: "扭動在.mp3"},
+            {name_cht: "拍手在" , name_eng: "clapping in" , file: "拍手在.mp3"},
+            {name_cht: "律動在" , name_eng: "grooving in" , file: "律動在.mp3"},
+            {name_cht: "穿梭在" , name_eng: "moving in" , file: "穿梭在.mp3"},
+            {name_cht: "漫遊在" , name_eng: "roaming in" , file: "漫遊在.mp3"},
 
             {name_cht: "奔跑在" , name_eng: "unknownly" , file: "奔跑在.mp3"},
             {name_cht: "跳舞在" , name_eng: "dance at" , file: "跳舞在.mp3"},
@@ -162,25 +162,25 @@ import $ from 'jquery'
             {name_cht: "散步在" , name_eng: "stroll at" , file: "散步在.mp3"}
           ],
           env: [
-            {name_cht:"三民書局翻書",name_eng: "",file: "三民書局翻書.mp3"},
-            {name_cht:"大安森林公園打籃球",name_eng: "",file: "大安森林公園打籃球.mp3"},
-            {name_cht:"大安森林公園賞鴨子",name_eng: "",file: "大安森林公園賞鴨子.mp3"},
-            {name_cht:"大湖公園賞湖水",name_eng: "",file: "大湖公園賞湖水.mp3"},
-            {name_cht:"小碧潭賞鳥",name_eng: "",file: "小碧潭賞鳥.mp3"},
-            {name_cht:"中山站使用螺絲電鑽",name_eng: "",file: "中山站使用螺絲電鑽.mp3"},
-            {name_cht:"中山國中站喊報告",name_eng: "",file: "中山國中站喊報告.mp3"},
-            {name_cht:"中正紀念堂拍照",name_eng: "",file: "中正紀念堂拍照.mp3"},
-            {name_cht:"中正紀念堂看鴿子飛翔",name_eng: "",file: "中正紀念堂看鴿子飛翔.mp3"},
-            {name_cht:"北門郵局寄信",name_eng: "",file: "北門郵局寄信.mp3"},
-            {name_cht:"台北101跨年倒數",name_eng: "",file: "台北101跨年倒數.mp3"},
-            {name_cht:"行天宮拜拜",name_eng: "",file: "行天宮拜拜.mp3"},
-            {name_cht:"西門町刺青",name_eng: "",file: "西門町刺青.mp3"},
-            {name_cht:"西門町舉行活動",name_eng: "",file: "西門町舉行活動.mp3"},
-            {name_cht:"南港站刷票",name_eng: "",file: "南港站刷票.mp3"},
-            {name_cht:"美麗華看電影",name_eng: "",file: "美麗華看電影.mp3"},
-            {name_cht:"迪化街買年貨",name_eng: "",file: "迪化街買年貨.mp3"},
-            {name_cht:"淡水買花枝",name_eng: "",file: "淡水買花枝.mp3"},
-            {name_cht:"圓山花博公園嬉戲",name_eng: "",file: "圓山花博公園嬉戲.mp3"},
+            {name_cht:"三民書局翻書",name_eng: "Flipping through the pages of books in Sa Min Bookstore",file: "三民書局翻書.mp3"},
+            {name_cht:"大安森林公園打籃球",name_eng: "Playing basketball in Daan Forest Park",file: "大安森林公園打籃球.mp3"},
+            {name_cht:"大安森林公園賞鴨子",name_eng: "Watching ducks in Daan Forest Park",file: "大安森林公園賞鴨子.mp3"},
+            {name_cht:"大湖公園賞湖水",name_eng: "Enjoying the beautiful lake in Dahu Park",file: "大湖公園賞湖水.mp3"},
+            {name_cht:"小碧潭賞鳥",name_eng: "Watching birds in Xiaobitan",file: "小碧潭賞鳥.mp3"},
+            {name_cht:"中山站使用螺絲電鑽",name_eng: "Using screws and electric drills in the construction sites of Zhongshan Station",file: "中山站使用螺絲電鑽.mp3"},
+            {name_cht:"中山國中站喊報告",name_eng: "Students yelling “Baogao” before reporting to their teachers in Zongshan Junior High School",file: "中山國中站喊報告.mp3"},
+            {name_cht:"中正紀念堂拍照",name_eng: "Taking pictures in National Chiang Kai-Shek Memorial Hall",file: "中正紀念堂拍照.mp3"},
+            {name_cht:"中正紀念堂看鴿子飛翔",name_eng: "Watching pigeons fly in National Chiang Kai-Shek Memorial Hall",file: "中正紀念堂看鴿子飛翔.mp3"},
+            {name_cht:"北門郵局寄信",name_eng: "Sending letters in Taipei Beimen Post Office",file: "北門郵局寄信.mp3"},
+            {name_cht:"台北101跨年倒數",name_eng: "Taipei 101 New Year’s Eve countdown",file: "台北101跨年倒數.mp3"},
+            {name_cht:"行天宮拜拜",name_eng: "Praying before Xingtian Temple",file: "行天宮拜拜.mp3"},
+            {name_cht:"西門町刺青",name_eng: "Getting tattoos in Ximending",file: "西門町刺青.mp3"},
+            {name_cht:"西門町舉行活動",name_eng: "Events in Ximending",file: "西門町舉行活動.mp3"},
+            {name_cht:"南港站刷票",name_eng: "Swiping EasyCard to get in MRT Nangang Station",file: "南港站刷票.mp3"},
+            {name_cht:"美麗華看電影",name_eng: "Watching movies in Miramar Cinemas",file: "美麗華看電影.mp3"},
+            {name_cht:"迪化街買年貨",name_eng: "Doing New Year Shopping in Dihua New Year",file: "迪化街買年貨.mp3"},
+            {name_cht:"淡水買花枝",name_eng: "Buying cuttlefish in Tamsui",file: "淡水買花枝.mp3"},
+            {name_cht:"圓山花博公園嬉戲",name_eng: "Playing in Taipei Expo Park",file: "圓山花博公園嬉戲.mp3"},
           
             {name_cht: "小巨蛋販售螢光棒" , name_eng: "Taipei Arena selling fluorescent lights" , file: "小巨蛋站賣螢光燈.mp3"},
             {name_cht: "小巨蛋入場處" , name_eng: "entrance of Taipei Arena" , file: "小巨蛋站六點半進場.mp3"},
@@ -489,12 +489,15 @@ import $ from 'jquery'
     margin-top: 30px
   
   h3
-    
+    max-width: 100%
+    white-space: wrap
+    display: inline-block
+
     margin-top: 15px
     .pg_icon
       display: none
     @media screen and (min-width: $break_sm)
-      white-space: nowrap
+      // white-space: nowrap
       display: inline-block
 
 

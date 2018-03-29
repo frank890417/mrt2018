@@ -43,7 +43,13 @@ For the third stage of the program in 2018, we have chosen 10 MRT stations of di
 
     title_eng: "即興創作",
     title: "Impromptu",
-    description: "There are many sounds in Taipei: the boradcast in Songshan Airport, concerts in Taipei Arena, moon block casting in Longshan Temple, tourists in Taipei 101 near Xiangshan and traditional market in Dongmen. What does Taipei sound like in your mind?"
+    description: "There are many sounds in Taipei: the boradcast in Songshan Airport, concerts in Taipei Arena, moon block casting in Longshan Temple, tourists in Taipei 101 near Xiangshan and traditional market in Dongmen. What does Taipei sound like in your mind?",
+    btn_play: "Play",
+    btn_stop: "Stop",
+    btn_random: "Random",
+    label_melody: "Melody",
+    label_rhythm: "Rhythm",
+    label_sound: "Sound"
   },
   rules: {
     p1Title: "徵件資訊",
