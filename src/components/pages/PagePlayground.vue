@@ -351,7 +351,10 @@ import $ from 'jquery'
             '&link='+"http://taipeisoundscape.com/playground?"+this.status_hash+
             '&redirect_uri=http://taipeisoundscape.com/playground?'+this.status_hash;
         window.open(share_url);
-        ga('send', 'event', 'MusicPlayground', 'Share', 'Share by FB');
+        setTimeout(()=>{
+          this.play()
+        },1500)
+        // ga('send', 'event', 'MusicPlayground', 'Share', 'Share by FB');
       }
     },
     mounted: function(){
@@ -369,16 +372,17 @@ import $ from 'jquery'
         
         if (document.URL.indexOf("?")!=-1){
           let vars = decodeURI(document.URL).replace(/%3D/g,"=").split("?")[1]
-          vars.split("|").filter(o=>o).map(t=>({
+          let usedata = vars.split("|").filter(o=>o).map(t=>({
             key: t.split("=")[0],
             data: t.split("=")[1]
           }))
-          this.select.melody=vars.find(o=>o.key=='melody').data
-          this.select.beat=vars.find(o=>o.key=='beat').data
-          this.select.env=vars.find(o=>o.key=='env').data
-          this.volume_melody=vars.find(o=>o.key=='volume_melody').data
-          this.volume_beat=vars.find(o=>o.key=='volume_beat').data
-          this.volume_env=vars.find(o=>o.key=='volume_env').data
+          console.log(usedata)
+          this.select.melody = parseInt(usedata.find(o=>o.key=='melody').data)
+          this.select.beat= parseInt(usedata.find(o=>o.key=='beat').data)
+          this.select.env= parseInt(usedata.find(o=>o.key=='env').data)
+          this.volume_melody= parseInt(usedata.find(o=>o.key=='volume_melody').data)
+          this.volume_beat= parseInt(usedata.find(o=>o.key=='volume_beat').data)
+          this.volume_env= parseInt(usedata.find(o=>o.key=='volume_env').data)
         }
     },
     computed: {
@@ -387,9 +391,9 @@ import $ from 'jquery'
           melody: this.select.melody,
           beat: this.select.beat,
           env: this.select.env,
-          volume_melody: 100,
-          volume_beat: 75,
-          volume_env: 100,
+          volume_melody: this.volume_melody,
+          volume_beat: this.volume_beat,
+          volume_env: this.volume_env,
         }
         return Object.keys(list).map(key=>key+"="+list[key]+"|").join("")
 
