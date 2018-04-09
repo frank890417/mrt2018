@@ -19,6 +19,10 @@
               h5.animated.fadeIn {{ station.keywords }}
               br
               p.animated.fadeIn(v-html="lineToBr(station.description)")
+              .audiodemo(v-if="station.demo")
+                audio( :src="station.demo" controls)
+
+              
           .col-lg-7.col-md-12.col-scene
             div.animated.fadeIn(:key="station.name")
               SvgInline.floatInUp.animated.scene.showing(:src="station.img")

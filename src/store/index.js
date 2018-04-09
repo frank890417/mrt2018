@@ -18,38 +18,6 @@ const store = new Vuex.Store({
       red: "#CE2834",
       white: "#F9F8F7"
     },
-    lines: [
-      {
-        name: "文湖線",
-        eng: "Wenhu Line",
-        bgcolor: "#BA8B2E",
-        color: "white"
-      },
-      {
-        name: "淡水信義線",
-        eng: "TamsuiXinyi Line",
-        bgcolor: "#D41433",
-        color: "white"
-      },
-      {
-        name: "松山新店線",
-        eng: "Xindian Line",
-        bgcolor: "#0C8155",
-        color: "white"
-      },
-      {
-        name: "中和新蘆線",
-        eng: "Xinlu Line",
-        bgcolor: "#E8AF29",
-        color: "black"
-      },
-      {
-        name: "板南線",
-        eng: "Bannan Line",
-        bgcolor: "#1568B2",
-        color: "white"
-      }
-    ],
 
   },
   mutations: {

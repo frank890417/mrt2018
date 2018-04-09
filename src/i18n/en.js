@@ -223,6 +223,7 @@ Submitted music works can be ambient music demos, songs, film scores, original m
   stations: [
     {
       // path: ,
+      station_key: "station_nangang",
       eng_name: "南港站",
       name: "Nangang Station",
       description: `1Nangang, the birthplace of Taiwan's tea plantation since the introduction of tea plantation in 1885, became one of the important agricultural areas in Taipei. After revitalized the economy into an industrial zone, Nangang has attracted many factories to bring prosperity.
@@ -234,6 +235,7 @@ Nowadays, key projects that continue to be put into place, such as the High-spee
       line: ["板南線"]
     },
     {
+      station_key: "station_ximen",
       eng_name: "⻄⾨站",
       name: "Ximen Station",
       description: `During the Japanese occupation period, Ximending was a wasteland outside the West Gate of Taipei City. The Japanese decided to imitate Asakusa district of Tokyo and set up a leisure business district. Today, Ximen is the most important and international consumer commerce district in Taipei's West District. It has become a symbol of young generation's subculture and a popular destination for tourists from all around the world.
@@ -244,6 +246,7 @@ Nowadays, key projects that continue to be put into place, such as the High-spee
       line: ["板南線", "松山新店線"]
     },
     {
+      station_key: "station_beimen",
       eng_name: "北⾨站",
       name: "Beimen Station",
       description: `Beimen was the North Gate of Taipei's Fucheng City during the Qing Dynasty and is the main passage to the Dadaocheng area in the early days. Nowadays, it is the only one of the five gates in Taipei City to maintain its original appearance, and also one of the few remaining Qing Dynasty buildings in Taipei.
@@ -255,6 +258,7 @@ Through the evolution of the times, Beimen carry memories of countless people, t
       line: ["松山新店線"]
     },
     {
+      station_key: "station_zhongshan",
       eng_name: "中⼭站",
       name: "Zhongshan Station",
       description: `During the Japanese occupation, Zhongshan North Road was a high-class residential area inhabited by upper class; during the period of Nationalist Government, it was a necessary place for foreign officials to visit the Shihlin Official Residence, and also the setting point for consulates in many countries.
@@ -265,6 +269,7 @@ Zhongshan, which used to be a gathering place for fashion indicators, has become
       line: ["淡水信義線", "松山新店線"]
     },
     {
+      station_key: "station_yuanshan",
       eng_name: "圓⼭站",
       name: "Yuanshan Station",
       description: `The Yuanshan site is one of the most precious prehistoric sites in Taiwan and it is also a rare multicultural site. Shell mounds are the biggest feature of the site and the Yuanshan culture, most of which belong to semi-salt and water-based shellfish, verifying that Taipei Lake in the Yuanshan period was a brackish water lake.
@@ -275,6 +280,7 @@ Surrounded by natural and cultural atmosphere, Yuanshan has been as part of Huab
       line: ["淡水信義線"]
     },
     {
+      station_key: "station_101",
       eng_name: "台北101站",
       name: "Taipei 101 Station",
       description: `Taipei’s landmark “Taipei 101” once had the world's tallest building record. It is now the fifth tallest building in the world and the highest skyscraper in the Pacific Rim earthquake belt. The building also has the world’s second largest damper.
@@ -285,6 +291,7 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
       line: ["淡水信義線"]
     },
     {
+      station_key: "station_jiannan",
       eng_name: "劍南路站",
       name: "Jiannan Rd. Station",
       description: `As the oldest temple in Taipei, Jiantan Temple, also known as Guanyin Temple, has a history of about 370 years. There are also many old stone monuments in the Beilin Garden near the temple. The oldest one is the “Fengxian Shijin Monument” in the second year of Xianfeng (1852 AD). The buildings and cultural walked through time and attracts travelers to embark on journey and witness the ancient temples that hold this historical memory.`,
@@ -294,6 +301,7 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
       line: ["文湖線"]
     },
     {
+      station_key: "station_dahupark",
       eng_name: "⼤湖公園站",
       name: "Dahu Park Station",
       description: `As one of the largest lakes in Taipei it is also called as Bailu Lake due to the group of egrets. The park was built in 1979 traditional Chinese garden design. In addition to the resting facilities, lake trails and picnic space, the park also has indoor and outdoor swimming pools and gymnasiums, and it has become a summer hotpot for the public to refresh their health and fitness.`,
@@ -303,6 +311,7 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
       line: ["文湖線"]
     },
     {
+      station_key: "station_xingtian",
       eng_name: "⾏天宮站",
       name: "Xingtian Temple Station",
       description: `Xingtian Temple is a major faith resort of the Greater Taipei region. The main god is Guan Shengdijun (Grace Lord). Many people come here to worship the Grace Lord, and it is also known as the Taipei Guandi Temple, or the Taipei Wu Temple. It is a well-known temple of Guan Yu in Taiwan. Taiwan’s temples endow traditional arts with Taiwanese folk custom culture. The well-known Guandi temple is not only for religious worshippers, but also an important attraction for foreigners to understand Taiwanese culture.`,
@@ -313,6 +322,7 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
     },
       
     {
+      station_key: "station_daqiaotou",
       eng_name: "⼤橋頭站",
       name: "Daqiaotou Station",
       description: `It is also known as Caopuzai and Sichanzai in the early days. As the origin of the rice food culture, the residents of Daqiaotou developed various rice products. due to its proximity to the Tamsui River and its flat terrain and fertile soil, rice has been prosperous since ancient times. The Dihua Street shopping district is a distribution center for Taiwan's northern and southern goods, tea, Chinese medicine, and cloth. It is also a New Year’s street for Taiwan's Lunar New Year shopping.
@@ -324,6 +334,7 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
     },
       
     {
+      station_key: "station_songshan",
       eng_name: "捷運松山機場站",
       name: "Songshan Airport",
       description: `Songshan Airport was once a military base during Japanese colonial period. After the Government of the Republic of China was moved to Taiwan, the airport was taken over by the airforce for civil aviation. When the terminal was completed in 1971, Songshan Airport became the top international airport in South East Asia.
@@ -336,6 +347,7 @@ In 1979, the airport turned into a domestic airport until it was later opened fo
 
     },
     {
+      station_key: "station_arena",
       eng_name: "捷運台北小巨蛋",
       name: "Taipei Arena",
       description: `The Taipei Arena is an important landmark built to uplift Taipei City's aspects of civic health and internationalism.
@@ -351,6 +363,7 @@ Shopping complexes near the arena is also a great place to go on holidays and a 
 
     },
     {
+      station_key: "station_longshan",
       eng_name: "捷運龍山寺站",
       name: "Longshan Temple",
       description: `Wanhua district, also kown as Bangka, is Taipei's earliest settlement. In the past, Longshan temple in this district was originally served as a place of worship, assembly and activities for immigrants from China. Worshipers prayed to the the gods for safe return from journeys.
@@ -363,6 +376,7 @@ Now, Longshan Temple has become a spiritual and social heart of the district. Th
 
     },
     {
+      station_key: "station_xiangshan",
       eng_name: "捷運象山站",
       name: "Xiangshan Station",
       description: `Xiangshan Station is the final stop of the 7.9 km Xinyi Line, an extension of Tamsui Line. Xiangshan (Elephant Mountain) is located in Xinyi District of Taipei City. 
@@ -375,6 +389,7 @@ It is not only a serene place to relax amid the hustle and bustle of Taipei City
 
     },
     {
+      station_key: "station_dongman",
       eng_name: "捷運東門站",
       name: "Dongman Station",
       description: `Dongmen (east gate) of Taipei City has witnessed historical changes of Qing dynasty, Japanese colonial period and the time after WWII. Dongmen was established after the govenment of the Republic of China was moved to Taiwan. To satisfy the shopping needs of government officials' wives, Chinese cooking materials and all kinds of high quality food were sold here. 
@@ -422,4 +437,14 @@ There are many famous traditional street food stalls in the market which were th
     }
   ],
 }
+
+
+import zh_base from './zh'
+let sts = zh_base.stations
+sts.forEach(st=>{
+  let engst = data.stations.find(stt => stt.station_key == st.station_key)
+  Object.assign(st, engst)
+})
+
+
 export default data

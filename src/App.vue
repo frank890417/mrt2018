@@ -70,7 +70,7 @@ html,body
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-align: center
-  border: solid 12px
+  border: solid 15px
   // background-color: $colorBlue
   
 .ovh

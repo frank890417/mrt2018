@@ -225,6 +225,7 @@ let data = {
     stations: [
       {
         // path: ,
+        station_key: "station_nangang",
         eng_name: "Nangang Station",
         name: "南港站",
         description: `1885年引進茶樹種植，為臺灣包種茶發源地的南港，成為臺北市重要農業地帶之一。而後為振興經濟成為工業區的南港，吸引了許多工廠遷入帶來了繁榮。
@@ -232,18 +233,22 @@ let data = {
         keywords: "懷舊、改變、交會",
         audition: true,
         img: "/static/img/stations/南港站.svg",
-        line: ["板南線"]
+        line: ["板南線"],
+        term: 3
       },
       {
+        station_key: "station_ximen",
         eng_name: "Ximen Station",
         name: "⻄⾨站",
         description: `日治時期的西門町為台北府城西門外的荒郊野外，日本人決定仿效東京淺草區，在此設立休閒商業區。如今西門為台北市西區最重要且國際化程度最高的消費商圈，成為青少年次文化的代表、國際觀光背包客造訪之地。`,
         keywords: "年輕、潮流、多元",
         audition: true,
         img: "/static/img/stations/西門站.svg",
-        line: ["板南線", "松山新店線"]
+        line: ["板南線", "松山新店線"],
+        term: 3
       },
       {
+        station_key: "station_beimen",
         eng_name: "Beimen Station",
         name: "北⾨站",
         description: `臺北府城的北門，為清代城門建築，是早期城內通往大稻埕一帶的主要孔道。現為臺北府城五大城門中唯一保持建城原貌者，也是臺北市區僅存不多的清代建築之一。 
@@ -251,9 +256,11 @@ let data = {
         keywords: "懷舊、封存、寧靜",
         audition: true,
         img: "/static/img/stations/北門站.svg",
-        line: ["松山新店線"]
+        line: ["松山新店線"],
+        term: 3
       },
       {
+        station_key: "station_zhongshan",
         eng_name: "Zhongshan Station",
         name: "中⼭站",
         description: `日治時期的中山北路，為高官貴人所居住的高級住宅區；國民政府時期，因連接士林官邸成為國外大使拜訪的必經之地，同為許多國家領事館的設立點。
@@ -261,9 +268,11 @@ let data = {
         keywords: "手工、風格、融合",
         audition: true,
         img: "/static/img/stations/中山站.svg",
-        line: ["淡水信義線", "松山新店線"]
+        line: ["淡水信義線", "松山新店線"],
+        term: 3
       },
       {
+        station_key: "station_yuanshan",
         eng_name: "Yuanshan Station",
         name: "圓⼭站",
         description: `圓山遺址為全台灣最珍貴的史前遺址之一，也是罕見的多文化層遺址。貝塚為該遺址與圓山文化的最大特色，種類多半屬於半淡半鹹水性的貝類，驗證了圓山時期的臺北湖為一鹹淡水交雜湖泊。
@@ -271,9 +280,11 @@ let data = {
         keywords: "自然、遺跡、探索",
         audition: true,
         img: "/static/img/stations/圓山站.svg",
-        line: ["淡水信義線"]
+        line: ["淡水信義線"],
+        term: 3
       },
       {
+        station_key: "station_101",
         eng_name: "Taipei 101 Station",
         name: "台北101站",
         description: `台北重要地標「台北101」曾擁有世界第一高樓之紀錄，目前為世界第五高樓以及環太平洋地震帶最高摩天大廈，並於大樓內擁有全球第二大的阻尼器。
@@ -281,18 +292,22 @@ let data = {
         keywords: "地標、紀錄、國際",
         audition: true,
         img: "/static/img/stations/101.svg",
-        line: ["淡水信義線"]
+        line: ["淡水信義線"],
+        term: 3
       },
       {
+        station_key: "station_jiannan",
         eng_name: "Jiannan Rd. Station",
         name: "劍南路站",
         description: `台北目前最古老的廟宇劍潭古寺，又名劍潭寺、觀音寺，於台北境內擁有約370年歷史。寺旁碑林園園內也保有不少舊石碑，最古老則為咸豐二年(西元1852)的「奉憲示禁碑」。 歷經時代演變確保有者歷史記憶的建築與文物，讓不少旅人為此而踏上旅程，想親自目睹存載這歷史記憶風情的古老寺廟。`,
         keywords: "幽靜、古老、韻味",
         audition: true,
         img: "/static/img/stations/美麗華.svg",
-        line: ["文湖線"]
+        line: ["文湖線"],
+        term: 3
       },
       {
+        station_key: "station_dahupark",
         eng_name: "Dahu Park Station",
         name: "⼤湖公園站",
         description: `為台北市最大的大型湖泊之一，因白鷺成群又稱白鷺湖，興建於1979年（民國六十八年），採中國園林式設計。
@@ -300,9 +315,11 @@ let data = {
         keywords: "遊樂、消暑",
         audition: true,
         img: "/static/img/stations/大湖公園站.svg",
-        line: ["文湖線"]
+        line: ["文湖線"],
+        term: 3
       },
       {
+        station_key: "station_xingtian",
         eng_name: "Xingtian Temple Station",
         name: "⾏天宮站",
         description: `行天宮是大臺北地區的信仰重鎮，主神為關聖帝君(恩主公)，許多民眾皆會來此敬拜恩主公，又稱恩主公廟、臺北關帝廟或臺北武廟，是臺灣知名的關帝廟。
@@ -310,9 +327,11 @@ let data = {
         keywords: "文化、習俗、虔誠",
         audition: true,
         img: "/static/img/stations/行天宮.svg",
-        line: ["中和新蘆線"]
+        line: ["中和新蘆線"],
+        term: 3
       },
       {
+        station_key: "station_daqiaotou",
         eng_name: "Daqiaotou Station",
         name: "⼤橋頭站",
         description: `為米食文化發源處的大橋頭一帶，早期又稱作草埔仔、四坎仔，由於鄰近淡水河，地勢平坦、土壤肥沃，因此自古盛產稻米，居民便用此研發出各項米食產品。
@@ -320,9 +339,11 @@ let data = {
         keywords: "文化、生產、起源",
         audition: true,
         img: "/static/img/stations/大橋頭站.svg",
-        line: ["中和新蘆線"]
+        line: ["中和新蘆線"],
+        term: 3
       },
       {
+        station_key: "station_songshan",
         eng_name: "Songshan Airport",
         name: "捷運松山機場站",
         description: `從日治時期的軍用機場、光復後空軍接管改為民航用途、民國 60 年航站大廈落成啟用，是東南亞首屈一指的國際機場
@@ -330,9 +351,12 @@ let data = {
         keywords: "希望、轉變、輕快",
         audition: false,
         img: "/static/img/stations/scene_airport.svg",
-        line: ["松山新店線"]
+        line: ["松山新店線"],
+        term: 2,
+        demo: "/static/audio/第二期站體音檔/松山機場站 Stereo MIX_02.wav"
       },
       {
+        station_key: "station_arena",
         eng_name: "Taipei Arena",
         name: "捷運台北小巨蛋",
         description: `台北小巨蛋的前身是市立棒球場，曾舉辦過多場大型國際比賽，而現在是一座多功能體育館，主要為體育活動盛事及大型演唱會場地，為提升台北市健康形象和國際化的重要地標。附近的複合式商圈是民眾假日休憩娛樂的好去處，是台北市充滿熱情活力的中心區域。 
@@ -340,10 +364,13 @@ let data = {
         keywords: "活力、熱情",
         audition: false,
         img: "/static/img/stations/scene_egg.svg",
-        line: ["松山新店線"]
+        line: ["松山新店線"],
+        term: 2,
+        demo: "/static/audio/第二期站體音檔/台北小巨蛋 StereoMIX(FullTalk)MIX_01.wav"
 
       },
       {
+        station_key: "station_longshan",
         eng_name: "Longshan Temple",
         name: "捷運龍山寺站",
         description: `艋岬是台北市開發最早的地方，也就是現在的「萬華」，而「龍山寺」是當地居 民信仰、活動、集會和指揮的中心，保佑著一批又一批渡海來台的先民能夠平安順利，富有早期居民打拚、奮鬥的文化歷史。
@@ -352,10 +379,13 @@ let data = {
         keywords: "傳統（復古）、熱鬧",
         audition: false,
         img: "/static/img/stations/scene_temple.svg",
-        line: ["板南線"]
+        line: ["板南線"],
+        term: 2,
+        demo: "/static/audio/第二期站體音檔/龍山寺站 Stereo MIX_01.wav"
 
       },
       {
+        station_key: "station_xiangshan",
         eng_name: "Xiangshan Station",
         name: "捷運象山站",
         description: `象山站為台北捷運信義線—淡水線的延伸段，全線長 7.9 公里，座落於台北市信義區，是台北市的後山。
@@ -364,10 +394,13 @@ let data = {
         keywords: "舒適、自在、生態",
         audition: false,
         img: "/static/img/stations/scene_mountain.svg",
-        line: ["淡水信義線"]
+        line: ["淡水信義線"],
+        term: 2,
+        demo: "/static/audio/第二期站體音檔/象山站 Stereo MIX_02.wav"
 
       },
       {
+        station_key: "station_dongman",
         eng_name: "Dongman Station",
         name: "捷運東門站",
         description: `歷經清治時期、日治時期、戰後時期，東門市場與戰後官兵及眷屬們生活上的點點滴滴。而掌管飲食的官夫人們對於美食的挑嘴，讓東門市場的美食不但具有色、香、味，更有著濃濃的家鄉味。
@@ -376,7 +409,9 @@ let data = {
         keywords: "歷史情懷、特色美食",
         audition: false,
         img: "/static/img/stations/scene_door.svg",
-        line: ["中和新蘆線","淡水信義線"]
+        line: ["中和新蘆線","淡水信義線"],
+        term: 2,
+        demo: "/static/audio/第二期站體音檔/東門站 Stereo MIX_01.wav"
   
      },
     ],
