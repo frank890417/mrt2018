@@ -97,6 +97,8 @@ export default {
     overflow: hidden
     margin-left: -2.5%
     margin-top: -10%
+    [id*="station"]
+      cursor: pointer
     circle
       r: 7
       animation: rr 1s linear
