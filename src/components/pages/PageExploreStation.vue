@@ -19,7 +19,7 @@
               h5.animated.fadeIn {{ station.keywords }}
               br
               p.animated.fadeIn(v-html="lineToBr(station.description)")
-              .btn.red(@click="togglePlay") 
+              .btn.red(@click="togglePlay" v-if="station.demo") 
                 i.fa.fa-play(v-if="!playingDemo") &nbsp;
                 i.fa.fa-pause(v-else) &nbsp;
                 span 播放作品
