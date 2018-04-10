@@ -435,7 +435,7 @@ let data = {
       {
         station_key: "station_zongzang",
         eng_name: "ZongZang Station",
-        name: "中正紀年堂站",
+        name: "中正紀念堂站",
         description: `建立於1976年的中正紀念堂，為紀念中華民國總統蔣中正而興建的建築，原為舊日據時代軍山砲兵與步兵第一連之用地，
         本古蹟為臺灣重要的政治空間，承載多數臺灣住民戰後的各種政治記憶，皆為歷史的一部分，也是十分重要的文化資產價值。`,
         keywords: "歷史、精神、資產",

@@ -230,9 +230,6 @@ Submitted music works can be ambient music demos, songs, film scores, original m
 Nowadays, key projects that continue to be put into place, such as the High-speed Rail Nangang Station, Nangang Financial Park, Nangang Exhibition Hall and the important landmark of the future Chinese pop music, the “Northern Pop Music Center”. They are bound to bring more yuan development to the Nangang Station.
 `,
       keywords: "The transfer station for MRT, train and High Speed Rail, near Taipei Music Center",
-      audition: true,
-      img: "/static/img/stations/南港站.svg",
-      line: ["板南線"]
     },
     {
       station_key: "station_ximen",
@@ -241,9 +238,6 @@ Nowadays, key projects that continue to be put into place, such as the High-spee
       description: `During the Japanese occupation period, Ximending was a wasteland outside the West Gate of Taipei City. The Japanese decided to imitate Asakusa district of Tokyo and set up a leisure business district. Today, Ximen is the most important and international consumer commerce district in Taipei's West District. It has become a symbol of young generation's subculture and a popular destination for tourists from all around the world.
 `,
       keywords: "Youthfulness and popular culture",
-      audition: true,
-      img: "/static/img/stations/西門站.svg",
-      line: ["板南線", "松山新店線"]
     },
     {
       station_key: "station_beimen",
@@ -253,9 +247,6 @@ Nowadays, key projects that continue to be put into place, such as the High-spee
 Through the evolution of the times, Beimen carry memories of countless people, the current center of Taipei, with its busy history, boasts a landscape that can travel in time and space.
 `,
       keywords: "Historical meaning, near Dadaocheng and culture galleries",
-      audition: true,
-      img: "/static/img/stations/北門站.svg",
-      line: ["松山新店線"]
     },
     {
       station_key: "station_zhongshan",
@@ -264,9 +255,6 @@ Through the evolution of the times, Beimen carry memories of countless people, t
       description: `During the Japanese occupation, Zhongshan North Road was a high-class residential area inhabited by upper class; during the period of Nationalist Government, it was a necessary place for foreign officials to visit the Shihlin Official Residence, and also the setting point for consulates in many countries.
 Zhongshan, which used to be a gathering place for fashion indicators, has become the latest cultural and creative hotspot in Taipei together with Hardware Street and Chifeng Street after their efforts to promote the artist's creation with the Contemporary Art Museum.`,
       keywords: "Design, art and community development",
-      audition: true,
-      img: "/static/img/stations/中山站.svg",
-      line: ["淡水信義線", "松山新店線"]
     },
     {
       station_key: "station_yuanshan",
@@ -277,7 +265,6 @@ Surrounded by natural and cultural atmosphere, Yuanshan has been as part of Huab
       keywords: "Tourism, park and military base for armies in 1950s",
       audition: true,
       img: "/static/img/stations/圓山站.svg",
-      line: ["淡水信義線"]
     },
     {
       station_key: "station_101",
@@ -286,9 +273,6 @@ Surrounded by natural and cultural atmosphere, Yuanshan has been as part of Huab
       description: `Taipei’s landmark “Taipei 101” once had the world's tallest building record. It is now the fifth tallest building in the world and the highest skyscraper in the Pacific Rim earthquake belt. The building also has the world’s second largest damper.
 In addition to being an office building, Taipei 101 also has shopping malls, restaurants, and indoor. Each year, it hosts New Year countdown and follows the world’s premier new year’s fireworks display, becoming the top tourist attraction of Taipei. `,
       keywords: "International shopping center and exhibition center",
-      audition: true,
-      img: "/static/img/stations/101.svg",
-      line: ["淡水信義線"]
     },
     {
       station_key: "station_jiannan",
@@ -296,9 +280,6 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
       name: "Jiannan Rd. Station",
       description: `As the oldest temple in Taipei, Jiantan Temple, also known as Guanyin Temple, has a history of about 370 years. There are also many old stone monuments in the Beilin Garden near the temple. The oldest one is the “Fengxian Shijin Monument” in the second year of Xianfeng (1852 AD). The buildings and cultural walked through time and attracts travelers to embark on journey and witness the ancient temples that hold this historical memory.`,
       keywords: "Miramar Entertainment Park, shopping mall and luxury hotels ",
-      audition: true,
-      img: "/static/img/stations/美麗華.svg",
-      line: ["文湖線"]
     },
     {
       station_key: "station_dahupark",
@@ -306,9 +287,6 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
       name: "Dahu Park Station",
       description: `As one of the largest lakes in Taipei it is also called as Bailu Lake due to the group of egrets. The park was built in 1979 traditional Chinese garden design. In addition to the resting facilities, lake trails and picnic space, the park also has indoor and outdoor swimming pools and gymnasiums, and it has become a summer hotpot for the public to refresh their health and fitness.`,
       keywords: "Nature and park for parents and children",
-      audition: true,
-      img: "/static/img/stations/大湖公園站.svg",
-      line: ["文湖線"]
     },
     {
       station_key: "station_xingtian",
@@ -316,9 +294,6 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
       name: "Xingtian Temple Station",
       description: `Xingtian Temple is a major faith resort of the Greater Taipei region. The main god is Guan Shengdijun (Grace Lord). Many people come here to worship the Grace Lord, and it is also known as the Taipei Guandi Temple, or the Taipei Wu Temple. It is a well-known temple of Guan Yu in Taiwan. Taiwan’s temples endow traditional arts with Taiwanese folk custom culture. The well-known Guandi temple is not only for religious worshippers, but also an important attraction for foreigners to understand Taiwanese culture.`,
       keywords: "Temple and religion",
-      audition: true,
-      img: "/static/img/stations/行天宮.svg",
-      line: ["中和新蘆線"]
     },
       
     {
@@ -330,7 +305,6 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
       keywords: "Yangping N. Rd. Night Market and Dihua Street",
       audition: true,
       img: "/static/img/stations/大橋頭站.svg",
-      line: ["中和新蘆線"]
     },
       
     {
@@ -341,9 +315,6 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
 
 In 1979, the airport turned into a domestic airport until it was later opened for the mini three links. Songshan Airport has witnessed historical changes of Taiwan's politics and economy and was part of the important memories of students, businessmen and travelers who were far away from home.`,
       keywords: "Stories about flying, traveling, dreams, and goodbye and reunite…",
-      audition: false,
-      img: "/static/img/stations/scene_airport.svg",
-      line: ["文湖線"]
 
     },
     {
@@ -357,9 +328,6 @@ Shopping complexes near the arena is also a great place to go on holidays and a 
 
 `,
       keywords: "Concert, energetic people, a place for performances and music festivals…",
-      audition: false,
-      img: "/static/img/stations/scene_egg.svg",
-      line: ["松山新店線"]
 
     },
     {
@@ -370,9 +338,6 @@ Shopping complexes near the arena is also a great place to go on holidays and a 
 
 Now, Longshan Temple has become a spiritual and social heart of the district. The one of a kind sculptures and clouds of smoke from the burning incense in the temple and the traditional buildings nearby it even make Longshan Temple a famous tourist spot of Taipei. `,
       keywords: "Historical sites of Taiwan, prayers in the temples, the scent of incense, good luck and fortune…",
-      audition: false,
-      img: "/static/img/stations/scene_temple.svg",
-      line: ["板南線"]
 
     },
     {
@@ -383,9 +348,6 @@ Now, Longshan Temple has become a spiritual and social heart of the district. Th
 
 It is not only a serene place to relax amid the hustle and bustle of Taipei City but also a great place to catch the stunning nighttime views of Xinyi District and the magnificent Taipei City.`,
       keywords: "	Nature as classroom and a quiet place amid the hustles and bustles of city...",
-      audition: false,
-      img: "/static/img/stations/scene_mountain.svg",
-      line: ["淡水信義線"]
 
     },
     {
@@ -396,9 +358,6 @@ It is not only a serene place to relax amid the hustle and bustle of Taipei City
 
 There are many famous traditional street food stalls in the market which were the favorites of celebrities and gourmets. As a result, Dongmen market was referred to as a market for the Taipei elite.`,
       keywords: "Places with culture and history, Dongmen market and Taiwanese street foods sold on Yongkang Street …",
-      audition: false,
-      img: "/static/img/stations/scene_door.svg",
-      line: ["中和新蘆線", "淡水信義線"]
 
     },
 
@@ -406,8 +365,8 @@ There are many famous traditional street food stalls in the market which were th
     //第一期
     {
       station_key: "station_tamsui",
-      eng_name: "Tamsui Station",
-      name: "淡水站",
+      eng_name: "淡水站",
+      name: "Tamsui Station",
       description: `“Tamsui”is one of the oldest district names that still exist in Taiwan now.  It was originally Hokkien name for the northern part of Taiwan in general by the Hokio refugees who fled to Taiwan at the end of Ming dynasty.  Even though Tamsui is only the third largest river in Taiwan, it was the most convenient river for sailing, and therefore became a link of trade and shipping activities, even the largest international port in Taiwan after Qing government opened Tamsui to foreign trade toward the end of the dynasty.
       After many years of development in history, the flourishing of folk culture, ships no longer comes to the harbour and the old Tamsui as a major transportation port will forever remain in people’s memory.
 `,
@@ -416,8 +375,8 @@ There are many famous traditional street food stalls in the market which were th
     },
     {
       station_key: "station_zongzang",
-      eng_name: "ZongZang Station",
-      name: "中正紀年堂站",
+      eng_name: "中正紀念堂站",
+      name: "Chiang Kai-shek Memorial Hall",
       description: `Built in 1976, the National Chiang Kai-shek Memorial Hall was a structure built to commemorate Chiang Kai-shek, president of Republic of China,.  It was originally an area of land  for the use of the first legion of the hill artillery and infantry during Japanese Occupation period.
       This historical site is an important political monument of Taiwan, which has been loaded with various political memories of post-war Taiwanese people.  It’s not only a part of history, but a significant cultural assent.`,
       keywords: "history, spirit, asset",
@@ -425,8 +384,8 @@ There are many famous traditional street food stalls in the market which were th
     },
     {
       station_key: "station_zongshanjh",
-      eng_name: "Zong Shang Junior High School Station",
-      name: "中山國中站",
+      eng_name: "中山國中站",
+      name: "Zong Shang Junior High School Station",
       description: `Filled with art and culture in the air,　Minsheng Community was one of Taipei’s first urban development projects that was built in 1960s following an American style community blueprint.   The streets and roads are designed in chessboard pattern, and at the same time wires and cables were laid underground.  The community features 25 parks.  
       Located in the midst of the prosperity of Taipei financial center, yet filled with a relaxing atmosphere, Minsheng community has become the top choice for residents to go for a leisurous time on holidays. `,
       keywords: "prosperity, dynamic, hide-out",
@@ -434,8 +393,8 @@ There are many famous traditional street food stalls in the market which were th
     },
     {
       station_key: "station_daanpark",
-      eng_name: "Daan Park Station",
-      name: "大安森林公園站",
+      eng_name: "大安森林公園站",
+      name: "Daan Forest Park Station",
       description: `Daan Forest Park was one of the various large scale city parks planned during Japanese governing period in Taipei city before the war.  After 1949, the area was used as  New South Military Camp of the Republic of China Military Police, Jianhua New Military Kindred Village, Yuelu New Village, as well as the International Student Dormitory.  The number of residents once reached thousands and Longfe Village and Wanlong Village were established.
       The park is now an ecology park full of greenery,  taking pride in being called “The Lung of the city”in Taipei,  with various recreational facilities in addition to an uniquely designed open air stadium, making it one of the all time favorite recreational spots of Taipei citizens.
 `,
@@ -444,8 +403,8 @@ There are many famous traditional street food stalls in the market which were th
     },
     {
       station_key: "station_beitan",
-      eng_name: "Beitan Station",
-      name: "捷運小碧潭站",
+      eng_name: "捷運小碧潭站",
+      name: "Xiaobitan Station",
       description: `Xiaobitan Riverside Park is located beside Xindian Creek, one of the three major tributaries of the Tamsui River system.  With rich water resource and good water quality, it became a main source of drinking water in Taipei metropolitan area and over 4 million Taipei residents obtain 97% of their drinking water from the creek.  
 The riverside park boasts of its lush green field, riverside bicycle lane, volleyball court, basketball court, scenic trail and other facilities, making it a great getaway for residents to spend some leisure time and relax the spirit. 
 `,
