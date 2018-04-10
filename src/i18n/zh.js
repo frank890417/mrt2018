@@ -351,7 +351,7 @@ let data = {
         keywords: "希望、轉變、輕快",
         audition: false,
         img: "/static/img/stations/scene_airport.svg",
-        line: ["松山新店線"],
+        line: ["文湖線"],
         term: 2,
         demo: "/static/audio/第二期站體音檔/松山機場站 Stereo MIX_02.wav"
       },

@@ -343,7 +343,7 @@ In 1979, the airport turned into a domestic airport until it was later opened fo
       keywords: "Stories about flying, traveling, dreams, and goodbye and reunite…",
       audition: false,
       img: "/static/img/stations/scene_airport.svg",
-      line: ["松山新店線"]
+      line: ["文湖線"]
 
     },
     {
