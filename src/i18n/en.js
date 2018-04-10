@@ -401,6 +401,58 @@ There are many famous traditional street food stalls in the market which were th
       line: ["中和新蘆線", "淡水信義線"]
 
     },
+
+
+    //第一期
+    {
+      station_key: "station_tamsui",
+      eng_name: "Tamsui Station",
+      name: "淡水站",
+      description: `“Tamsui”is one of the oldest district names that still exist in Taiwan now.  It was originally Hokkien name for the northern part of Taiwan in general by the Hokio refugees who fled to Taiwan at the end of Ming dynasty.  Even though Tamsui is only the third largest river in Taiwan, it was the most convenient river for sailing, and therefore became a link of trade and shipping activities, even the largest international port in Taiwan after Qing government opened Tamsui to foreign trade toward the end of the dynasty.
+      After many years of development in history, the flourishing of folk culture, ships no longer comes to the harbour and the old Tamsui as a major transportation port will forever remain in people’s memory.
+`,
+      keywords: "nostalgia, transformation, internationl",
+     
+    },
+    {
+      station_key: "station_zongzang",
+      eng_name: "ZongZang Station",
+      name: "中正紀年堂站",
+      description: `Built in 1976, the National Chiang Kai-shek Memorial Hall was a structure built to commemorate Chiang Kai-shek, president of Republic of China,.  It was originally an area of land  for the use of the first legion of the hill artillery and infantry during Japanese Occupation period.
+      This historical site is an important political monument of Taiwan, which has been loaded with various political memories of post-war Taiwanese people.  It’s not only a part of history, but a significant cultural assent.`,
+      keywords: "history, spirit, asset",
+    
+    },
+    {
+      station_key: "station_zongshanjh",
+      eng_name: "Zong Shang Junior High School Station",
+      name: "中山國中站",
+      description: `Filled with art and culture in the air,　Minsheng Community was one of Taipei’s first urban development projects that was built in 1960s following an American style community blueprint.   The streets and roads are designed in chessboard pattern, and at the same time wires and cables were laid underground.  The community features 25 parks.  
+      Located in the midst of the prosperity of Taipei financial center, yet filled with a relaxing atmosphere, Minsheng community has become the top choice for residents to go for a leisurous time on holidays. `,
+      keywords: "prosperity, dynamic, hide-out",
+     
+    },
+    {
+      station_key: "station_daanpark",
+      eng_name: "Daan Park Station",
+      name: "大安森林公園站",
+      description: `Daan Forest Park was one of the various large scale city parks planned during Japanese governing period in Taipei city before the war.  After 1949, the area was used as  New South Military Camp of the Republic of China Military Police, Jianhua New Military Kindred Village, Yuelu New Village, as well as the International Student Dormitory.  The number of residents once reached thousands and Longfe Village and Wanlong Village were established.
+      The park is now an ecology park full of greenery,  taking pride in being called “The Lung of the city”in Taipei,  with various recreational facilities in addition to an uniquely designed open air stadium, making it one of the all time favorite recreational spots of Taipei citizens.
+`,
+      keywords: "fun, ecology, leisure",
+     
+    },
+    {
+      station_key: "station_beitan",
+      eng_name: "Beitan Station",
+      name: "捷運小碧潭站",
+      description: `Xiaobitan Riverside Park is located beside Xindian Creek, one of the three major tributaries of the Tamsui River system.  With rich water resource and good water quality, it became a main source of drinking water in Taipei metropolitan area and over 4 million Taipei residents obtain 97% of their drinking water from the creek.  
+The riverside park boasts of its lush green field, riverside bicycle lane, volleyball court, basketball court, scenic trail and other facilities, making it a great getaway for residents to spend some leisure time and relax the spirit. 
+`,
+      keywords: "lohas, leisure, fun",
+    }
+
+
   ],
 
 
@@ -434,6 +486,12 @@ There are many famous traditional street food stalls in the market which were th
       name: "Bannan Line",
       bgcolor: "#1568B2",
       color: "white"
+    },
+    {
+      eng: "小碧潭線",
+      name: "Shao Beitan Line",
+      bgcolor: "#D1D71E",
+      color: "black"
     }
   ],
 }

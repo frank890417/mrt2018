@@ -414,6 +414,82 @@ let data = {
         demo: "/static/audio/第二期站體音檔/東門站 Stereo MIX_01.wav"
   
      },
+
+      //第一期
+      {
+        station_key: "station_tamsui",
+        eng_name: "Tamsui Station",
+        name: "淡水站",
+        description: `「淡水」是台灣現存最古老的地名，原本是明末以降，往來中國和台灣之間的閩南流民，對台灣北部的總稱。淡水河雖只是台灣第三大河川，卻曾是台灣航行最便利的河川，成為人民往來，物產運銷的樞紐。清末開口通商後，更一躍而為全台最大國際港口。
+        經過多年歷史的演變，民間文化工作蓬勃發展，大船不再入港，過去以河川為主要交通運輸的淡水，將永存在人民的記憶中。`,
+        keywords: "歷史情懷、轉變、國際",
+        audition: false,
+        img: "/static/img/stations/淡水站.svg",
+        line: ["淡水信義線"],
+        term: 2,
+        demo: "/static/audio/第ㄧ期站體音檔/淡水站＿陳建年＿藍海之歌.mp3"
+
+      },
+      {
+        station_key: "station_zongzang",
+        eng_name: "ZongZang Station",
+        name: "中正紀年堂站",
+        description: `建立於1976年的中正紀念堂，為紀念中華民國總統蔣中正而興建的建築，原為舊日據時代軍山砲兵與步兵第一連之用地，
+        本古蹟為臺灣重要的政治空間，承載多數臺灣住民戰後的各種政治記憶，皆為歷史的一部分，也是十分重要的文化資產價值。`,
+        keywords: "歷史、精神、資產",
+        audition: false,
+        img: "/static/img/stations/中正紀念堂.svg",
+        line: ["松山新店線", "淡水信義線"],
+        term: 2,
+        demo: "/static/audio/第ㄧ期站體音檔/中正紀念堂站＿紅樂團.mp3"
+
+      },
+      {
+        station_key: "station_zongshanjh",
+        eng_name: "Zong Shang Junior High School Station",
+        name: "中山國中站",
+        description: `著人文藝術氣息的民生社區為台北最早的都市計畫區，1960年代開發時以美式社區為藍圖。街廓、道路採井字型棋盤式設計，同時將電線電纜地下化，二十五座公園更是此區的一大特色。
+        身藏在繁華的台北市金融商圈，卻充滿著悠閒氣息，成為民眾假日放鬆心情、品味悠閒的第一首選。`,
+        keywords: "繁榮、多元、隱藏",
+        audition: false,
+        img: "/static/img/stations/中山國中站.svg",
+        line: ["文湖線"],
+        term: 2,
+        demo: "/static/audio/第ㄧ期站體音檔/中山國中站＿林強.wav"
+
+      },
+      {
+        station_key: "station_daanpark",
+        eng_name: "Daan Park Station",
+        name: "大安森林公園站",
+        description: `日治時期為眾多臺北市戰前規劃的大型都會公園之一的大安森林公園，1949年後挪用成為中華民國憲兵新南營區、眷村建華新村、岳廬新村與國際學舍用地，居民曾多達數千人，並設有龍飛里及萬龍里。 
+現今是一座草木濃密的生態公園並被譽為台北市「都市之肺」的公園，設立各種休憩設施及具獨特設計的露天音樂台，成為台北市民最喜愛休閒場所之一。`,
+        keywords: "歡樂、生態、休憩",
+        audition: false,
+        img: "/static/img/stations/大安森林公園.svg",
+        line: ["淡水信義線"],
+        term: 2,
+        demo: "/static/audio/第ㄧ期站體音檔/大安森林公園站＿劉季陵.wav"
+
+      },
+      {
+        station_key: "station_beitan",
+        eng_name: "Beitan Station",
+        name: "捷運小碧潭站",
+        description: `小碧潭河濱公園位於淡水河水系三大支流之一的新店溪旁，由於溪水量豐盛、水質良好而成為台北都會區民生用水的主要來源，大臺北地區400餘萬人口97％以上的民生用水，皆是由新店溪提供的。
+河濱公園則有翠綠草坪、河濱自行車道、排球場、籃球場及觀景步道等設施，成為民眾賞景小憩、放空心靈的絕佳去處。
+`,
+        keywords: "漫遊、休閒、遊樂",
+        audition: false,
+        img: "/static/img/stations/小碧潭站.svg",
+        line: ["小碧潭線"],
+        term: 2,
+        demo: "/static/audio/第ㄧ期站體音檔/小碧潭站＿劉涵.mp3"
+
+      }
+
+
+
     ],
 
       lines: [
@@ -446,6 +522,12 @@ let data = {
           name: "板南線",
           bgcolor: "#1568B2",
           color: "white"
+        },
+        {
+          eng: "Shao Beitan Line",
+          name: "小碧潭線",
+          bgcolor: "#D1D71E",
+          color: "black"
         }
       ],
 }

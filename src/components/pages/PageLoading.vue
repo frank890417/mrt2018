@@ -1,6 +1,6 @@
 <template lang="pug">
 .page.page-loading
-  SvgInline.logo(src="/static/img/Logo.svg")
+  SvgInline.logo.animated.fadeIn(src="/static/img/Logo.svg")
   br
   h4 Use headphones for the best experience.
   //- h1 Taipei Soundscape Program

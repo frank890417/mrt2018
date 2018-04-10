@@ -64,6 +64,9 @@ html,body
   font-size: 15px
   overflow-x: hidden
   color: #333
+  
+svg *
+  transform-box: fill-box
 
 #app
   font-family: 'Roboto Condensed', 'Noto Sans TC','Avenir', Helvetica, Arial, sans-serif

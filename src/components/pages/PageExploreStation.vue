@@ -19,8 +19,12 @@
               h5.animated.fadeIn {{ station.keywords }}
               br
               p.animated.fadeIn(v-html="lineToBr(station.description)")
+              .btn.red(@click="togglePlay") 
+                i.fa.fa-play(v-if="!playingDemo") &nbsp;
+                i.fa.fa-pause(v-else) &nbsp;
+                span 播放典藏
               .audiodemo(v-if="station.demo")
-                audio( :src="station.demo" controls controlsList="nodownload")
+                audio#demoaudio( :src="station.demo")
 
               
           .col-lg-7.col-md-12.col-scene
@@ -48,10 +52,12 @@ export default {
           svgdata: ["11","22","33","44","55"],
           lang: "zh",
           no_change_time: 0,
-          playind_sound: false
+          playind_sound: false,
+          playingDemo: false
         }
       },
   mounted: function(){
+    this.playingDemo=false
         var vobj=this;
         // vobj.delta(parseInt(Math.random()*50));
 
@@ -178,6 +184,36 @@ export default {
           trigger_boat: "10大湖公園站/大湖公園_湖水聲_9s.mp3",
 
 
+
+          trigger_water: "淡水站/淡水站_河水聲_12s.mp3",
+          trigger_vendor: "淡水站/淡水站_麻糬攤販_9s.mp3",
+          trigger_vendor_friedsquid_: "淡水站/淡水站_叫賣聲_4s.mp3",
+          trigger_foreigners: "淡水站/淡水站_外國遊客聲_11s.mp3",
+          trigger_claw_machine: "淡水站/淡水站_遊戲店廣播_9s.mp3",
+
+          trigger_take_photos: "中正紀念堂/中正紀念堂站_拍照數數_5s.mp3",
+          trigger_pigeons: "中正紀念堂/中正紀念堂站_鴿子群體飛翔_7s.mp3",
+          trigger_checking_ticket: "中正紀念堂/中正紀念堂站_戲劇院驗票_13s.mp3",
+          trigger_dance: "中正紀念堂/中正紀念堂站_高中生練舞_10s.mp3",
+
+          trigger_roadsound: "中山國中站/中山國中站_馬路聲_7s.mp3",
+          trigger_flipping_book: "中山國中站/中山國中站_三民書局翻書_7s.mp3",
+          trigger_bell_ring: "中山國中站/中山國中站_鐘聲_13s.mp3",
+
+
+          trigger_playing_basketball: "大安森林公園站/大安森林公園_打籃球_10s.mp3",
+          trigger_daan_duck: "大安森林公園站/大安森林公園_池塘鴨子叫_10s.mp3",
+          trigger_bird_singing: "大安森林公園站/大安森林公園_鳥叫聲_8s.mp3",
+          trigger_raining: "大安森林公園站/大安森林公園_雨聲_3s.mp3",
+
+
+
+          trigger_grass: "小碧潭站/小碧潭站_風吹動草聲_7s.mp3",
+          trigger_jogging: "小碧潭站_車流聲_12s.mp3小碧潭站_跑步聲_4s.mp3",
+          trigger_ride_bicycle: "小碧潭站_車流聲_12s.mp3小碧潭站_腳踏車聲_4s.mp3",
+          trigger_cars: "小碧潭站_車流聲_12s.mp3小碧潭站_車流聲_12s.mp3"
+
+
         };
 
         var player=new Audio();
@@ -196,7 +232,7 @@ export default {
 
 
         function trigger_sound(evt) {
-          let target =  $(this).attr("data-name").replace(/\r/g,"").replace(/\s/g,"").replace(/\</g,"").replace(/\>/g,"")
+          let target =  $(this).attr("data-name").replace(/\r/g,"").replace(/\s/g,"").replace(/\</g,"").replace(/\>/g,"").replace(/\(/g,"_").replace(/\)/g,"_")
           console.log(target)
 
           vobj.no_change_time=0;
@@ -276,6 +312,18 @@ export default {
 
     getLine(name){
       return this.lines.find(l=>l.name==name || l.eng==name)
+    },
+    togglePlay(){
+      if (!this.playingDemo){
+        this.playingDemo=true
+        $("#demoaudio")[0].currentTime=0
+        $("#demoaudio")[0].play()
+      }else{
+        this.playingDemo=false
+        $("#demoaudio")[0].currentTime=0
+        $("#demoaudio")[0].pause()
+
+      }
     }
   },
   computed:{
@@ -300,6 +348,12 @@ export default {
       }
     }
   },
+  watch: {
+    station(){
+
+      this.playingDemo=false
+    }
+  }
 
 }
 </script>
@@ -590,5 +644,411 @@ export default {
       &:hover
         g[data-name=sign]
           animation: flash 1s infinite
+
+
+  
+    g[data-name=island_1],g[data-name=island_2],g[data-name=island_3],
+      transition: opacity 0.5s
+      opacity: 0
+
+    g[data-name=island_1]
+      transition: 0.5s 0s
+      transform: translate(0px,10px)
+    g[data-name=island_2]
+      transition: 0.5s 0s
+      transform: translate(0px,10px)
+    g[data-name=island_3]
+      transition: 0.5s 0s
+      transform: translate(0px,10px)
+
+
+    &.showing
+      g[data-name=island_1],g[data-name=island_2],g[data-name=island_3],
+        opacity: 1
+      g[data-name=island_1]
+        transition: 0.5s 0.3s
+        transform: translate(0px,0px)
+      g[data-name=island_2]
+        transition: 0.5s 0.45s
+        transform: translate(0px,0px)
+      g[data-name=island_3]
+        transition: 0.5s 0.6s
+        transform: translate(0px,0px)
+
+      -webkit-pointer-events: initial
+      z-index: 10
+      // display: block
+      max-height: 10000px
+      transition: opacity 0.5s, max-height 0s 0s
+
+
+
+    @keyframes sign_wake
+      0%
+        transform: rotate(0deg)
+      80%
+        transform: rotate(0deg)
+      85%
+        transform: rotate(10deg)
+      90%
+        transform: rotate(-6deg)
+      95%
+        transform: rotate(3deg)
+      100%
+        transform: rotate(0deg)
+
+    //驚嘆號閃爍
+    g[data-name=sign]
+      transform-origin: center bottom
+      animation: sign_wake 3s infinite
+
+
+    g[data-name*=trigger]
+      cursor: pointer
+
+      &:hover
+        g[data-name=sign]
+          animation: flash 1s infinite
+  
+  //--------------------------------------------------------------------
+  //松山機場-動畫
+  //--------------------------------------------------------------------
+
+  @mixin shake($angle)
+    @keyframes shake_#{$angle}
+      0%
+        transform: rotate(0deg)
+      50%
+        transform: rotate($angle)
+      80%
+        transform: rotate(-$angle)
+      100%
+        transform: rotate(0deg)
+
+  @mixin translate($biasx,$biasy)
+    @keyframes trans_#{$biasx}_#{$biasy}
+      0%
+        transform: translate(0px,0px)
+      30%
+        transform: translate($biasx,$biasy)
+      70%
+        transform: translate($biasx,$biasy)
+      100%
+        transform: translate(0px,0px)
+
+  +shake(4deg)
+  +translate(-3px,4px)
+  +translate(3px,-4px)
+
+  //松山機場-廣播
+
+  g[data-name=trigger_radio]
+    &:hover
+      g[data-name=recorder]
+        transform-origin: center bottom
+        animation: 'shake_4deg' 2s infinite
+      g[data-name=women]
+        transform-origin: center center
+        animation: 'trans_-3px_4px' 10s infinite
+      g[data-name=paper1]
+        transform-origin: center center
+        animation: 'trans_3px_-4px' 20s infinite
+      g[data-name=paper2]
+        transform-origin: center center
+        animation: 'trans_3px_-4px' 20s 1s infinite
+
+
+  +translate(3px,3px)
+  //松山機場-行李(中)
+
+  g[data-name=trigger_package]
+    &:hover
+      g[data-name=package_upper]
+        animation: 'trans_3px_3px' 2s infinite
+      g[data-name=package_lower]
+        animation: 'trans_3px_3px' 2s -0.9s infinite
+
+  +translate(0px,-3px)
+
+  //松山機場-行李(下)
+  g[data-name=trigger_package_2]
+    &:hover
+      g[data-name=package_white]
+        animation: 'trans_0px_-3px' 2s infinite
+      g[data-name=package_red]
+        animation: 'trans_0px_-3px' 2s -0.9s infinite
+
+
+
+  +translate(8px,8px)
+  //松山機場-飛機
+
+  g[data-name=trigger_airplane]
+    &:hover
+      g[data-name=airplane]
+        animation: 'trans_8px_8px' 2s infinite
+
+
+  rect[data-name=hidden]
+    opacity: 0 
+    fill: transparent
+
+  //松山機場-人揮手
+  g[data-name=trigger_man_goodbye]
+    &:hover
+      path[data-name=hand]
+        transform-origin: left center
+        animation: 'shake_30deg' 4s infinite
+
+      g[data-name=child]
+        transform-origin: center bottom
+        animation: 2s 'trans_0px_-3px' 1s infinite
+  //--------------------------------------------------------------------
+  //龍山寺-動畫
+  //--------------------------------------------------------------------
+  
+  +translate(-5px,6px)
+  +shake(30deg)
+  +shake(2deg)
+
+  
+  //龍山寺 把杯
+  g[data-name=trigger_man_lucky]
+    &:hover
+      g[data-name=lucky_box]
+        animation: airplane_moving 2s infinite
+
+  g[data-name=trigger_women_lucky]
+    &:hover
+      g[data-name=women_upper]
+        animation: 'shake_4deg' 5s 1
+        transform-origin: center bottom
+      g[data-name=lucky_left]
+        animation: 'shake_30deg' 2s infinite
+        transform-origin: center center
+      g[data-name=lucky_right]
+        animation: 'shake_30deg' 2s 0.5s infinite
+        transform-origin: center center
+
+
+  @keyframes opacity
+    0%
+      opacity: 0
+    60%
+      opacity: 1
+    80%
+      opacity: 1
+    100%
+      opacity: 0
+
+  //抽籤
+
+  g[data-name=trigger_man_lucky]
+    g[data-name=dialog]
+      opacity: 0
+
+    &:hover
+      g[data-name=man_hand]
+        transform-origin: left center
+        animation: 'shake_4deg' 5s infinite
+
+      g[data-name=luckybox]
+        transform-origin: center bottom
+        animation: 'shake_4deg' 2s infinite
+
+      g[data-name=luckybar]
+        transform-origin: center center
+        animation: 'shake_2deg' 1s infinite
+
+      g[data-name=luckybar]:nth-child(1)
+        animation-delay: -0.3s
+      g[data-name=luckybar]:nth-child(2)
+        animation-delay: -0.6s
+      g[data-name=luckybar]:nth-child(3)
+        animation-delay: -0.7s
+      g[data-name=luckybar]:nth-child(4)
+        animation-delay: -0.9s
+      g[data-name=luckybar]:nth-child(5)
+        animation-delay: -1.1s
+
+      g[data-name=dialog]
+        transform-origin: center center
+        animation: 'opacity' 1s 3s 1 both
+
+
+
+  //抽籤
+
+  g[data-name=trigger_watching_poem]
+
+    &:hover
+      g[data-name=word]
+        animation: opacity 1s 0s infinite both
+      @for $i from 1 through 8
+        g[data-name=word]:nth-child(#{$i})
+          animation-delay: $i*0.5s
+
+        
+
+  @keyframes scale_fire
+    0%
+      transform: scaleY(1)
+    50%
+      transform: scaleY(1.1)
+    100%
+      transform: scaleY(1)
+
+  //香爐
+  g[data-name=trigger_temple_fire]
+    &:hover
+      g[data-name=stick_big]
+        transform-origin: center bottom
+        animation: scale_fire 4s 0s infinite both
+
+      g[data-name=stick_small]
+        transform-origin: center bottom
+        animation: scale_fire 2s 0s infinite both
+
+      @for $i from 1 through 20
+        g[data-name=stick_small]:nth-child(#{$i})軌跡
+          animation-delay: random()*-2s
+
+  //----------
+  //東門
+
+  +translate(6px,3px)
+
+  g[data-name=trigger_icecream]
+    g[data-name=babu]
+      transform-origin: center center
+    &:hover
+      g[data-name=hand]
+        transform-origin: left center
+        animation: 2s shake_4deg infinite
+      g[data-name=babu]
+        animation: 1s shake_4deg infinite
+      g[data-name=icecream]
+        transform-origin: center bottom
+        animation: 4s shake_4deg infinite
+      g[data-name=cover]
+        animation: 4s "trans_6px_3px" 1s infinite
+
+
+  
+
+  @keyframes bake_cookie
+    0%
+    40%
+      transform: rotate(5deg)
+    50%
+      transform: rotate(-10deg)
+    70%
+      transform: rotate(-12deg)
+    90%
+      transform: rotate(-10deg)
+    100%
+      transform: rotate(5deg)
+
+  @keyframes bake_cookie_locus
+    1%
+      opacity: 0
+    2%
+      opacity: 1
+    10%
+      opacity: 1
+    11%
+      opacity: 0
+    100%
+      opacity: 0
+
+  @keyframes now_cookie
+    0%
+      opacity: 1
+    49%
+      opacity: 1
+    50%
+      opacity: 0
+    90%
+      opacity: 0
+    91%
+      opacity: 1
+
+
+
+  g[data-name=trigger_cookie]
+    &:hover
+      g[data-name=man_upper]
+        transform-origin: center bottom
+        animation: 2s shake_4deg -1.5s infinite
+
+      g[data-name=now_cookie]
+        animation: 2s now_cookie 0s infinite both
+      g[data-name=cookie1]
+        animation: 2s bake_cookie_locus -1s infinite both
+      g[data-name=cookie2]
+        animation: 2s bake_cookie_locus -0.8s infinite both
+      g[data-name=cookie3]
+        animation: 2s bake_cookie_locus -0.6s infinite both
+      path[data-name=cookie4]
+        animation: 2s bake_cookie_locus -0.4s infinite both
+
+      g[data-name=hand]
+        transform-origin: left center
+        animation: 2s bake_cookie infinite
+      g[data-name=child]
+        transform-origin: center bottom
+        animation: 2s 'trans_0px_-3px' 1s infinite
+      g[data-name=mother]
+        transform-origin: center bottom
+        animation: 4s shake_4deg 1s infinite
+  
+
+
+  // g[data-name=throw_r]
+  //   transform-origin: center center
+  //   animation: throwing 1s infinite
+
+
+  @keyframes throwing
+    0%
+      transform: translateY(0px)
+    50%
+      transform: translateY(0px) rotate(45deg)
+    100%
+      transform: translateY(0px)
+
+
+  +translate(5px,0px)
+
+  //----------
+  //小巨蛋兒
+  // +shake(6deg)
+  //hand      
+  +translate(6px,0px)
+  g[data-name=trigger_peoples]
+    &:hover
+      g[data-name=people1]
+        animation: 2.5s "trans_6px_0px" -1.5s infinite
+      g[data-name=people2]
+        animation: 1.5s "trans_6px_0px" -0.5s infinite
+      g[data-name=people3]
+        animation: 3s "trans_6px_0px" -1s infinite
+      g[data-name=people4]
+        animation: 2.4s "trans_6px_0px" -2s infinite
+
+  g[data-name=trigger_sell_light]
+    &:hover
+      g[data-name=hand]
+        transform-origin: left center
+        animation: 2s shake_4deg -1.5s infinite
+
+  +translate(-10px,5px)
+  //hand      
+  g[data-name=trigger_egg_bus]
+    &:hover
+      g[data-name=bus]
+        animation: 5s "trans_-10px_5px" 0s infinite
+
+
 </style>
 
