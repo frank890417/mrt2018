@@ -5,6 +5,8 @@
     //-     .row
     section.sectionStyle
       .container-fluid
+        audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay)
+
         .row
           .col-lg-3.col-md-12.col-text
             h3.title-eng {{ $t('explore.title_eng')  }}
@@ -13,9 +15,11 @@
             //- .btn.red 第一期
             //- .btn.red 第二期
             //- .btn.red 第三期
-            //- .btn.red 典藏
-            //- .btn.red 徵選中
-          .col-lg-9.col-md-12.col-map
+            br
+            .btn(:class="{red: type==''}", @click='toggleType("")') 全部站體(15站)
+            .btn(:class="{red: type=='audition'}", @click='toggleType("audition")') 徵選中
+            .btn(:class="{red: type=='history'}", @click='toggleType("history")') 典藏
+          .col-lg-9.col-md-12.col-map(:class="'filter_'+type")
             
             SvgInline.animated.map(:src="'/static/img/map.svg'")
 
@@ -35,7 +39,7 @@ import $ from 'jquery'
 export default {
   data(){
     return {
-      
+      type: ""
     }
   },
   mounted(){
@@ -55,7 +59,16 @@ export default {
     $( ".col-map" ).on( "tap", "g[id*='station']",station_goto);
     $( ".col-map" ).on( "click", "g[id*='station']",station_goto);
 
-    
+    setTimeout(()=>{
+      this.stations.forEach(stdata=>{
+        let st = $("[id*="+stdata.station_key+"]")
+        if (stdata.demo){
+          st.attr("type","history")
+        }else{
+          st.attr("type","audition")
+        }
+      })
+    },500)
     // $( ".col-map" ).on( "mouseenter", "g[data-name*='station']",station);
     // $( ".col-map" ).on( "mouseleave", "g[data-name*='station']",station);
   
@@ -67,7 +80,13 @@ export default {
     // ...mapState(['stations'])
   },
   methods:{
-
+    toggleType(type){
+      if (this.type==type){
+        this.type==""
+      }else{
+        this.type=type
+      }
+    }
   }
 }
 </script>
@@ -77,6 +96,7 @@ export default {
 .page-scene-list
   background: linear-gradient(45deg,transparent 0%,transparent 15%,#efefef 19% ,#efefef 20%,transparent 21%),linear-gradient(-45deg,transparent 0%,transparent 15%,#efefef 19% ,#efefef 20%,transparent 21%)
   background-size: 50px
+
   .col-text
     // background-color: $colorRed
     // color: white
@@ -90,6 +110,17 @@ export default {
   .title-eng
     &:before
     color: #fff
+  
+  .filter_history
+    [type*="history"]
+      opacity: 1
+    [type*="audition"]
+      opacity: 0
+  .filter_audition
+    [type*="history"]
+      opacity: 0
+    [type*="audition"]
+      opacity: 1
   .map
     mix-blend-mode: multiply
     transform: scale(1)
@@ -99,6 +130,8 @@ export default {
     margin-top: -10%
     [id*="station"]
       cursor: pointer
+      +trans
+
     circle
       r: 7
       animation: rr 1s linear

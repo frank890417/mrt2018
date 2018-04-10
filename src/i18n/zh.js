@@ -427,7 +427,9 @@ let data = {
         img: "/static/img/stations/淡水站.svg",
         line: ["淡水信義線"],
         term: 2,
-        demo: "/static/audio/第ㄧ期站體音檔/淡水站＿陳建年＿藍海之歌.mp3"
+        demo: "/static/audio/第ㄧ期站體音檔/淡水站＿陳建年＿藍海之歌.mp3",
+        demo_title: "藍海之歌",
+        demo_author: "陳建年",
 
       },
       {
@@ -441,7 +443,9 @@ let data = {
         img: "/static/img/stations/中正紀念堂.svg",
         line: ["松山新店線", "淡水信義線"],
         term: 2,
-        demo: "/static/audio/第ㄧ期站體音檔/中正紀念堂站＿紅樂團.mp3"
+        demo: "/static/audio/第ㄧ期站體音檔/中正紀念堂站＿紅樂團.mp3",
+        demo_title: "中正紀念堂站",
+        demo_author: "紅樂團",
 
       },
       {
@@ -455,7 +459,9 @@ let data = {
         img: "/static/img/stations/中山國中站.svg",
         line: ["文湖線"],
         term: 2,
-        demo: "/static/audio/第ㄧ期站體音檔/中山國中站＿林強.wav"
+        demo: "/static/audio/第ㄧ期站體音檔/中山國中站＿林強.wav",
+        demo_title: "中山國中站",
+        demo_author: "林強",
 
       },
       {
@@ -469,7 +475,9 @@ let data = {
         img: "/static/img/stations/大安森林公園.svg",
         line: ["淡水信義線"],
         term: 2,
-        demo: "/static/audio/第ㄧ期站體音檔/大安森林公園站＿劉季陵.wav"
+        demo: "/static/audio/第ㄧ期站體音檔/大安森林公園站＿劉季陵.wav",
+        demo_title: "大安森林公園站",
+        demo_author: "劉季陵",
 
       },
       {
@@ -484,7 +492,9 @@ let data = {
         img: "/static/img/stations/小碧潭站.svg",
         line: ["小碧潭線"],
         term: 2,
-        demo: "/static/audio/第ㄧ期站體音檔/小碧潭站＿劉涵.mp3"
+        demo: "/static/audio/第ㄧ期站體音檔/小碧潭站＿劉涵.mp3",
+        demo_title: "小碧潭站",
+        demo_author: "劉涵",
 
       }
 

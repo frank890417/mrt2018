@@ -22,9 +22,11 @@
               .btn.red(@click="togglePlay") 
                 i.fa.fa-play(v-if="!playingDemo") &nbsp;
                 i.fa.fa-pause(v-else) &nbsp;
-                span 播放典藏
+                span 播放作品
+                span  ({{ station.demo_author }})
               .audiodemo(v-if="station.demo")
                 audio#demoaudio( :src="station.demo")
+              audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay)
 
               
           .col-lg-7.col-md-12.col-scene
@@ -32,7 +34,7 @@
               SvgInline.floatInUp.animated.scene.showing(:src="station.img")
 
 
-</template>
+</template>n
 
 <script>
 import {mapState,mapMutations,mapActions} from 'vuex'
