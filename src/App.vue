@@ -64,8 +64,8 @@ html,body
   font-size: 15px
   overflow-x: hidden
   color: #333
-  
-svg *
+
+svg g,svg path
   transform-box: fill-box
 
 #app
