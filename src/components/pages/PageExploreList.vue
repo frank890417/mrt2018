@@ -19,6 +19,8 @@
             .btn(:class="{red: type==''}", @click='toggleType("")') 全部站體(15站)
             .btn(:class="{red: type=='audition'}", @click='toggleType("audition")') 徵選中
             .btn(:class="{red: type=='history'}", @click='toggleType("history")') 典藏
+            br
+            br
           .col-lg-9.col-md-12.col-map(:class="'filter_'+type")
             
             SvgInline.animated.map(:src="'/static/img/map.svg'")
@@ -93,15 +95,28 @@ export default {
 
 <style lang="sass">
 @import "../../assets/_mixins.sass"
-.page-scene-list
-  background: linear-gradient(45deg,transparent 0%,transparent 15%,#efefef 19% ,#efefef 20%,transparent 21%),linear-gradient(-45deg,transparent 0%,transparent 15%,#efefef 19% ,#efefef 20%,transparent 21%)
-  background-size: 50px
+.page.page-scene-list
+  padding-bottom: 0
+  &:before
+    content: ""
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(45deg,transparent 0%,transparent 15%,#ddd 19% ,#ddd 20%,transparent 21%),linear-gradient(-45deg,transparent 0%,transparent 15%,#ddd 19% ,#ddd 20%,transparent 21%)
+    background-size: 50px
+    opacity: 0.4
+    +rwd_sm
+      background-size: 15px
+      opacity: 0.2
 
   .col-text
     // background-color: $colorRed
     // color: white
     padding-left: 100px
     padding-top: 100px
+    // background-color: #fff
     // padding: 30px
     height: 450px
     +rwd_sm
