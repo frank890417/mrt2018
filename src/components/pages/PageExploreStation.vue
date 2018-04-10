@@ -20,7 +20,7 @@
               br
               p.animated.fadeIn(v-html="lineToBr(station.description)")
               .audiodemo(v-if="station.demo")
-                audio( :src="station.demo" controls)
+                audio( :src="station.demo" controls controlsList="nodownload")
 
               
           .col-lg-7.col-md-12.col-scene
