@@ -23,7 +23,7 @@
             br
           .col-lg-9.col-md-12.col-map(:class="'filter_'+type")
             
-            SvgInline.animated.map(:src="'/static/img/map.svg'")
+            SvgInline.animated.map(:src="'/static/img/map.svg'",:class="'locale_'+$i18n.locale")
 
           //- router-link.animated.fadeIn.col-sm-4.col-station(
           //-           v-for = "(station,sid) in stations",
@@ -64,12 +64,17 @@ export default {
     setTimeout(()=>{
       this.stations.forEach(stdata=>{
         let st = $("[id*="+stdata.station_key+"]")
+        
         if (stdata.demo){
           st.attr("type","history")
         }else{
           st.attr("type","audition")
         }
+        let text =  st.children("text")
+        console.log(text)
+        text.text(stdata.name)
       })
+      
     },500)
     // $( ".col-map" ).on( "mouseenter", "g[data-name*='station']",station);
     // $( ".col-map" ).on( "mouseleave", "g[data-name*='station']",station);
@@ -77,7 +82,10 @@ export default {
   },
   computed:{
     stations(){
+      //update station title
+      
       return this.$t("stations")
+      
     },
     // ...mapState(['stations'])
   },
@@ -88,6 +96,18 @@ export default {
       }else{
         this.type=type
       }
+    }
+  },
+  watch: {
+    "$i18n.locale":function() {
+      // console.log("locale change! text reset")
+      this.stations.forEach(stdata=>{
+        let st = $("[id*="+stdata.station_key+"]")
+        
+        let text =  st.children("text")
+        console.log(text)
+        text.text(stdata.name)
+      })
     }
   }
 }
@@ -146,6 +166,9 @@ export default {
     [id*="station"]
       cursor: pointer
       +trans
+    &.locale_en
+      text
+        font-size: 8px
 
     circle
       r: 7
