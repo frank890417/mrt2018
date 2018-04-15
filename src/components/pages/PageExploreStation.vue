@@ -369,6 +369,10 @@ export default {
     padding-bottom: 0
     padding-top: 60px
     margin-bottom: 30px
+  +rwd_lg
+    padding-top: 10vh
+  
+
   .btn-prev,.btn-next
     position: absolute
     top: 50%
@@ -421,6 +425,9 @@ export default {
     margin-bottom: 20px
     display: inline-block
     margin-right: 10px
+    +range_width(500px,1400px)
+      margin-top: 5vh
+    
   .col-content
     padding-left: 10vw
     box-sizing: border-box

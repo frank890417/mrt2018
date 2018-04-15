@@ -287,9 +287,12 @@ export default {
       console.log(this.error_msg);
       if (check){
         $("#regist_form").submit();
-        $(".submit_regist_form_btn").text("傳送中...");
+        $(".btn-send").text("上傳報名中...請勿重複點選或跳離畫面");
       }else{
-        $(".submit_regist_form_btn").text("請確認後重新送出");
+        $(".btn-send").text("請確認完整後重新送出");
+        setTimeout(function(){
+          $(".btn-send").text("送出報名資料");
+        },2000)
       }
     }
   }

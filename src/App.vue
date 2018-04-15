@@ -343,7 +343,7 @@ p
   // position: fixed
   position: absolute
   left: 0px
-  top: 20px
+  top: 0px
   font-size: 1.2em
   cursor: pointer
   box-shadox: 0px 0px 10px rgba(black,0.1)

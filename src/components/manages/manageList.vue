@@ -9,11 +9,14 @@
       .container
         .row
           .col-sm-12
+            VueLazyTable(:table_data="use_registlist", :hide_table="true")
+        .row
+          .col-sm-12
             el-table(:data="use_registlist")
               el-table-column(prop="id",label="#",width=50)
               //- el-table-column(prop="creator_count",label="人數",width=40)
               el-table-column(prop="creators",label="創作者",width=200)
-              el-table-column(prop="is18",label="是否18",width=80)
+              //- el-table-column(prop="is18",label="是否18",width=80)
               el-table-column(prop="works",label="作品",width=250)
                 template(slot-scope="scope")
                   p(v-html="scope.row.works")
@@ -30,6 +33,7 @@
 import {mapState,mapMutations,mapActions} from 'vuex'
 import $ from 'jquery'
 import axios from 'axios'
+import VueLazyTable from '../vue_lazy_table'
 export default {
   data(){
     return {
@@ -41,7 +45,7 @@ export default {
     
     // axios.get('http://metro2017.test/api/regist2018/all').then(res=>{
       
-    axios.get('http://api.taipeisoundscape.com/api/regist2018/all').then(res=>{
+    axios.get('http://api.taipeisoundscape.com/regist2018/all').then(res=>{
       console.log(res.data)
       this.registlist=res.data
     })
@@ -74,7 +78,7 @@ export default {
         ].filter(o=>o.name)
           .map(o=>{
             let url = "http://api.taipeisoundscape.com/registwork/file"+o.file
-            let html = "<a href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
+            let html = "<a style='text-align:left' href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
             return html
           }).join('<br>')
       }))
@@ -82,6 +86,9 @@ export default {
   },
   methods:{
 
+  },
+  components: {
+    VueLazyTable
   }
 }
 </script>
