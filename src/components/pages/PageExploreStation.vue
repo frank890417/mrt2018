@@ -19,14 +19,19 @@
               h5.animated.fadeIn {{ station.keywords }}
               br
               p.animated.fadeIn(v-html="lineToBr(station.description)")
-              .btn.red(@click="togglePlay" v-if="station.demo") 
+              .btn.red.btn-demo(@click="togglePlay" v-if="station.demo") 
                 i.fa.fa-play(v-if="!playingDemo") &nbsp;
                 i.fa.fa-pause(v-else) &nbsp;
-                span 播放作品
-                span  ({{ station.demo_author }})
+                span {{station.demo_title}}
+                span / {{ station.demo_author }}
+                p.description
+                  span
+                    h5 作品名稱：{{station.demo_title}}
+                  span 作品簡介：<br>
+                  span(v-html="station.demo_description")
               .audiodemo(v-if="station.demo")
                 audio#demoaudio( :src="station.demo")
-              audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay)
+              audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay, volume = "0.2")
 
               
           .col-lg-7.col-md-12.col-scene
@@ -55,12 +60,17 @@ export default {
           lang: "zh",
           no_change_time: 0,
           playind_sound: false,
-          playingDemo: false
+          playingDemo: false,
+          playingEnvir: false
         }
       },
   mounted: function(){
     this.playingDemo=false
         var vobj=this;
+
+        //降低環境音量
+        $("#demoenvir")[0].volume=0.5
+        $("#demoaudio")[0].volume=0.25
         // vobj.delta(parseInt(Math.random()*50));
 
         //如果超過5秒動作自動切換
@@ -372,6 +382,44 @@ export default {
   +rwd_lg
     padding-top: 10vh
   
+  //播放demo按鈕
+  .btn-demo
+    display: block
+    position: relative
+    .description
+
+      position: absolute
+      background-color: white
+      color: black
+      padding: 10px 20px
+      width: 400px
+      max-width: 100vw
+      font-size: 0.9em
+      // max-width: 
+      white-space: pre-wrap
+      left: calc( 100% + 20px )
+      transform: translateY(-50%)
+      // display: none
+      z-index: 100
+      opacity: 0
+      pointer-events: none
+      background-color: white
+      +trans
+      &:before
+        +size(35px)
+        display: block
+        content: ''
+        position: absolute
+        left: 0
+        top: 35%
+        transform: rotate(45deg)
+        left: -20px
+        background-color: #fff
+
+    &:hover .description
+      display: block
+      opacity: 1
+      pointer-events: initial
 
   .btn-prev,.btn-next
     position: absolute

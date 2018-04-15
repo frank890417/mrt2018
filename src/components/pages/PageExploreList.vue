@@ -5,7 +5,7 @@
     //-     .row
     section.sectionStyle
       .container-fluid
-        audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay)
+        //- audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay)
 
         .row
           .col-lg-3.col-md-12.col-text
