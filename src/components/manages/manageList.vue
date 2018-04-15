@@ -28,8 +28,10 @@
       .container(v-else)
         .row
           .col-sm-12
-            h3 請先到登入頁面登入後，再回此頁面重新整理
-            a.btn.red(href="http://api.taipeisoundscape.com/login", target="_blank") 前往登入
+            h3 請輸入管理用密碼：
+            el-input(v-model="temptoken")
+            .btn.red(@click="reloadData") 確認
+            //- a.btn.red(href="http://api.taipeisoundscape.com/login", target="_blank") 前往登入
 
 
 </template>
@@ -43,22 +45,16 @@ export default {
   data(){
     return {
       registlist: [],
-      getDataError: false
+      getDataError: false,
+      temptoken: ""
     }
   },
   mounted(){
-
-    
     // axios.get('http://metro2017.test/api/regist2018/all').then(res=>{
-      
-    axios.get('http://api.taipeisoundscape.com/regist2018/all').then(res=>{
-      console.log(res.data)
-      this.registlist=res.data
-    }).catch(res=>{
-      this.getDataError=true
-    })
+    this.loadData()
   },
   computed:{
+    ...mapState(['token']),
     use_registlist(){
 
       return this.registlist.map(o=>({
@@ -93,6 +89,21 @@ export default {
     }
   },
   methods:{
+    ...mapMutations(['setToken']),
+    loadData(){
+      axios.get('http://api.taipeisoundscape.com/regist2018/all',{params: { token: this.token} }).then(res=>{
+        console.log(res.data)
+        this.$set(this,"registlist",res.data)
+        // this.registlist=res.data
+        this.getDataError=false
+      }).catch(res=>{
+        this.getDataError=true
+      })
+    },
+    reloadData(){
+      this.setToken(this.temptoken)
+      this.loadData()
+    }
 
   },
   components: {

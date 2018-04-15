@@ -9,6 +9,7 @@
             router-link.btn-back(to="/explore") 
               i.fa.fa-undo
               span Back
+            
             br
             div(:key="station.name")
               .ovh
@@ -31,6 +32,12 @@
                   span(v-html="station.demo_description")
               .audiodemo(v-if="station.demo")
                 audio#demoaudio( :src="station.demo")
+                br
+                .btn(@click="toggleDemoPlay")
+                  span(v-if="playingEnvir") 關閉
+                  span(v-else) 開啟
+                  span 環境音
+                  
               audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay, volume = "0.2")
 
               
@@ -61,7 +68,9 @@ export default {
           no_change_time: 0,
           playind_sound: false,
           playingDemo: false,
-          playingEnvir: false
+          playingEnvir: true,
+          envir_volume: 0.25,
+          demo_volume: 0.5
         }
       },
   mounted: function(){
@@ -336,6 +345,18 @@ export default {
         $("#demoaudio")[0].pause()
 
       }
+    },
+    toggleDemoPlay(){
+      if (!this.playingEnvir){
+        this.playingEnvir=true
+        $("#demoenvir")[0].currentTime=0
+        $("#demoenvir")[0].play()
+      }else{
+        this.playingEnvir=false
+        $("#demoenvir")[0].currentTime=0
+        $("#demoenvir")[0].pause()
+
+      }
     }
   },
   computed:{
@@ -384,7 +405,7 @@ export default {
   
   //播放demo按鈕
   .btn-demo
-    display: block
+    // display: block
     position: relative
     .description
 

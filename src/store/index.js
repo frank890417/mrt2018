@@ -18,7 +18,7 @@ const store = new Vuex.Store({
       red: "#CE2834",
       white: "#F9F8F7"
     },
-
+    token: ""
   },
   mutations: {
     setMenuState(state, value) {
@@ -31,6 +31,9 @@ const store = new Vuex.Store({
     },
     setBgColor(state,value){
       state.bgColor = state.colors[value]
+    },
+    setToken(state,value){
+      state.token = value
     }
   },
   actions: {

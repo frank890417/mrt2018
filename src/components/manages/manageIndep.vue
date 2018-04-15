@@ -110,12 +110,13 @@ export default {
     
     // axios.get('http://metro2017.test/api/regist2018/all').then(res=>{
       
-    axios.get('http://api.taipeisoundscape.com/api/regist2018/all').then(res=>{
+    axios.get('http://api.taipeisoundscape.com/regist2018/all',{params: { token: this.token} }).then(res=>{
       console.log(res.data)
       this.registlist=res.data
     })
   },
   computed:{
+    ...mapState(['token']),
     nowdata(){
       return this.use_registlist.find(o=>o.id==this.$route.params.id)
     },
