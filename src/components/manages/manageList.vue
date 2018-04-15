@@ -6,7 +6,7 @@
           .col-sm-12
             h1.title 管理報名清單
     section.sectionStyle
-      .container
+      .container(v-if='!getDataError')
         .row
           .col-sm-12
             VueLazyTable(:table_data="use_registlist", :hide_table="true")
@@ -25,6 +25,11 @@
               el-table-column(prop="detail",label="詳細資料")
                 template(slot-scope="scope")
                   router-link.btn.red(:to="'/manage/'+scope.row.id") 檢視資料
+      .container(v-else)
+        .row
+          .col-sm-12
+            h3 請先到登入頁面登入後，再回此頁面重新整理
+            a.btn.red(href="http://api.taipeisoundscape.com/login", target="_blank") 前往登入
 
 
 </template>
@@ -37,7 +42,8 @@ import VueLazyTable from '../vue_lazy_table'
 export default {
   data(){
     return {
-      registlist: []
+      registlist: [],
+      getDataError: false
     }
   },
   mounted(){
@@ -48,6 +54,8 @@ export default {
     axios.get('http://api.taipeisoundscape.com/regist2018/all').then(res=>{
       console.log(res.data)
       this.registlist=res.data
+    }).catch(res=>{
+      this.getDataError=true
     })
   },
   computed:{
@@ -78,7 +86,7 @@ export default {
         ].filter(o=>o.name)
           .map(o=>{
             let url = "http://api.taipeisoundscape.com/registwork/file"+o.file
-            let html = "<a style='text-align:left' href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
+            let html = "<a style='display: block' href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
             return html
           }).join('<br>')
       }))
