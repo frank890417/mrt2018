@@ -32,10 +32,10 @@
                     h5 作品名稱：{{station.demo_title}}
                   span 作品簡介：<br>
                   span(v-html="station.demo_description")
-              .audiodemo(v-if="station.demo")
-                audio#demoaudio( :src="station.demo")
+              .audiodemo
+                audio#demoaudio( :src="station.demo" v-if="station.demo")
                 
-                br
+                br(v-if="station.demo")
                 .btn(@click="toggleDemoPlay")
                   span(v-if="playingEnvir") 關閉
                   span(v-else) 開啟
