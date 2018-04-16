@@ -1,5 +1,7 @@
 <template lang="pug">
   .page.page-explore-station.color.white
+    audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay, volume = "0.2")
+
     section.sectionHero
       .container-fluid
         router-link.btn-prev(v-if="stationDelta(-1)" :to="stationDelta(-1)")
@@ -32,14 +34,13 @@
                   span(v-html="station.demo_description")
               .audiodemo(v-if="station.demo")
                 audio#demoaudio( :src="station.demo")
+                
                 br
                 .btn(@click="toggleDemoPlay")
                   span(v-if="playingEnvir") 關閉
                   span(v-else) 開啟
                   span 環境音
                   
-              audio#demoenvir(src="/static/audio/捷運站內環境音.mp3" autoplay, volume = "0.2")
-
               
           .col-lg-7.col-md-12.col-scene
             div.animated.fadeIn(:key="station.name")
@@ -69,8 +70,8 @@ export default {
           playind_sound: false,
           playingDemo: false,
           playingEnvir: true,
-          envir_volume: 0.25,
-          demo_volume: 0.5
+          envir_volume: 0.35,
+          demo_volume: 0.75
         }
       },
   mounted: function(){
@@ -394,14 +395,20 @@ export default {
 <style lang="sass">
 @import "../../assets/_mixins.sass"
 .page-explore-station
-  height: 100vh
+  height: auto
   overflow: hidden
+  min-height: 850px
+  padding-bottom: 50px
+  box-sizing: border-box
   +rwd_sm
-    padding-bottom: 0
+    padding-bottom: 0px
     padding-top: 60px
     margin-bottom: 30px
+  +rwd_md
+    height: auto
   +rwd_lg
     padding-top: 10vh
+  .sectionHero
   
   //播放demo按鈕
   .btn-demo
@@ -412,8 +419,8 @@ export default {
       position: absolute
       background-color: white
       color: black
-      padding: 10px 20px
-      width: 400px
+      padding: 15px 25px
+      width: 450px
       max-width: 100vw
       font-size: 0.9em
       // max-width: 
@@ -421,10 +428,12 @@ export default {
       left: calc( 100% + 20px )
       transform: translateY(-50%)
       // display: none
-      z-index: 100
+      z-index: 150
       opacity: 0
       pointer-events: none
       background-color: white
+      box-shadow: 0px 0px 10px rgba(black,0.1)
+      // box-shadow: 0px 0px 0px 10px $colorRed
       +trans
       &:before
         +size(35px)
@@ -436,6 +445,8 @@ export default {
         transform: rotate(45deg)
         left: -20px
         background-color: #fff
+        // box-shadow: 0px 0px 10px rgba(black,0.1)
+
 
     &:hover .description
       display: block

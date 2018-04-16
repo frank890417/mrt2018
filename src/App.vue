@@ -232,14 +232,20 @@ h1
   font-size: 2.8rem
   font-weight: 700
   line-height: 1.5
+  +rwd_md
+    font-size: 2.6rem
 h2
   font-size: 2rem
   font-weight: 500
   line-height: 1.5
+  +rwd_md
+    font-size: 1.8rem
 h3
   font-size: 1.6rem
   font-weight: 500
   line-height: 1.5
+  +rwd_md
+    font-size: 1.4rem
 h4
   font-size: 1.2rem
   font-weight: 500

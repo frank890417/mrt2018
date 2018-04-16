@@ -124,9 +124,9 @@ export default {
     top: 0
     width: 100%
     height: 100%
-    background: linear-gradient(45deg,transparent 0%,transparent 15%,#ddd 19% ,#ddd 20%,transparent 21%),linear-gradient(-45deg,transparent 0%,transparent 15%,#ddd 19% ,#ddd 20%,transparent 21%)
+    background: linear-gradient(45deg,transparent 0%,transparent 17%,#ddd 18% ,#ddd 20%,transparent 21%),linear-gradient(-45deg,transparent 0%,transparent 17%,#ddd 18% ,#ddd 20%,transparent 21%)
     background-size: 50px
-    opacity: 0.4
+    opacity: 0.5
     +rwd_sm
       background-size: 15px
       opacity: 0.2
