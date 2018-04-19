@@ -6,7 +6,8 @@ let data = {
       content: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，你，還感受到了些什麼？"
     },
     explore: {
-      title: "場景探索",
+      short_title: "場景探索",
+      title: "場景探索與環境⾳樂試聽",
       eng: "EXPLORE",
       content: "繁忙的台北街頭，乘載著川流不息的人們，<br>而你，是否曾側耳傾聽那些美妙的旋律？"
     },
@@ -215,8 +216,8 @@ let data = {
       label: "聯繫: +886-2-2765-2969<br>Email: info@taipeisoundscape.com<br>音樂、聲音製作: <a href='https://www.facebook.com/profile.php?id=1674474496' target='_blank'>沈宣萱</a>"
     },
     company: {
-      mega: "台北市音樂創作職業工會",
-      union: "強力錄音室",
+      mega: "強力錄音室",
+      union: "台北市音樂創作職業工會",
       mono: "墨雨設計"
     }
 
@@ -507,7 +508,7 @@ let data = {
         keywords: "漫遊、休閒、遊樂",
         audition: false,
         img: "/static/img/stations/小碧潭站.svg",
-        line: ["小碧潭線"],
+        line: ["松山新店線"],
         term: 2,
         demo: "/static/audio/第ㄧ期站體音檔/第一期＿小碧潭站.mp3",
         demo_title: "捷運小碧潭站站體音樂",
@@ -534,13 +535,13 @@ let data = {
           color: "white"
         },
         {
-          eng: "Xindian Line",
+          eng: "Songshan-Xindian Line",
           name: "松山新店線",
           bgcolor: "#0C8155",
           color: "white"
         },
         {
-          eng: "Xinlu Line",
+          eng: "Zhonghe-Xinlu Line",
           name: "中和新蘆線",
           bgcolor: "#E8AF29",
           color: "black"

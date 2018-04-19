@@ -16,7 +16,7 @@
             //- .btn.red 第二期
             //- .btn.red 第三期
             br
-            .btn(:class="{red: type==''}", @click='toggleType("")') 全部站體(15站)
+            .btn(:class="{red: type==''}", @click='toggleType("")') 全部站體(20站)
             .btn(:class="{red: type=='audition'}", @click='toggleType("audition")') 徵選中
             .btn(:class="{red: type=='history'}", @click='toggleType("history")') 典藏
             br

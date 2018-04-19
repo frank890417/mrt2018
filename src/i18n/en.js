@@ -6,6 +6,7 @@ let data = {
       content: "With the busy streets of Taipei carrying heavy traffic flows everyday, Have you ever opened your ears to those beautiful melodies hidden in the sounds of Taipei City ?"
     },
     explore: {
+      short_title: "EXPLORE",
       title: "EXPLORE",
       eng: "場景探索",
       content: "Every single place has its own sound. It could be the roar of the crowd or the cries of street vendors. So, what else do you feel when you are in the following places ?"
@@ -430,13 +431,13 @@ The riverside park boasts of its lush green field, riverside bicycle lane, volle
     },
     {
       eng: "松山新店線",
-      name: "Xindian Line",
+      name: "Songshan-Xindian Line",
       bgcolor: "#0C8155",
       color: "white"
     },
     {
       eng: "中和新蘆線",
-      name: "Xinlu Line",
+      name: "Zhonghe-Xinlu Line",
       bgcolor: "#E8AF29",
       color: "black"
     },

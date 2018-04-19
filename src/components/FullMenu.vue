@@ -43,7 +43,7 @@
               router-link.col-sm-6(to="/explore")
                 //- img.logo(src="/static/img/NavIcon2.svg")
                 .rect
-                h1  {{ $t('nav.explore.title') }}
+                h1  {{ $t('nav.explore.short_title') }}
                 h2 {{ $t('nav.explore.eng') }}
                 p.nav-short-description(v-html="$t('nav.explore.content')") 繁忙的台北街頭，乘載著川流不息的人們，<br>而你，是否曾側耳傾聽那些美妙的旋律？
             

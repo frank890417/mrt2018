@@ -28,11 +28,11 @@
         br
         a.data(href='http://www.megaforce.tw/', target='_blank', title='前往網站')
           img(src='http://api.taipeisoundscape.com/img/icon_company_3.svg', alt='')
-        span(style="white-space: nowrap;") {{ $t('footer.company.union' ) }}
+        span(style="white-space: nowrap;") {{ $t('footer.company.mega' ) }}
         br
         a.data(href='http://www.mcu.org.tw/', target='_blank', title='前往網站' )
           img(src='http://api.taipeisoundscape.com/img/icon_company_4.png', alt='')
-        span(style="white-space: nowrap;")              {{ $t('footer.company.mega' ) }}
+        span(style="white-space: nowrap;")              {{ $t('footer.company.union' ) }}
       .col-md-2.col-sm-12
         .colname  {{ $t('footer.label_website') }}
         br

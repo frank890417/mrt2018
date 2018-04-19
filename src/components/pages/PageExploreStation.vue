@@ -25,8 +25,7 @@
               .btn.red.btn-demo(@click="togglePlay" v-if="station.demo") 
                 i.fa.fa-play(v-if="!playingDemo") &nbsp;
                 i.fa.fa-pause(v-else) &nbsp;
-                span {{station.demo_title}}
-                span / {{ station.demo_author }}
+                span 站體環靜⾳樂典藏試聽
                 p.description
                   span
                     h5 作品名稱：{{station.demo_title}}
@@ -400,6 +399,8 @@ export default {
   min-height: 850px
   padding-bottom: 50px
   box-sizing: border-box
+  p
+    text-align: left
   +rwd_sm
     padding-bottom: 0px
     padding-top: 60px
