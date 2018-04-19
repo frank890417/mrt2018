@@ -37,9 +37,21 @@ let data = {
   },
   explore: {
     title_eng: "Space explore",
-    title: "場景探索",
+    title: "場景探索<br>與環境⾳樂試聽",
     description: "每個地方，都有專屬自己的聲音，<br>人群嘈雜、商家紛鬧叫賣，<br>你，還感受到了些什麼？",
-    requiring: "徵選中"
+    requiring: "徵選中",
+    cata_all: "全部站體(20站)",
+    cata_audition: "徵選中",
+    cata_history: "典藏",
+
+    label_demo_btn: "站體環境⾳樂作品",
+    label_work_text: "作品",
+    label_author_text: "作者",
+    label_demo_about_text: "作品/作者介紹",
+    label_open: "開啟",
+    label_close: "關閉",
+    label_env: "環境音",
+
   },
   playground: {
     title_eng: "Impromptu",

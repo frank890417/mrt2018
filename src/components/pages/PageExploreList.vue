@@ -10,15 +10,15 @@
         .row
           .col-lg-3.col-md-12.col-text
             h3.title-eng {{ $t('explore.title_eng')  }}
-            h1.title {{ $t('explore.title')  }}
+            h1.title(v-html="$t('explore.title')")
             p(v-html="$t('explore.description')")
             //- .btn.red 第一期
             //- .btn.red 第二期
             //- .btn.red 第三期
             br
-            .btn(:class="{red: type==''}", @click='toggleType("")') 全部站體(20站)
-            .btn(:class="{red: type=='audition'}", @click='toggleType("audition")') 徵選中
-            .btn(:class="{red: type=='history'}", @click='toggleType("history")') 典藏
+            .btn(:class="{red: type==''}", @click='toggleType("")') {{ $t('explore.cata_all') }}
+            .btn(:class="{red: type=='audition'}", @click='toggleType("audition")') {{ $t('explore.cata_audition') }}
+            .btn(:class="{red: type=='history'}", @click='toggleType("history")') {{ $t('explore.cata_history') }}
             br
             br
           .col-lg-9.col-md-12.col-map(:class="'filter_'+type")

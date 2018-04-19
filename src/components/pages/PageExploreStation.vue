@@ -25,20 +25,20 @@
               .btn.red.btn-demo(@click="togglePlay" v-if="station.demo") 
                 i.fa.fa-play(v-if="!playingDemo") &nbsp;
                 i.fa.fa-pause(v-else) &nbsp;
-                span 站體環靜⾳樂典藏試聽
+                span {{ $t("explore.label_demo_btn") }}
                 p.description
                   span
-                    h5 作品名稱：{{station.demo_title}}
-                  span 作品簡介：<br>
+                    h5 {{  $t("explore.label_work_text") }}：{{station.demo_title}} / {{$t("explore.label_author_text")  }}： {{station.demo_author}}
+                  span {{ $t("explore.label_demo_about_text") }}：<br>
                   span(v-html="station.demo_description")
               .audiodemo
                 audio#demoaudio( :src="station.demo" v-if="station.demo")
                 
                 br(v-if="station.demo")
                 .btn(@click="toggleDemoPlay")
-                  span(v-if="playingEnvir") 關閉
-                  span(v-else) 開啟
-                  span 環境音
+                  span(v-if="playingEnvir") {{ $t("explore.label_open") }}
+                  span(v-else)  {{ $t("explore.label_close") }}
+                  span  {{ $t("explore.label_env") }}
                   
               
           .col-lg-7.col-md-12.col-scene
