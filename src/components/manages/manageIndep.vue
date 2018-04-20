@@ -201,7 +201,10 @@ export default {
         if (d[1]=="-"){
           return null
         }
-        console.log(d)
+        // console.log(d)
+        if (key=="attend_workshop"){
+          data = data?"確定":"無法參加"
+        }
         return {
           data,
           key: d[1]

@@ -28,7 +28,7 @@
                 span {{ $t("explore.label_demo_btn") }}
                 p.description
                   span
-                    h5 {{  $t("explore.label_work_text") }}：{{station.demo_title}} / {{$t("explore.label_author_text")  }}： {{station.demo_author}}
+                    h5 {{ $t("explore.label_work_text") }}：{{station.demo_title}}<br>{{$t("explore.label_author_text")}}：{{station.demo_author}}
                   span {{ $t("explore.label_demo_about_text") }}：<br>
                   span(v-html="station.demo_description")
               .audiodemo
@@ -36,8 +36,8 @@
                 
                 br(v-if="station.demo")
                 .btn(@click="toggleDemoPlay")
-                  span(v-if="playingEnvir") {{ $t("explore.label_open") }}
-                  span(v-else)  {{ $t("explore.label_close") }}
+                  span(v-if="playingEnvir") {{ $t("explore.label_close") }}
+                  span(v-else)  {{ $t("explore.label_open") }}
                   span  {{ $t("explore.label_env") }}
                   
               
@@ -415,13 +415,14 @@ export default {
   .btn-demo
     // display: block
     position: relative
+    // z-index: 200
     .description
 
       position: absolute
       background-color: white
       color: black
       padding: 15px 25px
-      width: 450px
+      width: 600px
       max-width: 100vw
       font-size: 0.9em
       // max-width: 
@@ -429,7 +430,7 @@ export default {
       left: calc( 100% + 20px )
       transform: translateY(-50%)
       // display: none
-      z-index: 150
+      z-index: 200
       opacity: 0
       pointer-events: none
       background-color: white

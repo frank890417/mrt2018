@@ -329,6 +329,9 @@ In addition to being an office building, Taipei 101 also has shopping malls, res
 In 1979, the airport turned into a domestic airport until it was later opened for the mini three links. Songshan Airport has witnessed historical changes of Taiwan's politics and economy and was part of the important memories of students, businessmen and travelers who were far away from home.`,
       keywords: "Stories about flying, traveling, dreams, and goodbye and reunite…",
 
+      demo_title: "Roaming Traveler",
+      demo_author: "Iris Chang",
+      demo_description: `It’s a journey of time, the airport is like a layer of film, in which the past and the future crosses.  Every departure awaits the next arrival.  It’s also a log before flying, where travelers, full of anticipation and expectations, cheerfully drag their luggage through the shiny marble lobby, all ready for their next encounter.  This feeling vibrates like ocean waves, full of rhythm, where your past speaks with the future, and all your memories are transformed into a mist-like existence that doesn’t leave, but envelopes around you.  At the moment of boarding, you are ready to welcome a whole new self, one that is again full of power.  For me, every journey is a process of reconstructing myself, as if I were stepping into an unknown planet, and each dialogue with myself is like the coming and going of waves.  I want to express this feeling in the music by using simplistic repetitions to create rhythm; the two major sonic lines represent the past and future.  They interact, change, and influence each other until finally, the imagined roaming traveler returns to where he belongs.`,
     },
     {
       station_key: "station_arena",
@@ -342,6 +345,9 @@ Shopping complexes near the arena is also a great place to go on holidays and a 
 `,
       keywords: "Concert, energetic people, a place for performances and music festivals…",
 
+      demo_title: "MRT Taipei Arena Station Ambient Music",
+      demo_author: "Ethan Ma",
+      demo_description: `All the materials (except for 2:12 sound of pipe organ) used were sounds the artist recorded inside the Taipei Arena Station, and improvised creatively post production, then assembled with percussion and hip-hop elements around it like a collage.  The goal is to express the dynamic urban spirit of the area.  Starting from the rhyme of the busy footsteps of people, leading to the cheerful tone of trains entering and leaving the station (the main rhythm is chosen from the sound of Songshan-Xindian  line train arrival and re-arranged), in the middle the artist incorporated pipe organ to express the sense of anticipation as if going to a big sports game, and finally assembled all the elements to make a smooth end.`,
     },
     {
       station_key: "station_longshan",
@@ -352,6 +358,9 @@ Shopping complexes near the arena is also a great place to go on holidays and a 
 Now, Longshan Temple has become a spiritual and social heart of the district. The one of a kind sculptures and clouds of smoke from the burning incense in the temple and the traditional buildings nearby it even make Longshan Temple a famous tourist spot of Taipei. `,
       keywords: "Historical sites of Taiwan, prayers in the temples, the scent of incense, good luck and fortune…",
 
+      demo_title: "Inherited",
+      demo_author: "Yung-Chiao Chang",
+      demo_description: `The Longshan Temple in Monga area has always been a place where the new meets the tradition and the spiritual index of cultural heritage.  Many local residents have developed a leisurely life attitude as well as commercial, cultural, and economical habits centering the temple.  The Sanshui Street, Xiyuan Road, Huaxi Street Night Market, as well as the always busy Longshan Temple MRT station make the area even more prosperous, and always crowded with people.  Thus, I used new and old instruments to compose this piece.  I used Chinese percussion instrument and pentatonic scale to interpret the glories of Longshan Temple in the past and added electric guitar as well as other percussion instruments to emphasize on the coming of “new” and its merging with the old, the express the concept of the passing down of a cultural heritage one generation after another.`,
     },
     {
       station_key: "station_xiangshan",
@@ -362,6 +371,9 @@ Now, Longshan Temple has become a spiritual and social heart of the district. Th
 It is not only a serene place to relax amid the hustle and bustle of Taipei City but also a great place to catch the stunning nighttime views of Xinyi District and the magnificent Taipei City.`,
       keywords: "	Nature as classroom and a quiet place amid the hustles and bustles of city...",
 
+      demo_title: "MRT Xiangshan Station Ambient Music",
+      demo_author: "Emma Kao",
+      demo_description: `When traveling in Europe, one can see street artists scattered at every corner playing their own instrument or performing their talent.  Once when climbing the hill of Park Quell in Spain, just as I was feeling exhausted, I encountered a handpan (a type of percussion instrument) street performer performing. Her improvisation gave me the strength to go on, it was like an oasis in the desert.  Accompanied by her music, I forgot all the toil and my footsteps became lighter and my spirits uplifted.  I really enjoyed the experience.  Music really has the power to change people’s moods believe this beautiful experience should be shared with others.  Therefore, in this piece I employed the frolicking sounds of foreigners climbing, footsteps, insects humming, leaves hustling, and more and assembled them with plucked stringed instruments like guitar and mandolin to create a light and cheerful tempo, hoping to bring to every traveler that comes to the station a relaxed and refreshed feeling.`,
     },
     {
       station_key: "station_dongman",
@@ -372,6 +384,9 @@ It is not only a serene place to relax amid the hustle and bustle of Taipei City
 There are many famous traditional street food stalls in the market which were the favorites of celebrities and gourmets. As a result, Dongmen market was referred to as a market for the Taipei elite.`,
       keywords: "Places with culture and history, Dongmen market and Taiwanese street foods sold on Yongkang Street …",
 
+      demo_title: "Walking tour in Dongmen",
+      demo_author: "Yin Chen / Zero Hsu",
+      demo_description: `Coming to Dongmen Station, one can sense the area is filled with warm hospitality.  Being a hub for inexpensive but delicious food, one can find all kinds of Taiwanese delicacies in the area!  To illustrate the area’s cheerful yet traditional character, in the composition of the music we used some light and fast Chinese music percussion to start, followed by the more lively, upbeat tempo of guzheng and Chinese lute to express the joy of shopping; In the chorus we used real soundtrack of erhu to illustrate the delicate sentiments of Taiwanese people’s genuine hospitality, which is our proudest ambience.  Towards the middle we added suona to emphasize on Taiwan’s unique instrument with its invigorating sound; intertwined with the sound of erhu, it’s like a dialogue between people, creating a harmonious scene to end the piece.  Every country has its good and bad sides, while Taiwan may not have a significant status in the world, but it enables its people and visitors to live and taste delicacies with happiness, a nirvana indeed.`,
     },
 
 
@@ -384,6 +399,9 @@ There are many famous traditional street food stalls in the market which were th
       After many years of development in history, the flourishing of folk culture, ships no longer comes to the harbour and the old Tamsui as a major transportation port will forever remain in people’s memory.
 `,
       keywords: "nostalgia, transformation, internationl",
+      demo_title: "MRT Tamsui Station Ambient Music",
+      demo_author: "Pur-dull",
+      demo_description: "A work by aboriginal singer Chen JianNian, whose full-time occupation is apolice officer.Having been acclaimed by the Golden Melodies Award severaltimes, the artist who now resides in Orchid Island especially chose to useguitar, accordion, flutes and other instruments to create warm notes to weavea melody close to Tamsui’s local features and named it “Song of Blue Ocean”. With the arch hallway of MRT Tamsui Station which provides great lighting tothe public space, where travelers can rest on the benches and enjoy amoment of rest while listening to the music."
      
     },
     {
@@ -393,7 +411,9 @@ There are many famous traditional street food stalls in the market which were th
       description: `Built in 1976, the National Chiang Kai-shek Memorial Hall was a structure built to commemorate Chiang Kai-shek, president of Republic of China,.  It was originally an area of land  for the use of the first legion of the hill artillery and infantry during Japanese Occupation period.
       This historical site is an important political monument of Taiwan, which has been loaded with various political memories of post-war Taiwanese people.  It’s not only a part of history, but a significant cultural assent.`,
       keywords: "history, spirit, asset",
-    
+      demo_title: "MRT Chiang Kai-shek Memorial Hall Station Ambient Music",
+      demo_author: "RED",
+      demo_description: "The band Red features musical works with electronic music as base,merging with oriental notes.The leader DJ Code is a top music producer in        Taiwan, also the first Asian DJ to be invited to Glastonbury Festival in Britain.This time, they continue to integrate Chinese and Western styles and employ the harp, yangqin and other Chinese instruments and composed the music through digital electronic style to express the interplay of the past and present, in correspondence with the National Chiang Kai-shet Memorial Hall and National Theatre & amp; Performing Hall’s character of being classical architectures adorned with modern touches. <br>Because the walkway to the National Theatre & amp; Performing Hall are reserved for street performers at set times, the music will be played at the platform.",    
     },
     {
       station_key: "station_zongshanjh",
@@ -402,6 +422,9 @@ There are many famous traditional street food stalls in the market which were th
       description: `Filled with art and culture in the air,　Minsheng Community was one of Taipei’s first urban development projects that was built in 1960s following an American style community blueprint.   The streets and roads are designed in chessboard pattern, and at the same time wires and cables were laid underground.  The community features 25 parks.  
       Located in the midst of the prosperity of Taipei financial center, yet filled with a relaxing atmosphere, Minsheng community has become the top choice for residents to go for a leisurous time on holidays. `,
       keywords: "prosperity, dynamic, hide-out",
+      demo_title: "MRT Zhongshan Junior High School Station Ambient Music",
+      demo_author: "Lim Giong",
+      demo_description: "Zhongshan Junior High School Station, located on Wenhu Line, invited Lim Giong, who has won the acclaim of many musical awards domestically and internally to compose the station’s ambient music.Lim Giong was famous early in his career for the Taiwanese rock song Marching Forward, which broke the convention of the sad music style of Taiwanese music.In recent years he is dedicated in promoting Taiwanese music, besides composing music scores for several films, he has also done interdisciplinary work for Cloud Gate Dance.The concept of this work is out of the respect for Chen Nan-Jung for Freedom Alley, which is in the proximity of the station, was established in the memory of Mr.Chen Nan-Jung’s spirits. <br> With the concept of freedom as the core, through inorganic, fragmented style of creation, what came to fruit is a narration between music and poetry.He expects to open people’s window of mind through this music, to harvest the clarity of the heart in correspondence with the Freedom Alley’s spirit of speaking for human rights.",
      
     },
     {
@@ -412,6 +435,9 @@ There are many famous traditional street food stalls in the market which were th
       The park is now an ecology park full of greenery,  taking pride in being called “The Lung of the city”in Taipei,  with various recreational facilities in addition to an uniquely designed open air stadium, making it one of the all time favorite recreational spots of Taipei citizens.
 `,
       keywords: "fun, ecology, leisure",
+      demo_title: "Wonderful Taipei",
+      demo_author: "Liu Chi-ling",
+      demo_description: "MRT Daan Park station invited Chi-Ling Liu, who has taken part in Jimmy Liao’s musical production and whose works include TV drama film score, commercials, fashion shows, animation and more.Daan Park Station contains a great space for relaxation, besides the spacious room, the fountain walkway outside the glass window is also within the scope of where the ambient music will be played.Chi - Ling Liu sought to create a music that can sooth people’s heart by creating a comfortable, family like joyous ambience. He employed the use of light tune to slow down the nervous pace of the city.",
      
     },
     {
@@ -422,6 +448,9 @@ There are many famous traditional street food stalls in the market which were th
 The riverside park boasts of its lush green field, riverside bicycle lane, volleyball court, basketball court, scenic trail and other facilities, making it a great getaway for residents to spend some leisure time and relax the spirit. 
 `,
       keywords: "lohas, leisure, fun",
+      demo_title: "landscape",
+      demo_author: "Liu Hang",
+      demo_description: "MRT Xiaobitan Station is a Shangri-la at the terminal stop of the MRT line. The artist is celloist Liu Han, who is also a professional musician in pop music and has worked with artists like Hebe, Yoga Lin, Fish Leong and more.Liu Han uses her professional cello to play the main melody and employ the wide notes of piano to create a sometimes quiet, sometimes invigorating rhythm. Accompanied by the elegant notes of cello, the music makes one feel as if he were standing right next to the XinDian river, overlooking the panoramic view.<br> The ambient music makes one filled with anticipation for the view of layers of mountains reflecting in the water before even exiting the station.",
     }
 
 

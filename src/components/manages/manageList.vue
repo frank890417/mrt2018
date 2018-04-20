@@ -12,8 +12,10 @@
             VueLazyTable(:table_data="use_registlist", :hide_table="true")
         .row
           .col-sm-12
+            h5 共有 {{ use_registlist.length }} 件報名資料
             el-table(:data="use_registlist")
-              el-table-column(prop="id",label="#",width=50)
+              el-table-column(prop="countId",label="#",width=50)
+              el-table-column(prop="id",label="序號",width=50)
               //- el-table-column(prop="creator_count",label="人數",width=40)
               el-table-column(prop="creators",label="創作者",width=200)
               //- el-table-column(prop="is18",label="是否18",width=80)
@@ -57,10 +59,12 @@ export default {
     ...mapState(['token']),
     use_registlist(){
 
-      return this.registlist.map(o=>({
+      return this.registlist.map( (o,oid)=>({
+        countId: oid+1,
         ...o ,
         creators: o.creators.reduce((all,creator)=>all+(all!=''?"、":'')+creator.name,""),
         is18:  (o.creators[0] && o.creators[0].age>18),
+        
         works: [
           {
             id: 0,
