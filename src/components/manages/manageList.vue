@@ -9,7 +9,7 @@
       .container(v-if='!getDataError')
         .row
           .col-sm-12
-            VueLazyTable(:table_data="use_registlist", :hide_table="true")
+            VueLazyTable(:table_data="use_registlist", :hide_table="true",dataTitle="所有報名資料")
         .row
           .col-sm-12
             h5 共有 {{ use_registlist.length }} 件報名資料
@@ -27,6 +27,13 @@
               el-table-column(prop="detail",label="詳細資料")
                 template(slot-scope="scope")
                   router-link.btn.red(:to="'/manage/'+scope.row.id") 檢視資料
+        .row
+          .col-sm-12
+            br
+            br
+            br
+            h3 報名人資料匯出
+            VueLazyTable(:table_data="creatorlist", :hide_table="true",dataTitle="報名人資料")
       .container(v-else)
         .row
           .col-sm-12
@@ -47,6 +54,7 @@ export default {
   data(){
     return {
       registlist: [],
+      creatorlist: [],
       getDataError: false,
       temptoken: ""
     }
@@ -102,6 +110,12 @@ export default {
         this.getDataError=false
       }).catch(res=>{
         this.getDataError=true
+      })
+
+      axios.get('http://api.taipeisoundscape.com/creators2018/all',{params: { token: this.token} }).then(res=>{
+        console.log(res.data)
+        this.$set(this,"creatorlist",res.data)
+      }).catch(res=>{
       })
     },
     reloadData(){

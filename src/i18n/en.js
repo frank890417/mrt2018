@@ -399,7 +399,7 @@ There are many famous traditional street food stalls in the market which were th
       After many years of development in history, the flourishing of folk culture, ships no longer comes to the harbour and the old Tamsui as a major transportation port will forever remain in people’s memory.
 `,
       keywords: "nostalgia, transformation, internationl",
-      demo_title: "MRT Tamsui Station Ambient Music",
+      demo_title: "Blue Ocean",
       demo_author: "Pur-dull",
       demo_description: "A work by aboriginal singer Chen JianNian, whose full-time occupation is apolice officer.Having been acclaimed by the Golden Melodies Award severaltimes, the artist who now resides in Orchid Island especially chose to useguitar, accordion, flutes and other instruments to create warm notes to weavea melody close to Tamsui’s local features and named it “Song of Blue Ocean”. With the arch hallway of MRT Tamsui Station which provides great lighting tothe public space, where travelers can rest on the benches and enjoy amoment of rest while listening to the music."
      
