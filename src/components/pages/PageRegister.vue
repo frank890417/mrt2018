@@ -90,7 +90,7 @@
                         :placeholder="$t('register.s2.label_select')",
                         :name="'concept_'+cid+'_target'" 
                         :data-require="$t('register.s2.label_station')+ (cid+1)",)
-                        el-option(v-for="op in stations"
+                        el-option(v-for="op in filterStations"
                                   :value="op.name" ) {{op.name}}
                     el-form-item(:label="$t('register.s2.label_content')", v-if="registData.concepts[cid].target")  
                       el-input(v-model="registData.concepts[cid].content",:name="'concept_'+cid+'_content'"
@@ -237,6 +237,10 @@ export default {
     },
     stationsOptions(){
       return this.stations.map(s=>s.name)
+    },
+    filterStations(){
+      return this.stations.filter(station=>station.audition)
+
     }
   },
   methods:{
