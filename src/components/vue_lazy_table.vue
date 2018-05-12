@@ -198,7 +198,11 @@ export default {
                   // let hasNL = (""+array[i][index]).indexOf("\n")>-1
                   let hasNL=true
                   if (hasNL) line+='"'
-                  line += array[i][index];
+                  if (array[i][index]===null){
+                    line += "";
+                  }else{
+                    line += array[i][index].replace(/\"/g,"\"\"");
+                  }
                   if (hasNL) line+='"'
               }
 
