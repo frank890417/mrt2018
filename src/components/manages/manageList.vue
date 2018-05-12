@@ -65,39 +65,45 @@ export default {
   },
   computed:{
     ...mapState(['token']),
-    use_registlist(){
-
-      return this.registlist.map( (o,oid)=>({
-        countId: oid+1,
-        ...o ,
-        creators: o.creators.reduce((all,creator)=>all+(all!=''?"、":'')+creator.name,""),
-        is18:  (o.creators[0] && o.creators[0].age>18),
-        
-        works: [
-          {
-            id: 0,
-            name: o.work_0_name,
-            content: o.work_0_content,
-            file: o.work_0_file
-          },{
-            id: 1,
-            name: o.work_1_name,
-            content: o.work_1_content,
-            file: o.work_1_file
-          },{
-            id: 2,
-            name: o.work_2_name,
-            content: o.work_2_content,
-            file: o.work_2_file
-          }
+    use_registlist(){ 
+      return this.registlist.map( (o,oid)=>{
+        let creatorsname = o.creators.reduce((all,creator)=>all+(all!=''?"、":'')+creator.name,"")
+        let data = {
+          countId: oid+1,
+          ...o ,
+          is18:  (o.creators[0] && o.creators[0].age>18),
           
-        ].filter(o=>o.name)
-          .map(o=>{
-            let url = "http://api.taipeisoundscape.com/registwork/file"+o.file
-            let html = "<a style='display: block' href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
-            return html
-          }).join('<br>')
-      }))
+          works: [
+            {
+              id: 0,
+              name: o.work_0_name,
+              content: o.work_0_content,
+              file: o.work_0_file
+            },{
+              id: 1,
+              name: o.work_1_name,
+              content: o.work_1_content,
+              file: o.work_1_file
+            },{
+              id: 2,
+              name: o.work_2_name,
+              content: o.work_2_content,
+              file: o.work_2_file
+            }
+            
+          ].filter(o=>o.name)
+            .map(o=>{
+              let url = "http://api.taipeisoundscape.com/registwork/file"+o.file
+              let html = "<a style='display: block' href='"+url+"' target='_blank'>"+o.name+"</a><audio controls src='"+url+"' download></audio>"
+              return html
+            }).join('<br>')
+            
+          }
+          data['creators'] = creatorsname
+          return data
+        })
+        
+      }
     }
   },
   methods:{
