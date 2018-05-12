@@ -98,12 +98,10 @@ export default {
               return html
             }).join('<br>')
             
-          }
-          data['creators'] = creatorsname
-          return data
-        })
-        
-      }
+        }
+        data['creators'] = creatorsname
+        return data
+      })
     }
   },
   methods:{
