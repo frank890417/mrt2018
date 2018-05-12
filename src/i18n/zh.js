@@ -173,7 +173,7 @@ let data = {
     btn_next: "下一步",
     btn_prev: "上一步",
     agreement_file: "徵件辦法及同意書下載",
-    agreement_file_link: "/static/file/捷運站體音樂-徵件辦法_中文版文化局審核_核定版.pdf",
+    agreement_file_link: "/static/file/捷運站體音樂-徵件辦法_中文版文化局審核_核定版n.pdf",
     stage1: "個人資料",
     stage2: "創作論述",
     stage3: "上傳作品",

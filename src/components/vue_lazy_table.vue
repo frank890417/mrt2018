@@ -195,7 +195,8 @@ export default {
               var line = '';
               for (var index in array[i]) {
                   if (line != '') line += ','
-                  let hasNL = (""+array[i][index]).indexOf("\n")>-1
+                  // let hasNL = (""+array[i][index]).indexOf("\n")>-1
+                  let hasNL=true
                   if (hasNL) line+='"'
                   line += array[i][index];
                   if (hasNL) line+='"'

@@ -345,7 +345,7 @@ Shopping complexes near the arena is also a great place to go on holidays and a 
 `,
       keywords: "Concert, energetic people, a place for performances and music festivals…",
 
-      demo_title: "MRT Taipei Arena Station Ambient Music",
+      demo_title: "Urban spirit",
       demo_author: "Ethan Ma",
       demo_description: `All the materials (except for 2:12 sound of pipe organ) used were sounds the artist recorded inside the Taipei Arena Station, and improvised creatively post production, then assembled with percussion and hip-hop elements around it like a collage.  The goal is to express the dynamic urban spirit of the area.  Starting from the rhyme of the busy footsteps of people, leading to the cheerful tone of trains entering and leaving the station (the main rhythm is chosen from the sound of Songshan-Xindian  line train arrival and re-arranged), in the middle the artist incorporated pipe organ to express the sense of anticipation as if going to a big sports game, and finally assembled all the elements to make a smooth end.`,
     },
@@ -371,7 +371,7 @@ Now, Longshan Temple has become a spiritual and social heart of the district. Th
 It is not only a serene place to relax amid the hustle and bustle of Taipei City but also a great place to catch the stunning nighttime views of Xinyi District and the magnificent Taipei City.`,
       keywords: "	Nature as classroom and a quiet place amid the hustles and bustles of city...",
 
-      demo_title: "MRT Xiangshan Station Ambient Music",
+      demo_title: "Happy Steps",
       demo_author: "Emma Kao",
       demo_description: `When traveling in Europe, one can see street artists scattered at every corner playing their own instrument or performing their talent.  Once when climbing the hill of Park Quell in Spain, just as I was feeling exhausted, I encountered a handpan (a type of percussion instrument) street performer performing. Her improvisation gave me the strength to go on, it was like an oasis in the desert.  Accompanied by her music, I forgot all the toil and my footsteps became lighter and my spirits uplifted.  I really enjoyed the experience.  Music really has the power to change people’s moods believe this beautiful experience should be shared with others.  Therefore, in this piece I employed the frolicking sounds of foreigners climbing, footsteps, insects humming, leaves hustling, and more and assembled them with plucked stringed instruments like guitar and mandolin to create a light and cheerful tempo, hoping to bring to every traveler that comes to the station a relaxed and refreshed feeling.`,
     },
