@@ -201,7 +201,7 @@ export default {
                   if (array[i][index]===null){
                     line += "";
                   }else{
-                    line += array[i][index].replace(/\"/g,"\"\"");
+                    line += (array[i][index]+'').replace(/\"/g,"\"\"");
                   }
                   if (hasNL) line+='"'
               }
