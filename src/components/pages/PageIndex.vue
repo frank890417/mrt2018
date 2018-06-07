@@ -27,6 +27,7 @@
                 br
                 router-link.btn.color.white(to="/playground") {{ $t('nav.playground.title') }}
                 router-link.btn.color.white(to="/rules") {{ $t('nav.register.title') }}
+                a.btn.color.white(href="/static/file/20180605 捷運地景音樂入選名單.pdf") 查看入選名單!
             
 
 </template>
