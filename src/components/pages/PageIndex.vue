@@ -15,7 +15,7 @@
               h1.title
                 span {{ $t('index.title') }}
               h3.sub {{ $t('index.subtitle') }}
-              h2 2018/3/31-5/15
+              //- h2 2018/3/31-5/15
             .col-md-6.col-sm-12
               .btns
                 .btn-lang.btn.red(@click="switchLang('en')") English 

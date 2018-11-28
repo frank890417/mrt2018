@@ -30,7 +30,7 @@
                   span
                     h5 {{ $t("explore.label_work_text") }}：{{station.demo_title}}<br>{{$t("explore.label_author_text")}}：{{station.demo_author}}
                   span {{ $t("explore.label_demo_about_text") }}：<br>
-                  span(v-html="station.demo_description")
+                  span(v-html="station.demo_author_description+station.demo_description")
               .audiodemo
                 audio#demoaudio( :src="station.demo" v-if="station.demo")
                 
@@ -46,7 +46,7 @@
               SvgInline.floatInUp.animated.scene.showing(:src="station.img")
 
 
-</template>n
+</template>
 
 <script>
 import {mapState,mapMutations,mapActions} from 'vuex'
